@@ -3,6 +3,7 @@ body {
  font-family: Arial, Helvetica, sans-serif;
  -background-color: #190037;
  margin:0;
+ overflow: hidden;
 }
 
 #wrapper {
@@ -20,35 +21,8 @@ body {
  float: center;
  background-color: white;
  width: 100%;
- height: 625px;
+ height: 600px;
 }
-
-/*
-
-#leftcolumn { float: left;
-background-color: #ffffcc;
- width: 150px;
- height: 488px;
-}
-div#leftcolumn a { display: block;
-margin: 0 15px 15px 15px;
-width: 80px;
-padding-left:10px;
-padding-right:10px;
-text-decoration:none;
-}
-#leftcolumn ul {list-style-type: none;
- margin-top: 0;
- margin-left: 0;
- padding-left: 0;
-}
-
-#rightcolumn {
-  height: 468px;
- background-color: #F1E8B0;
- padding: 0 20px 20px 0;
- padding-left: 200px;
-}*/
 
 #footer { font
 -size: .60em;
@@ -63,21 +37,174 @@ color: white;
 background-color: #190037
 }
 
+#header {
+  background-color: #190037;
+  width: 100%;
+  height: 20%;
+  padding-top: 0px;
+  padding-bottom: 62px;
+
+}
+
+
 #logo{
-  margin: 0 auto;
-   text-align: center;
-   border: 3px inset black;
-}
-
-#img2{
   position: absolute;
-  left: 60%;
-  bottom: 45%;
-  text-align: right;
+  left: 0%;
+  top: 0%;
+  margin: 0;
+  text-align: center;
 }
 
-img { border:0; }
-.property {
- -padding right:30px;
- -padding top: 5px;
- -float:left; }
+
+
+/*
+  source : https://www.w3schools.com/csS/tryit.asp?filename=trycss_buttons_group
+*/
+.btn-group .button {
+  background-color: #190037; /* violet */
+  border: none;
+  color: white;
+  padding: 30px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  float: right;
+}
+
+.btn-group .button:hover {
+  background-color: #431A73;
+}
+
+
+
+/*
+source : https://codepen.io/ancaspatariu/pen/WpQYOP
+*/
+
+ul.slides {
+    -display: block;
+    position: relative;
+    height: 600px;          - taille a changer ici
+    margin: 0;
+    padding: 0;
+    -overflow: hidden;
+    -list-style: none;
+}
+
+/*
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}*/
+
+ul.slides input {
+    display: none;
+}
+
+/*
+.slide-container {
+    display: block;
+}*/
+
+.slide-image {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    transition: all .7s ease-in-out;
+}
+
+.slide-image img {
+    width: auto;
+    min-width: 100%;
+    height: 100%;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    font-size: 100px;
+    line-height: 600px;
+    color: #fff;
+}
+
+.carousel-controls label {
+    display: none;
+    position: absolute;
+    padding: 0 20px;
+    opacity: 0;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+
+.slide-image:hover + .carousel-controls label{
+    opacity: 0.5;
+}
+
+.carousel-controls label:hover {
+    opacity: 1;
+}
+
+.carousel-controls .prev-slide {
+    width: 49%;
+    text-align: left;
+    left: 0;
+}
+
+.carousel-controls .next-slide {
+    width: 49%;
+    text-align: right;
+    right: 0;
+}
+
+.carousel-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 999;
+    text-align: center;
+}
+
+.carousel-dots .carousel-dot {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.5;
+    margin: 10px;
+}
+
+input:checked + .slide-container .slide-image {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .carousel-controls label {
+     display: block;
+}
+
+input#img-1:checked ~ .carousel-dots label#img-dot-1,
+input#img-2:checked ~ .carousel-dots label#img-dot-2,
+input#img-3:checked ~ .carousel-dots label#img-dot-3,
+input#img-4:checked ~ .carousel-dots label#img-dot-4,
+input#img-5:checked ~ .carousel-dots label#img-dot-5,
+input#img-6:checked ~ .carousel-dots label#img-dot-6 {
+	opacity: 1;
+}
+
+
+input:checked + .slide-container .nav label { display: block; }
