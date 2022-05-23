@@ -36,60 +36,73 @@
 
 
         <!-- Top Navigation Menu -->
-        <div class="topnav">
-          <a href="#home" class="active">Médecine générale</a>
-          <div id="myLinks1">
-            <a href="#dr1">Dr machin</a>
-            <a href="#dr2">Dr truc</a>
-            <a href="#dr3">Dr bidule</a>
-          </div>
-
-          <a href="javascript:void(0);" class="icon" onclick="myFunction1()">
-          <i class="fa fa-caret-down"></i>
-          </a>
-          </div>
-
-        <!-- Top Navigation Menu -->
-        <div class="topnav">
-          <a href="#home" class="active">Médecins spécialistes</a>
-          <div id="myLinks2">
-            <a href="#Addictologie">Addictologie</a>
-            <a href="#Andrologie">Andrologie</a>
-            <a href="#Cardiologie">Cardiologie</a>
-            <a href="#Dermatologie">Dermatologie</a>
-            <a href="#GastroHepatoEnterologie">Gastro-Hépato-Entérologie</a>
-            <a href="#Gynecologie">Gynécologie</a>
-            <a href="#IST">I.S.T.</a>
-            <a href="#Osteopathie">Ostéopathie</a>
-          </div>
-
-          <a href="javascript:void(0);" class="icon" onclick="myFunction2()">
-          <i class="fa fa-caret-down"></i>
-          </a>
+      <div class="topnav">
+        <a href="#home" class="active">Médecine générale</a>
+        <div id="myLinks1">
+        <a onclick="openForm()">Dr machin</a>
+          <a href="#dr2">Dr truc</a>
+          <a href="#dr3">Dr bidule</a>
         </div>
 
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction1()">
+        <i class="fa fa-caret-down"></i>
+        </a>
+        </div>
         <!-- Top Navigation Menu -->
-        <div class="topnav">
-          <a href="#home" class="active">Laboratoire de biologie médicale</a>
-          <div id="myLinks3">
-            <a href="#PriseDeSang">Prise de sang</a>
-            <a href="#ExaminUrine">Examen de l'urine</a>
-            <a href="#DepistageCovid">Dépistage Covid</a>
-          </div>
-
-          <a href="javascript:void(0);" class="icon" onclick="myFunction3()">
-          <i class="fa fa-caret-down"></i>
-
-          </a>
+      <div class="topnav">
+        <a href="#home" class="active">Médecins spécialisés</a>
+        <div id="myLinks2">
+          <a href="#Cardiologie">Cardiologie</a>
+          <a href="#spe2">Spé2</a>
+          <a href="#spe3">Spé3</a>
         </div>
 
-    </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction2()">
+        <i class="fa fa-caret-down"></i>
 
-    <div id="footer">Copyright &copy; 2022, Omnes Santé<br>
-      <a href="mailto:omnes.sante@gmail.com">omnes.sante@gmail.com</a>
-    </div>
-
+        </a>
   </div>
+          <!-- Top Navigation Menu -->
+      <div class="topnav">
+        <a href="#home" class="active">Laboratoire de biologie médicale</a>
+        <div id="myLinks3">
+          <a href="#news">Test machin</a>
+          <a href="#contact">Test truc</a>
+          <a href="#about">Test x</a>
+        </div>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction3()">
+        <i class="fa fa-caret-down"></i>
+
+        </a>
+      </div>
+
+    </div>
+
+    <div class="login-popup">
+      <div class="form-popup" id="popupForm">
+        <form action="/action_page.php" class="form-container">
+          <h2>Veuillez vous connecter</h2>
+          <label for="email">
+            <strong>E-mail</strong>
+          </label>
+          <input type="text" id="email" placeholder="Votre Email" name="email" required />
+          <label for="psw">
+            <strong>Mot de passe</strong>
+          </label>
+          <input type="password" id="psw" placeholder="Votre Mot de passe" name="psw" required />
+          <button type="submit" class="btn">Connecter</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
+        </form>
+      </div>
+    </div>
+
+      <div id="footer">Copyright &copy; 2022, Omnes Santé<br>
+        <a href="mailto:omnes.sante@gmail.com">omnes.sante@gmail.com</a>
+      </div>
+
+    </div>
 
 
 
