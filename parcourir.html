@@ -89,12 +89,14 @@
 </div>
 
     <div class="login-popup">
-      <div class="form-popup" id="popupForm">
-        <form action="/action_page.php" class="form-container">
-          <h2>Veuillez vous connecter</h2>
+      <div class="form-popup" id="popupForm" onclick="closeForm()">
 
-          <button type="button" class="btn cancel" onclick="closeForm()">X</button>
-        </form>
+      </div>
+
+      <div class="form-container" id="pagePopup">
+        <h2>Veuillez vous connecter</h2>
+
+        <button type="button" class="btn cancel" onclick="closeForm()">X</button>
       </div>
     </div>
 
