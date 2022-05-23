@@ -7,9 +7,20 @@
   padding-bottom: 78px;
 }
 
+#section2{
+  margin-top: 5%;
+  margin-left: 15%;
+  background-color: white;
+  width: 70%;
+  min-height: 100px;
+  height: 50%;
+  overflow: auto;
+}
+
 .topnav {
-  background-color: #333;
+  background-color: white;
   position: relative;
+  margin: 30px;
 }
 
 .topnav #myLinks1{
@@ -42,28 +53,31 @@
 
 
 .topnav a {
-  color: white;
+  color: black;
   padding: 25px 16px;
   text-decoration: none;
   font-size: 17px;
   display: block;
+  border-radius: 15px;
 }
 
 .topnav a.icon {
-  background: black;
+  background: #190037;
   display: block;
   position: absolute;
   right: 0;
   top: 0;
+  color: white;
 }
 
 .active {
-  background-color: #04AA6D;
+  background-color: #ddd;
   color: white;
 }
 
 
 /* Positionnez la forme Popup */
+<<<<<<< HEAD
  .login-popup {
    position: relative;
    text-align: center;
@@ -135,3 +149,20 @@ left: 92%;
   background-color: #ddd;
   outline: none;
 }*/
+=======
+     .login-popup {
+       position: relative;
+       text-align: center;
+       width: 100%;
+     }
+     /* Masquez la forme Popup */
+     .form-popup {
+       display: none;
+       position: fixed;
+       left: 45%;
+       top: 5%;
+       transform: translate(-45%, 5%);
+       border: 2px solid #666;
+       z-index: 9;
+     }
+>>>>>>> c96af6578ef49370e1f6116369b8651185d31012
