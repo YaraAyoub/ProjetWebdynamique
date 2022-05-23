@@ -30,8 +30,10 @@ function myFunction3() {
 
   function openForm() {
     document.getElementById("popupForm").style.display = "block";
+    document.getElementById("pagePopup").style.display = "block";
   }
 
   function closeForm() {
     document.getElementById("popupForm").style.display = "none";
+    document.getElementById("pagePopup").style.display = "none";
   }

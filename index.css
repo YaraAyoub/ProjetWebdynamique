@@ -21,7 +21,11 @@ overflow: auto;
  float: center;
  background-color: white;
  width: 100%;
+<<<<<<< HEAD
  min-height: 850px;
+=======
+ min-height: 800px;
+>>>>>>> 87fda967ae72a0f765f9bb4aaa4e73575f134fcd
  height: 100%;
  color: black;
  overflow: auto;
