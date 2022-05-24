@@ -107,30 +107,3 @@
   border: none;
   background: #eee;
 }*/
-
-/* Stylez le bouton de connexion*/
-.form-container .btn {
-  background-color: #ffffff3d;
-  color: black;
-  /* padding: 8px; */
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  /* width: 5%; */
-  -padding: 10px;
-  opacity: 0.8;
-  position: absolute;
-  bottom: 93%;
-  left: 96%;
-}
-
-/* Stylez le bouton pour annuler */
-.form-container .cancel {
-  background-color: none;
-  border-radius: 25%;
-}
-/* Planez les effets pour les boutons */
-.form-container .btn:hover,
-.open-button:hover {
-  opacity: 1;
-}

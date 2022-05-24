@@ -119,6 +119,7 @@ ul.slides {
     margin: 0;
     padding: 0;
     -list-style: none;
+    z-index: 8;
 }
 
 /*
@@ -135,10 +136,10 @@ ul.slides input {
     display: none;
 }
 
-/*
+
 .slide-container {
     display: block;
-}*/
+}
 
 .slide-image {
     display: block;
@@ -267,17 +268,45 @@ input:checked + .slide-container .nav label { display: block; }
  /* Styles pour le conteneur de forme de la connexion ou inscription*/
 .form-container-connexion {
   display: none;
-  z-index: 9;
+  z-index: 11;
   -max-width: 300px;
   -padding: 20px;
   position: fixed;
-  left: 15%;
-  top: 10%;
+  left: 35%;
+  top: 15%;
   background-color: #fff;
   border-radius: 20px;
-  width: 70%;
-  height: 70%;
+  width: 30%;
+  height: 60%;
   -margin-top: -20px;
   border: 1px solid #666;
   opacity: none;
+}
+
+
+/* Stylez le bouton de connexion*/
+.form-container .btn {
+  background-color: #ffffff3d;
+  color: black;
+  /* padding: 8px; */
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  /* width: 5%; */
+  -padding: 10px;
+  opacity: 0.8;
+  position: absolute;
+  bottom: 93%;
+  left: 96%;
+}
+
+/* Stylez le bouton pour annuler */
+.form-container .cancel {
+  background-color: none;
+  border-radius: 25%;
+}
+/* Planez les effets pour les boutons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
 }
