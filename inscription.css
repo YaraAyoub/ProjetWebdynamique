@@ -1,0 +1,9 @@
+#section2{
+  margin-top: 0%;
+  margin-left: 30%;
+  background-color: transparent;
+  width: 45%;
+  min-height: 100px;
+  height: 50%;
+  overflow: auto;
+}
