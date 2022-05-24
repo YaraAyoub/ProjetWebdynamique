@@ -21,21 +21,22 @@
   background-color: white;
   position: relative;
   margin: 30px;
-  overflow: auto;
-  max-height: 400px;
 }
 
 .topnav #myLinks1{
 	display:none;
   overflow: auto;
+  max-height: 270px;
 }
 .topnav #myLinks2{
 	display:none;
   overflow: auto;
+  max-height: 270px;
 }
 .topnav #myLinks3{
 	display:none;
   overflow: auto;
+  max-height: 270px;
 }
 
 
