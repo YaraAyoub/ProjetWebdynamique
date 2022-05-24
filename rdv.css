@@ -1,14 +1,28 @@
 #section2{
   margin-top: 5%;
   margin-left: 15%;
-  background-color: grey;
+  background-color: transparent;
   width: 70%;
-  min-height: 100px;
-  height: 50%;
+  -min-height: 600px;
+  height: 70%;
   overflow: auto;
 }
 
 #section2 p{
-margin-left: 10px;
+  font-size: 20px;
+}
 
+.rdv{
+  background-color: #ddd;
+  position: relative;
+  margin: 30px;
+}
+
+.rdv a {
+  color: black;
+  padding: 25px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+  border-radius: 15px;
 }
