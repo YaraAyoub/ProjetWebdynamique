@@ -53,11 +53,12 @@
                 font-size: 15px;"
             >
 
-            <input type="text" id="dateNaissance" placeholder="Date de naissance (JJ/MM/AAAA)" name="dateNaissance" required="" style="margin-bottom: 20px;
-                padding-right: 18px;
+            <input type="text" id="dateNaissance" placeholder="Date de naissance (AAAA-MM-JJ)" name="dateNaissance" required="" style="margin-bottom: 20px;
+                padding-right: 7px;
                 padding-top: 8px;
                 padding-bottom: 8px;
-                font-size: 15px;width: 230px;"
+                font-size: 15px;
+                width: 250px;"
             >
 
             <input type="text" id="adresse" placeholder="Adresse" name="adresse" required=""
@@ -68,7 +69,7 @@
                 font-size: 15px;"
             >
 
-            <input type="text" id="carteVitale" placeholder="Carte Vitale" name="carteVitale" required=""
+            <input type="number" id="carteVitale" placeholder="Carte Vitale" name="carteVitale" required=""
               style="margin-bottom: 20px;
                 padding-right: 64px;
                 padding-top: 8px;
@@ -111,6 +112,21 @@
             <input type="number" id="numCarte" placeholder="Numero de carte" name="numCarte" required=""
               style="margin-bottom: 20px;
                 padding-right: 64px;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                font-size: 15px;"
+            >
+            <input type="text" id="typeCarte" placeholder="Type de carte" name="typeCarte" required=""
+              style="margin-bottom: 20px;
+                padding-right: 64px;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                font-size: 15px;"
+            >
+            <input type="text" id="expCarte" placeholder="Date d'expiration (AAAA-MM)" name="expCarte" required=""
+              style="margin-bottom: 20px;
+                padding-right: 7px;
+                width:250px;
                 padding-top: 8px;
                 padding-bottom: 8px;
                 font-size: 15px;"
