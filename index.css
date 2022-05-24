@@ -6,6 +6,28 @@ body {
 
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+
+  background:transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+   border-radius:10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
 #wrapper {
  width: 100%;
  height: 100%;
@@ -119,7 +141,7 @@ ul.slides {
     margin: 0;
     padding: 0;
     -list-style: none;
-    z-index: 8;
+      z-index: 8;
 }
 
 /*
@@ -136,10 +158,10 @@ ul.slides input {
     display: none;
 }
 
-
+/*
 .slide-container {
     display: block;
-}
+}*/
 
 .slide-image {
     display: block;
@@ -237,7 +259,6 @@ input#img-6:checked ~ .carousel-dots label#img-dot-6 {
 
 
 input:checked + .slide-container .nav label { display: block; }
-
 
 
 /* Popup */

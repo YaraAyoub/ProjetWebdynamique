@@ -21,6 +21,8 @@
   background-color: white;
   position: relative;
   margin: 30px;
+  overflow: auto;
+  max-height: 400px;
 }
 
 .topnav #myLinks1{
