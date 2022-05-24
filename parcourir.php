@@ -23,7 +23,7 @@
 
         <div class="btn-group">
           <a onclick="openFormCo()"><button class="button">Votre compte</button></a>
-          <a href="rdv.html"><button class="button">RDV</button></a>
+          <a href="rdv.php"><button class="button">RDV</button></a>
           <a href="recherche.html"><button class="button">Recherche</button></a>
           <a href="parcourir.php"><button class="button">Tout Parcourir</button></a>
           <a href="index.html"><button class="button">Accueil</button></a>

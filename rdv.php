@@ -24,7 +24,7 @@
 
         <div class="btn-group">
           <a onclick="openFormCo()"><button class="button">Votre compte</button></a>
-          <a href="rdv.html"><button class="button">RDV</button></a>
+          <a href="rdv.php"><button class="button">RDV</button></a>
           <a href="recherche.html"><button class="button">Recherche</button></a>
           <a href="parcourir.php"><button class="button">Tout Parcourir</button></a>
           <a href="index.html"><button class="button">Accueil</button></a>
@@ -35,13 +35,16 @@
 
       <div id="section">
 
-
         <div id="section2">
-        <!--    <h2>RDV à venir</h2>-->
 
-            <div class="rdv">
+                <div class="rdv">
+                  <a href="#home" class="active">type</a>
 
-            </div>
+                <a href="javascript:void(0);" class="icon" onclick="suppRdv()">
+                <i class="fa fa-trash-o"></i>
+
+                </a>
+                </div>
 
 
         </div>

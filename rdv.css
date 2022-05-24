@@ -26,3 +26,17 @@
   display: block;
   border-radius: 15px;
 }
+
+.rdv a.icon {
+  background: #190037;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: white;
+}
+
+.active {
+  background-color: #ddd;
+  color: white;
+}
