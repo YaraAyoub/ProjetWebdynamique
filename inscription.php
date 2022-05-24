@@ -124,7 +124,7 @@
                 font-size: 15px;"
             >
 
-            <a href="compte.html">
+            <a href="compte.php">
               <button type="submit" class="btn co" style="background-color: #80008040;
                 font-size: large;
                 margin-top: 8px;
