@@ -47,3 +47,14 @@ function myFunction3() {
     document.getElementById("popupFormCo").style.display = "none";
     document.getElementById("popupCo").style.display = "none";
   }
+
+  function openFormInsc() {
+    document.getElementById("popupFormCo").style.display = "none";
+    document.getElementById("popupCo").style.display = "none";
+    document.getElementById("popupInsc").style.display = "block";
+  }
+
+  function closeFormInsc() {
+    document.getElementById("popupFormCo").style.display = "none";
+    document.getElementById("popupInsc").style.display = "none";
+  }
