@@ -5,7 +5,6 @@
      <title>Omnes Santé</title>
      <link href="index.css" rel="stylesheet" type="text/css" />
      <link href="logo.jpg" rel="icon" type="images/x-icon" />
-     <script type="text/javascript" src="parcours.js"></script>
      <meta charset="utf-8" />
   </head>
 
@@ -23,7 +22,7 @@
           <a href="compte.html"><button class="button">Votre compte</button></a>
           <a href="rdv.html"><button class="button">RDV</button></a>
           <a href="recherche.html"><button class="button">Recherche</button></a>
-          <a href="parcourir.html"><button class="button">Tout Parcourir</button></a>
+          <a href="parcourir.php"><button class="button">Tout Parcourir</button></a>
           <a href="index.html"><button class="button">Accueil</button></a>
 
         </div>
@@ -35,24 +34,21 @@
 
 
         <div class="login-popup">
-          <div class="form-popup" id="popupForm" onclick="closeForm()">
-
+          <div class="form-popup" id="popupForm">
+            <form action="/action_page.php" class="form-container">
+              <h2>Veuillez vous connecter</h2>
+              <label for="email">
+                <strong>E-mail</strong>
+              </label>
+              <input type="text" id="email" placeholder="Votre Email" name="email" required />
+              <label for="psw">
+                <strong>Mot de passe</strong>
+              </label>
+              <input type="password" id="psw" placeholder="Votre Mot de passe" name="psw" required />
+              <button type="submit" class="btn">Connecter</button>
+              <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
+            </form>
           </div>
-
-          <form action="/action_page.php" class="form-container-connexion">
-            <h2>Veuillez vous connecter</h2>
-            <label for="email">
-              <strong>E-mail</strong>
-            </label>
-            <input type="text" id="email" placeholder="Votre Email" name="email" required />
-            <label for="psw">
-              <strong>Mot de passe</strong>
-            </label>
-            <input type="password" id="psw" placeholder="Votre Mot de passe" name="psw" required />
-            <button type="submit" class="btn">Connecter</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">X</button>
-          </form>
-
         </div>
 
 
