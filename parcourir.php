@@ -39,7 +39,7 @@
         <div class="topnav">
           <a href="#home" class="active">Médecine générale</a>
           <div id="myLinks1">
-
+<!--TODO-->
         <?php
         $doc = "Dr machin";
         echo("<a onclick=\"openForm()\">$doc</a>");
