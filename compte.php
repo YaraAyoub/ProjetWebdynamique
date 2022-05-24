@@ -19,7 +19,7 @@
       <div id="header">
 
         <div class="btn-group">
-          <a href="compte.html"><button class="button">Votre compte</button></a>
+          <a href="compte.php"><button class="button">Votre compte</button></a>
           <a href="rdv.php"><button class="button">RDV</button></a>
           <a href="recherche.html"><button class="button">Recherche</button></a>
           <a href="parcourir.php"><button class="button">Tout Parcourir</button></a>
@@ -34,22 +34,42 @@
 
 
         <div class="login-popup">
-          <div class="form-popup" id="popupForm">
-            <form action="/action_page.php" class="form-container">
-              <h2>Veuillez vous connecter</h2>
-              <label for="email">
-                <strong>E-mail</strong>
-              </label>
-              <input type="text" id="email" placeholder="Votre Email" name="email" required />
-              <label for="psw">
-                <strong>Mot de passe</strong>
-              </label>
-              <input type="password" id="psw" placeholder="Votre Mot de passe" name="psw" required />
-              <button type="submit" class="btn">Connecter</button>
-              <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
-            </form>
+          <div class="form-popup" id="popupFormCo" onclick="closeFormCo()"></div>
+
+          <div action="/action_page.php" class="form-container-connexion" id="popupCo">
+            <button type="button" class="btn cancel" onclick="closeFormCo()">X</button>
+
+            <h2 style="margin-top: 50px;margin-bottom: 25px;">
+              J'ai déjà un compte OMNES Santé
+            </h2>
+
+            <input type="text" id="email" placeholder="Adresse email" name="email" required=""
+              style="margin-bottom: 20px;
+                padding-right: 64px;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                font-size: 15px;"
+            >
+
+            <input type="password" id="psw" placeholder="Mot de passe" name="psw" required=""
+              style="margin-bottom: 20px;
+                padding-right: 64px;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                font-size: 15px;"
+            >
+
+            <a href="compte.php"><button type="submit" class="btn co">Connexion</button></a>
+
+            <h2 style="margin-top: 40px;font-size: 0.9em;">
+              Nouveau sur OMNES Santé ?
+            </h2>
+
+            <a href="inscription.php"><button type="button" class="btn insc" onclick="closeFormCo">S'inscrire</button></a>
+
           </div>
         </div>
+
 
 
       </div>
