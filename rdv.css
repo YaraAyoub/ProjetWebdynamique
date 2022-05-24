@@ -1,0 +1,14 @@
+#section2{
+  margin-top: 5%;
+  margin-left: 15%;
+  background-color: grey;
+  width: 70%;
+  min-height: 100px;
+  height: 50%;
+  overflow: auto;
+}
+
+#section2 p{
+margin-left: 10px;
+
+}
