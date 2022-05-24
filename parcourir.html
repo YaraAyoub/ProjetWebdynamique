@@ -22,7 +22,7 @@
       <div id="header">
 
         <div class="btn-group">
-          <a href="compte.html"><button class="button">Votre compte</button></a>
+          <a onclick="openFormCo()"><button class="button">Votre compte</button></a>
           <a href="rdv.html"><button class="button">RDV</button></a>
           <a href="recherche.html"><button class="button">Recherche</button></a>
           <a href="parcourir.html"><button class="button">Tout Parcourir</button></a>
@@ -94,10 +94,33 @@
       </div>
 
       <div class="form-container" id="pagePopup">
+
+
         <h2>Veuillez vous connecter</h2>
 
         <button type="button" class="btn cancel" onclick="closeForm()">X</button>
       </div>
+    </div>
+
+
+    <div class="login-popup">
+      <div class="form-popup" id="popupFormCo" onclick="closeFormCo()">
+
+      </div>
+
+      <form action="/action_page.php" class="form-container-connexion" id="popupCo">
+        <h2>Veuillez vous connecter</h2>
+        <label for="email">
+          <strong>E-mail</strong>
+        </label>
+        <input type="text" id="email" placeholder="Votre Email" name="email" required />
+        <label for="psw">
+          <strong>Mot de passe</strong>
+        </label>
+        <input type="password" id="psw" placeholder="Votre Mot de passe" name="psw" required />
+        <button type="submit" class="btn">Connecter</button>
+        <button type="button" class="btn cancel" onclick="closeFormCo()">X</button>
+      </form>
     </div>
 
 

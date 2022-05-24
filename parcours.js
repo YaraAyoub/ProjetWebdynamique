@@ -37,3 +37,13 @@ function myFunction3() {
     document.getElementById("popupForm").style.display = "none";
     document.getElementById("pagePopup").style.display = "none";
   }
+
+  function openFormCo() {
+    document.getElementById("popupFormCo").style.display = "block";
+    document.getElementById("popupCo").style.display = "block";
+  }
+
+  function closeFormCo() {
+    document.getElementById("popupFormCo").style.display = "none";
+    document.getElementById("popupCo").style.display = "none";
+  }
