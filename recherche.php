@@ -103,8 +103,8 @@
           if ($db_found) {
           //commencer le query
           $sql1 = "SELECT Email, MdP FROM medecin";
-          $sql2 = "SELECT Email, MdP FROM medecin";
-          $sql3 = "SELECT Email, MdP FROM medecin";
+          $sql2 = "SELECT Email, MdP FROM admin";
+          $sql3 = "SELECT Email, MdP FROM client";
           if ($email != "") {
           //on recherche le profil par son email
           $sql1 .= " WHERE Titre LIKE '%$email%'";
@@ -121,9 +121,12 @@
           $result2 = mysqli_query($db_handle, $sql2);
           $result3 = mysqli_query($db_handle, $sql3);
           //regarder s'il y a des resultats
-          if (mysqli_num_rows($result) == 0) {
+          if (mysqli_num_rows($result1) == 0 && mysqli_num_rows($result2) == 0 && mysqli_num_rows($result3) == 0) {
           echo "<p>profil not found.</p>";
           } else {
+
+
+          }
            ?>
 
 
