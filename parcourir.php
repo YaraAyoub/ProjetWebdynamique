@@ -48,13 +48,15 @@
           $db_found = mysqli_select_db($db_handle, $database);
           //si le BDD existe, faire le traitement
           if ($db_found) {
-            $sql = "SELECT Nom, Prenom FROM medecin WHERE Specialiste='generaliste'";
+            $sql = "SELECT Nom, Prenom, IdMedecin FROM medecin WHERE Specialiste='generaliste'";
 
             $result = mysqli_query($db_handle, $sql);
 
             while ($data = mysqli_fetch_assoc($result)) {
               $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
-              echo("<a onclick=\"openForm()\">$doc</a>");
+              $iddoc = $data['IdMedecin'];
+              echo("<a onclick=\"openForm('{$doc}')\">$doc</a>");
+
             }//end while
           }//end if
           //si le BDD n'existe pas
@@ -110,7 +112,6 @@
     </div>
 </div>
 
-
     <div class="login-popup">
       <div class="form-popup" id="popupForm" onclick="closeForm()">
 
@@ -125,7 +126,7 @@
           border-radius:25%"
         >
 
-        <h2 style="padding-right: 40%;padding-left: 220px;margin-top: 9%;text-align: left;">Dr bidule</h2>
+        <h2 id="namedoc" style="padding-right: 40%;padding-left: 220px;margin-top: 9%;text-align: left;">Dr bidule</h2>
 
         <h3 style="padding-right: 40%;padding-left: 220px;margin-top: 3%;text-align: left;">Médecin généraliste</h3>
 

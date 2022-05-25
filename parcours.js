@@ -25,11 +25,19 @@ function dropDownLab() {
     }
 }
 
+  function openForm(name) {
+
+   document.getElementById("namedoc").innerHTML = name;
+
+   document.getElementById("popupForm").style.display = "block";
+   document.getElementById("pagePopup").style.display = "block";
+ }
+/*
   function openForm() {
     document.getElementById("popupForm").style.display = "block";
     document.getElementById("pagePopup").style.display = "block";
   }
-
+*/
   function closeForm() {
     document.getElementById("popupForm").style.display = "none";
     document.getElementById("pagePopup").style.display = "none";
