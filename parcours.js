@@ -72,3 +72,9 @@ function dropDownLab() {
   function drPasdispo(elemId){
     document.getElementById(elemId).style.background = "#666";
   }
+
+
+  function clickSuppRdv(){
+    var result ="<?php SuppRdv(); ?>"
+    document.write(result);
+  }

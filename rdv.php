@@ -38,10 +38,19 @@
         <div id="section2">
 
                 <div class="rdv">
-                  <a href="#home" class="active">blabla</a>
+                  <a class="active">blabla</a>
 
-                <a class="icon" onclick="">
+<!--https://www.delftstack.com/fr/howto/php/onclick-php/#utilisez-du-javascript-simple-pour-ex%25C3%25A9cuter-la-fonction-php-avec-l%25C3%25A9v%25C3%25A9nement-onclick -->
+
+                <a href="#home" class="icon" onclick="clickSuppRdv()">
                 <i class="fa fa-trash-o"></i>
+
+                <?php
+
+                function SuppRdv(){
+                print("supp");
+                }
+                 ?>
 
                 </a>
                 </div>

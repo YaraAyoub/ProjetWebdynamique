@@ -37,7 +37,7 @@
 <div id="section2">
 
         <div class="topnav">
-          <a href="#home" class="active">Médecine générale</a>
+          <a href="#home" class="active" onclick="dropDownDoc()">Médecine générale</a>
           <div id="myLinks1">
 
         <?php
@@ -55,8 +55,8 @@
             while ($data = mysqli_fetch_assoc($result)) {
               $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
               $image=$data['Image'];
-              echo("<a onclick=\"openForm('{$doc}')\"> <img src=\"PhotoProfils/$image\" height='120' width='100'> $doc</a>");
-            
+              echo("<a onclick=\"openForm('{$doc}')\"> <img src=\"PhotoProfils/$image\" height='60' width='50'> $doc</a>");
+
             }//end while
           }//end if
           //si le BDD n'existe pas
@@ -76,7 +76,7 @@
         </div>
         <!-- Top Navigation Menu -->
         <div class="topnav">
-          <a href="#home" class="active">Médecins spécialistes</a>
+          <a href="#home" class="active" onclick="dropDownSpe()">Médecins spécialistes</a>
           <div id="myLinks2">
             <a href="#Addictologie">Addictologie</a>
             <a href="#Andrologie">Andrologie</a>
@@ -96,7 +96,7 @@
 
           <!-- Top Navigation Menu -->
           <div class="topnav">
-            <a href="#home" class="active">Laboratoire de biologie médicale</a>
+            <a href="#home" class="active" onclick="dropDownLab()">Laboratoire de biologie médicale</a>
             <div id="myLinks3">
               <a href="#PriseDeSang">Prise de sang</a>
               <a href="#ExaminUrine">Examen de l'urine</a>
