@@ -121,27 +121,58 @@
 
         <img src="PhotoProfils/Garcia.jpg" alt="photo dr" width="130" height="150"
           style="position: fixed;
-          margin-left: -30%;
-          margin-top: 3%;
+          margin-left: -385px;
+          margin-top: 45px;
           border-radius:25%"
         >
 
+<<<<<<< HEAD
         <h2 id="namedoc" style="padding-right: 40%;padding-left: 220px;margin-top: 9%;text-align: left;">Dr bidule</h2>
+=======
+        <div style="position: fixed;top: 120px;width: 260px;margin-left: 214px;padding-right: 20px;text-align: left;">
+          <h2>Dr Machin BIDULE-TRUC</h2>
+>>>>>>> 25a4cf002488504e10a1736f6d7ba1a369bd1574
 
-        <h3 style="padding-right: 40%;padding-left: 220px;margin-top: 3%;text-align: left;">Médecin généraliste</h3>
+          <h3>Médecin généraliste</h3>
+        </div>
+
+        <div style="position: fixed;top: 120px;margin-left: 494px;">
+          <p style="padding-right: 30px;text-align: left;">
+            Bureau : 405 <br>
+            Adresse: 123 Boulevard de la Reine, 78000, Versailles <br>
+            DigiCode: - <br><br>
+            Telephone : 0612345678 <br>
+            mail : doc.teur@gmail.com <br>
+          </p>
+        </div>
 
 
-        <p style="padding-right: 50%;padding-left: 50px;margin-top: 70px;text-align: left;">
-          Bureau : 405 <br>
-          Adresse: 23 Boulevard de la Reine <br>
-          DigiCode: - <br><br>
-          Telephone : 0612345678 <br>
-          mail : doc.teur@gmail.com <br>
-        </p>
+        <div class="grid-container">
+          <div style="border: none;background: none;"></div>
+          <div style="border-bottom: none;border-right: none;">Lundi</div>
+          <div style="border-bottom: none;border-right: none;">Mardi</div>
+          <div style="border-bottom: none;border-right: none;">Mercredi</div>
+          <div style="border-bottom: none;border-right: none;">Jeudi</div>
+          <div style="border-bottom: none;border-right: none;">Vendredi</div>
+          <div style="border-bottom: none;">Samedi</div>
+          <div style="border-bottom: none;border-right: none;">Matin</div>
+          <div id="lunMat" style="border-bottom: none;border-right: none;"></div>
+          <div id="marMat" style="border-bottom: none;border-right: none;"></div>
+          <div id="merMat" style="border-bottom: none;border-right: none;"></div>
+          <div id="jeuMat" style="border-bottom: none;border-right: none;"></div>
+          <div id="venMat" style="border-bottom: none;border-right: none;"></div>
+          <div id="samMat" style="border-bottom: none;"></div>
+          <div style="border-right: none;">Aprem</div>
+          <div id="lunAprem" style="border-right: none;"></div>
+          <div id="marAprem" style="border-right: none;"></div>
+          <div id="merAprem" style="border-right: none;"></div>
+          <div id="jeuAprem" style="border-right: none;"></div>
+          <div id="venAprem" style="border-right: none;"></div>
+          <div id="samAprem"></div>
+        </div>
 
         <a href="priseRDV.php">
-          <button type="button" onclick="closeForm()"
-            style="background-color: #80008040;
+          <button type="button" onclick="closeForm()" style="background-color: #80008040;
             font-size: medium;
             color: black;
             border: none;
@@ -149,8 +180,8 @@
             cursor: pointer;
             opacity: 0.8;
             position: fixed;
-            left: 20%;
-            margin-top: 8px;
+            top: 470px;
+            margin-left: -360px;
             padding: 8px;"
           >Prendre RDV</button>
         </a>
@@ -165,8 +196,8 @@
             cursor: pointer;
             opacity: 0.8;
             position: fixed;
-            left: 30%;
-            margin-top: 8px;
+            top: 470px;
+            margin-left: -70px;
             padding: 8px;"
           >Voir son CV</button>
         </a>
@@ -181,11 +212,13 @@
             cursor: pointer;
             opacity: 0.8;
             position: fixed;
-            left: 21%;
-            margin-top: 60px;
+            top: 470px;
+            margin-left: 60px;
             padding: 8px;"
           >Communiquer avec le médecin</button>
         </a>
+
+
 
 
         <button type="button" class="btn cancel" onclick="closeForm()">X</button>

@@ -63,3 +63,12 @@ function dropDownLab() {
     document.getElementById("popupFormCo").style.display = "none";
     document.getElementById("popupInsc").style.display = "none";
   }
+
+
+  function drdispo(elemId){
+    document.getElementById(elemId).style.background = "none";
+  }
+
+  function drPasdispo(elemId){
+    document.getElementById(elemId).style.background = "#666";
+  }
