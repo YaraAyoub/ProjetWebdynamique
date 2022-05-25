@@ -50,7 +50,7 @@
               $result = mysqli_query($db_handle, $sql);
 
 
-                $prenom = $data['Prenom'];
+                $prenom = $result['Prenom'];
                 $nom = strtoupper($data['Nom']);
                 $mdp = $data['MdP'];
                 $mdp = $data['Email'];
@@ -58,7 +58,7 @@
                 $mdp = $data['DateNaissance'];
                 $mdp = $data['Adresse1'];
 
-              
+
 
               echo ("<p id=\"nomClient\" style=\"margin-bottom: 20px;padding-right: 64px;padding-top: 8px;padding-bottom: 8px;\">"
                 ."Prénom: ".$prenom."</p>");

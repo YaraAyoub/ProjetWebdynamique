@@ -48,19 +48,15 @@
           $db_found = mysqli_select_db($db_handle, $database);
           //si le BDD existe, faire le traitement
           if ($db_found) {
-            $sql = "SELECT Nom, Prenom , Image FROM medecin WHERE Specialiste='generaliste'";
+            $sql = "SELECT Nom, Prenom, Image FROM medecin WHERE Specialiste='generaliste'";
 
             $result = mysqli_query($db_handle, $sql);
 
             while ($data = mysqli_fetch_assoc($result)) {
               $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
-
               $image=$data['Image'];
-              echo("<a onclick=\"openForm('{$doc}')\"> <img src=\"PhotoProfils/$image\" height='120' width='100'> $doc</a>");
-              // echo ("<img src=\"PhotoProfils/$image\" height='120' width='100'>");
-
-            //  echo("<a onclick=\"openForm('{$doc}')\">$doc</a>");
-
+              echo("<a onclick=\"openForm()\"> $doc</a>");
+              echo ("<img src=\"PhotoProfils/$image\" height='120' width='100'>");
             }//end while
           }//end if
           //si le BDD n'existe pas
@@ -73,7 +69,7 @@
 
         </div>
 
-        <a href="javascript:void(0);" class="icon" onclick="dropDownDoc()">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction1()">
         <i class="fa fa-chevron-down"></i>
 
         </a>
@@ -92,7 +88,7 @@
             <a href="#Osteopathie">Ostéopathie</a>
           </div>
 
-          <a href="javascript:void(0);" class="icon" onclick="dropDownSpe()">
+          <a href="javascript:void(0);" class="icon" onclick="myFunction2()">
           <i class="fa fa-chevron-down"></i>
           </a>
 
@@ -107,7 +103,7 @@
               <a href="#DepistageCovid">Dépistage Covid</a>
             </div>
 
-            <a href="javascript:void(0);" class="icon" onclick="dropDownLab()">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction3()">
             <i class="fa fa-chevron-down"></i>
 
             </a>
@@ -123,107 +119,12 @@
 
       <div class="form-container" id="pagePopup">
 
-        <img src="PhotoProfils/Garcia.jpg" alt="photo dr" width="130" height="150"
-          style="position: fixed;
-          margin-left: -385px;
-          margin-top: 45px;
-          border-radius:25%"
-        >
-        <!--TODO-->
-        <div style="position: fixed;top: 120px;width: 260px;margin-left: 214px;padding-right: 20px;text-align: left;">
-        <h2 id="namedoc"></h2>
-        <h3>Médecin généraliste</h3>
-        </div>
 
-        <div style="position: fixed;top: 120px;margin-left: 494px;">
-          <p style="padding-right: 30px;text-align: left;">
-            Bureau : 405 <br>
-            Adresse: 123 Boulevard de la Reine, 78000, Versailles <br>
-            DigiCode: - <br><br>
-            Telephone : 0612345678 <br>
-            mail : doc.teur@gmail.com <br>
-          </p>
-        </div>
-
-
-        <div class="grid-container">
-          <div style="border: none;background: none;"></div>
-          <div style="border-bottom: none;border-right: none;">Lundi</div>
-          <div style="border-bottom: none;border-right: none;">Mardi</div>
-          <div style="border-bottom: none;border-right: none;">Mercredi</div>
-          <div style="border-bottom: none;border-right: none;">Jeudi</div>
-          <div style="border-bottom: none;border-right: none;">Vendredi</div>
-          <div style="border-bottom: none;">Samedi</div>
-          <div style="border-bottom: none;border-right: none;">Matin</div>
-          <div id="lunMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="marMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="merMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="jeuMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="venMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="samMat" style="border-bottom: none;"></div>
-          <div style="border-right: none;">Aprem</div>
-          <div id="lunAprem" style="border-right: none;"></div>
-          <div id="marAprem" style="border-right: none;"></div>
-          <div id="merAprem" style="border-right: none;"></div>
-          <div id="jeuAprem" style="border-right: none;"></div>
-          <div id="venAprem" style="border-right: none;"></div>
-          <div id="samAprem"></div>
-        </div>
-
-        <a href="priseRDV.php">
-          <button type="button" onclick="closeForm()" style="background-color: #80008040;
-            font-size: medium;
-            color: black;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            opacity: 0.8;
-            position: fixed;
-            top: 470px;
-            margin-left: -360px;
-            padding: 8px;"
-          >Prendre RDV</button>
-        </a>
-
-        <a href="CV.php">
-          <button type="button" onclick="closeForm()"
-            style="background-color: #80008040;
-            font-size: medium;
-            color: black;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            opacity: 0.8;
-            position: fixed;
-            top: 470px;
-            margin-left: -70px;
-            padding: 8px;"
-          >Voir son CV</button>
-        </a>
-
-        <a href="priseRDV.php">
-          <button type="button" onclick="closeForm()"
-            style="background-color: #80008040;
-            font-size: medium;
-            color: black;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            opacity: 0.8;
-            position: fixed;
-            top: 470px;
-            margin-left: 60px;
-            padding: 8px;"
-          >Communiquer avec le médecin</button>
-        </a>
-
-
-
+        <h2>Veuillez vous connecter</h2>
 
         <button type="button" class="btn cancel" onclick="closeForm()">X</button>
       </div>
     </div>
-
 
 
     <div class="login-popup">
