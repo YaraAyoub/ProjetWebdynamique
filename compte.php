@@ -45,7 +45,7 @@
             $db_found = mysqli_select_db($db_handle, $database);
             //si le BDD existe, faire le traitement
             if ($db_found) {
-              $sql = "SELECT c.Nom, c.Prenom, c.MdP, c.Email, c.CarteVital, c.DateNaissance, c.Adresse1, c.Adresse2, c.CodePostal, c.Pays, p.Type, p.Numero, p.DateExpiration, p.CodeSecurite
+              $sql = "SELECT c.Image, c.Nom, c.Prenom, c.MdP, c.Email, c.CarteVital, c.DateNaissance, c.Adresse1, c.Adresse2, c.CodePostal, c.Pays, p.Type, p.Numero, p.DateExpiration, p.CodeSecurite
               FROM client c, payment p
               WHERE email='alexandre.teixera@profil.com'
               And c.IdClient=p.IdClient";
@@ -53,6 +53,8 @@
               $result = mysqli_query($db_handle, $sql);
 
               while ($data = mysqli_fetch_assoc($result)) {
+
+                $photoProfil=$data['Image'];
 
                 $prenom = $data['Prenom'];
                 $nom = strtoupper($data['Nom']);
@@ -82,6 +84,7 @@
                   .$numero."<br>"
                   .$dateExpiration."<br>"
                   .$codeSecurite."</p>");
+                echo ("<img src=\"PhotoProfils/$photoProfil\" height='120' width='100'>");
               }//end while
 
             }//end if
