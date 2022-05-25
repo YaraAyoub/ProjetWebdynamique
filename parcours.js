@@ -1,14 +1,13 @@
-function myFunction1() {
+function dropDownDoc() {
   var x = document.getElementById("myLinks1");
   if (x.style.display === "block") {
     x.style.display = "none";
   } else {
     x.style.display = "block";
   }
-
 }
 
-function myFunction2() {
+function dropDownSpe() {
   var x = document.getElementById("myLinks2");
   if (x.style.display === "block") {
     x.style.display = "none";
@@ -17,16 +16,14 @@ function myFunction2() {
   }
 }
 
-function myFunction3() {
+function dropDownLab() {
     var x = document.getElementById("myLinks3");
     if (x.style.display === "block") {
       x.style.display = "none";
     } else {
       x.style.display = "block";
     }
-
 }
-
 
   function openForm() {
     document.getElementById("popupForm").style.display = "block";

@@ -67,7 +67,7 @@
 
         </div>
 
-        <a href="javascript:void(0);" class="icon" onclick="myFunction1()">
+        <a href="javascript:void(0);" class="icon" onclick="dropDownDoc()">
         <i class="fa fa-chevron-down"></i>
 
         </a>
@@ -86,7 +86,7 @@
             <a href="#Osteopathie">Ostéopathie</a>
           </div>
 
-          <a href="javascript:void(0);" class="icon" onclick="myFunction2()">
+          <a href="javascript:void(0);" class="icon" onclick="dropDownSpe()">
           <i class="fa fa-chevron-down"></i>
           </a>
 
@@ -101,7 +101,7 @@
               <a href="#DepistageCovid">Dépistage Covid</a>
             </div>
 
-            <a href="javascript:void(0);" class="icon" onclick="myFunction3()">
+            <a href="javascript:void(0);" class="icon" onclick="dropDownLab()">
             <i class="fa fa-chevron-down"></i>
 
             </a>
