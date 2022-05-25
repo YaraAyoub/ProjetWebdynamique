@@ -40,12 +40,29 @@
           <a href="#home" class="active">Médecine générale</a>
           <div id="myLinks1">
 
-<!--TODO-->
         <?php
-        $doc = "Dr machin";
-        echo("<a onclick=\"openForm()\">$doc</a>");
-        echo("<a onclick=\"openForm()\">Dr truc</a>");
-        echo("<a onclick=\"openForm()\">Dr bidule</a>");
+          //Le nom de la base de donnée visée
+          $database = "omnessante";
+          //connectez-vous dans votre BDD
+          $db_handle = mysqli_connect('localhost', 'root', '' );
+          $db_found = mysqli_select_db($db_handle, $database);
+          //si le BDD existe, faire le traitement
+          if ($db_found) {
+            $sql = "SELECT Nom, Prenom FROM medecin WHERE Specialiste='generaliste'";
+
+            $result = mysqli_query($db_handle, $sql);
+
+            while ($data = mysqli_fetch_assoc($result)) {
+              $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
+              echo("<a onclick=\"openForm()\">$doc</a>");
+            }//end while
+          }//end if
+          //si le BDD n'existe pas
+          else {
+          echo "Database not found";
+          }//end else
+          //fermer la connection
+          mysqli_close($db_handle);
         ?>
 
         </div>
