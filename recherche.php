@@ -68,7 +68,7 @@
 
         <form action="compte.php" method="post" class="form-container-connexion" id="popupCo">
 
-           
+
           <button type="button" class="btn cancel" onclick="closeFormCo()">X</button>
 
           <h2 style="margin-top: 50px;margin-bottom: 25px;">
@@ -91,7 +91,41 @@
               font-size: 15px;"
           >
 
-          <button type="submit" class="btn co">Connexion</button>
+          <button type="submit" name= "connexion" class="btn co">Connexion</button>
+
+          <?php
+          //saisir les données du formulaire
+          $email = isset($_POST["email"])? $_POST["email"] : "";
+          $psw = isset($_POST["psw"])? $_POST["psw"] : "";
+
+          // si le bouton Connexion est cliqué
+          if (isset($_POST["connexion"])){
+          if ($db_found) {
+          //commencer le query
+          $sql1 = "SELECT Email, MdP FROM medecin";
+          $sql2 = "SELECT Email, MdP FROM medecin";
+          $sql3 = "SELECT Email, MdP FROM medecin";
+          if ($email != "") {
+          //on recherche le profil par son email
+          $sql1 .= " WHERE Titre LIKE '%$email%'";
+          $sql2 .= " WHERE Titre LIKE '%$email%'";
+          $sql3 .= " WHERE Titre LIKE '%$email%'";
+          //on cherche ce profil par son MdP aussi
+          if ($psw != "") {
+          $sql1 .= " AND MdP LIKE '%$psw%'";
+          $sql2 .= " AND MdP LIKE '%$psw%'";
+          $sql3 .= " AND MdP LIKE '%$psw%'";
+          }
+          }
+          $result1 = mysqli_query($db_handle, $sql1);
+          $result2 = mysqli_query($db_handle, $sql2);
+          $result3 = mysqli_query($db_handle, $sql3);
+          //regarder s'il y a des resultats
+          if (mysqli_num_rows($result) == 0) {
+          echo "<p>profil not found.</p>";
+          } else {
+           ?>
+
 
 
           <h2 style="margin-top: 40px;font-size: 0.9em;">
