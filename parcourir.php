@@ -48,13 +48,15 @@
           $db_found = mysqli_select_db($db_handle, $database);
           //si le BDD existe, faire le traitement
           if ($db_found) {
-            $sql = "SELECT Nom, Prenom FROM medecin WHERE Specialiste='generaliste'";
+            $sql = "SELECT Nom, Prenom, Image FROM medecin WHERE Specialiste='generaliste'";
 
             $result = mysqli_query($db_handle, $sql);
 
             while ($data = mysqli_fetch_assoc($result)) {
               $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
-              echo("<a onclick=\"openForm()\">$doc</a>");
+              $image=$data['Image'];
+              echo("<a onclick=\"openForm()\"> <img src=\"PhotoProfils/$image\" height='120' width='100'> $doc</a>");
+              // echo ("<img src=\"PhotoProfils/$image\" height='120' width='100'>");
             }//end while
           }//end if
           //si le BDD n'existe pas
