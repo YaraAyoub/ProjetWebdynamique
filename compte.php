@@ -49,7 +49,7 @@
 
               $result = mysqli_query($db_handle, $sql);
 
-
+              while ($data = mysqli_fetch_assoc($result)) {
                 $prenom = $data['Prenom'];
                 $nom = strtoupper($data['Nom']);
                 $mdp = $data['MdP'];
@@ -58,7 +58,7 @@
                 $mdp = $data['DateNaissance'];
                 $mdp = $data['Adresse1'];
 
-              
+              }//end while
 
               echo ("<p id=\"nomClient\" style=\"margin-bottom: 20px;padding-right: 64px;padding-top: 8px;padding-bottom: 8px;\">"
                 ."Prénom: ".$prenom."</p>");
