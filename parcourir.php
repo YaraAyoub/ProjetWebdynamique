@@ -146,25 +146,25 @@
 
         <div class="grid-container">
           <div style="border: none;background: none;"></div>
-          <div style="border-bottom: none;border-right: none;">Lundi</div>
-          <div style="border-bottom: none;border-right: none;">Mardi</div>
-          <div style="border-bottom: none;border-right: none;">Mercredi</div>
-          <div style="border-bottom: none;border-right: none;">Jeudi</div>
-          <div style="border-bottom: none;border-right: none;">Vendredi</div>
-          <div style="border-bottom: none;">Samedi</div>
-          <div style="border-bottom: none;border-right: none;">Matin</div>
-          <div id="lunMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="marMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="merMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="jeuMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="venMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="samMat" style="border-bottom: none;"></div>
-          <div style="border-right: none;">Aprem</div>
-          <div id="lunAprem" style="border-right: none;"></div>
-          <div id="marAprem" style="border-right: none;"></div>
-          <div id="merAprem" style="border-right: none;"></div>
-          <div id="jeuAprem" style="border-right: none;"></div>
-          <div id="venAprem" style="border-right: none;"></div>
+          <div class="case">Lundi</div>
+          <div class="case">Mardi</div>
+          <div class="case">Mercredi</div>
+          <div class="case">Jeudi</div>
+          <div class="case">Vendredi</div>
+          <div class="case2">Samedi</div>
+          <div class="case">Matin</div>
+          <div id="lunMat" class="case"></div>
+          <div id="marMat" class="case"></div>
+          <div id="merMat" class="case"></div>
+          <div id="jeuMat" class="case"></div>
+          <div id="venMat" class="case"></div>
+          <div id="samMat" class="case2"></div>
+          <div class="case3">Aprem</div>
+          <div id="lunAprem" class="case3"></div>
+          <div id="marAprem" class="case3"></div>
+          <div id="merAprem" class="case3"></div>
+          <div id="jeuAprem" class="case3"></div>
+          <div id="venAprem" class="case3"></div>
           <div id="samAprem"></div>
         </div>
 
