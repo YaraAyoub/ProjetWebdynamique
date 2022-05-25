@@ -66,7 +66,7 @@
       <div class="login-popup">
         <div class="form-popup" id="popupFormCo" onclick="closeFormCo()"></div>
 
-        <form action="compte.php" method="post" class="form-container-connexion" id="popupCo">
+        <form method="post" class="form-container-connexion" id="popupCo">
 
 
           <button type="button" class="btn cancel" onclick="closeFormCo()">X</button>
@@ -91,6 +91,8 @@
               font-size: 15px;"
           >
 
+          <p id="noconnexion" style = "display: none; color: red;">email ou mdp incorrect</p>
+
           <button type="submit" name= "connexion" class="btn co">Connexion</button>
 
           <?php
@@ -98,34 +100,29 @@
           $email = isset($_POST["email"])? $_POST["email"] : "";
           $psw = isset($_POST["psw"])? $_POST["psw"] : "";
 
+          //identifier BDD
+          $database = "omnessante";
+          //connectez-vous dans BDD
+          $db_handle = mysqli_connect('localhost', 'root', '');
+          $db_found = mysqli_select_db($db_handle, $database);
+
           // si le bouton Connexion est cliqué
           if (isset($_POST["connexion"])){
-          if ($db_found) {
-          //commencer le query
-          $sql1 = "SELECT Email, MdP FROM medecin";
-          $sql2 = "SELECT Email, MdP FROM admin";
-          $sql3 = "SELECT Email, MdP FROM client";
-          if ($email != "") {
-          //on recherche le profil par son email
-          $sql1 .= " WHERE Titre LIKE '%$email%'";
-          $sql2 .= " WHERE Titre LIKE '%$email%'";
-          $sql3 .= " WHERE Titre LIKE '%$email%'";
-          //on cherche ce profil par son MdP aussi
-          if ($psw != "") {
-          $sql1 .= " AND MdP LIKE '%$psw%'";
-          $sql2 .= " AND MdP LIKE '%$psw%'";
-          $sql3 .= " AND MdP LIKE '%$psw%'";
-          }
-          }
-          $result1 = mysqli_query($db_handle, $sql1);
-          $result2 = mysqli_query($db_handle, $sql2);
-          $result3 = mysqli_query($db_handle, $sql3);
-          //regarder s'il y a des resultats
-          if (mysqli_num_rows($result1) == 0 && mysqli_num_rows($result2) == 0 && mysqli_num_rows($result3) == 0) {
-          echo "<p>profil not found.</p>";
-          } else {
+            if ($db_found) {
 
+              $sql = "SELECT Email
+              FROM client
+              WHERE Email='alexandre.teixera@profil.com' AND MdP='zeefez'";
 
+              $result = mysqli_query($db_handle, $sql);
+
+             if (mysqli_fetch_assoc($result)) {
+
+            }
+              else {
+                  echo("<script>noConnexion()</script>");
+              }
+            }
           }
            ?>
 

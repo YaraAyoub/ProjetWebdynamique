@@ -88,3 +88,7 @@ function showSecretData(elemId) {
     x.type = "password";
   }
 }
+
+function noConnexion(){
+  document.getElementById("noconnexion").style.display = "block";
+}
