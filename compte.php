@@ -4,7 +4,11 @@
   <head>
      <title>Omnes Santé</title>
      <link href="index.css" rel="stylesheet" type="text/css" />
+      <link href="compte.css" rel="stylesheet" type="text/css" />
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <link href="logo.jpg" rel="icon" type="images/x-icon" />
+      <script type="text/javascript" src="parcours.js"></script>
      <meta charset="utf-8" />
   </head>
 
@@ -33,8 +37,8 @@
 
         <div id="section2">
 
-          <h2 style="margin-top: 50px;margin-bottom: 25px;margin-left: 210px;">
-            Vos informations personnelles:
+          <h2 style="margin-top: 50px;margin-bottom: 25px;text-align: center;">
+              <i class="fa fa-user"></i> Vos informations personnelles:
           </h2>
 
           <?php
@@ -48,14 +52,13 @@
               $sql = "SELECT c.Image, c.Nom, c.Prenom, c.MdP, c.Email, c.CarteVital, c.DateNaissance, c.Adresse1, c.Adresse2, c.CodePostal, c.Pays, p.Type, p.Numero, p.DateExpiration, p.CodeSecurite
               FROM client c, payment p
               WHERE email='alexandre.teixera@profil.com'
-              And c.IdClient=p.IdClient";
+              AND c.IdClient=p.IdClient";
 
               $result = mysqli_query($db_handle, $sql);
 
               while ($data = mysqli_fetch_assoc($result)) {
 
                 $photoProfil=$data['Image'];
-
                 $prenom = $data['Prenom'];
                 $nom = strtoupper($data['Nom']);
                 $mdp = $data['MdP'];
@@ -71,20 +74,34 @@
                 $dateExpiration = $data['DateExpiration'];
                 $codeSecurite = $data['CodeSecurite'];
 
-                echo ("<p id=\"nomClient\" style=\"margin-bottom: 20px;padding-right: 64px;padding-top: 8px;padding-bottom: 8px;\">"
-                  ."Prénom : ".$prenom."<br>"
-                  ."Nom : ".$nom."<br>"
-                  ."MdP : ".$mdp."<br>"
-                  ."Email : ".$email."<br>"
-                  ."Carte Vital : ".$carteVital."<br>"
-                  ."DateNaissance : ".$dateNaissance."<br>"
-                  ."Adresse : ".$adresse1." ".$adresse2.", ".$codePostal.", ".$pays."<br>"
-                  ."Information Carte de payment : <br>"
-                  .$type."<br>"
-                  .$numero."<br>"
-                  .$dateExpiration."<br>"
-                  .$codeSecurite."</p>");
-                echo ("<img src=\"PhotoProfils/$photoProfil\" height='120' width='100'>");
+                echo ("<img src=\"PhotoProfils/$photoProfil\" height='120' width='100' style=\"padding-left: 210px;\">");
+
+                echo ("<p style=\"margin-bottom: 20px;padding-top: 8px;padding-bottom: 8px;\">"
+                  ."Prénom : ".$prenom."<br>"."<br>"
+                  ."Nom : ".$nom."<br>"."<br>"
+                  ."<i class=\"material-icons\">"."&#xe7e9;"."</i>"." Date de naissance : ".$dateNaissance."</p>");
+
+
+                echo("<p style=\"margin-bottom: 20px;padding-right: 64px;padding-top: 8px;padding-bottom: 8px;\">"
+                  ."<i style=\"font-size:24px\" class=\"fa\">&#xf0fe;"."</i>"." Carte Vital : ".$carteVital."<br>"."<br>"
+                  ."<i class=\"material-icons\">"."&#xe55f;"."</i>"." Adresse : ".$adresse1." ".$adresse2.", ".$codePostal.", ".$pays."<br>"."<br>"
+                  ."<h4> Information de connexion : <br>"."</h4>"
+                  ."Email : ".$email."<br>"."<br>"
+                  ."Mot de passe : "."<input type=\"password\" value=\"$mdp\" id=\"mdpSecret\">"
+                  ."<input type=\"checkbox\" onclick=\"showSecretData('mdpSecret')\">"."<i class=\"fa fa-low-vision\">"."</i>"."</p>");
+
+
+                echo("<p style=\"margin-bottom: 20px;padding-right: 64px;padding-top: 8px;padding-bottom: 8px;\">"
+                  ."<h4> Information de paiement "."<i class=\"fa fa-credit-card\">"."</i>"." : <br>"."</h4>"
+                  ."Type : "."<input type=\"password\" value=\"$type\" id=\"typeCarteSecret\">"
+                  ."<input type=\"checkbox\" onclick=\"showSecretData('typeCarteSecret')\">"."<i class=\"fa fa-low-vision\">"."</i>"."<br>"."<br>"
+                  ."Numéro de la carte : "."<input type=\"password\" value=\"$numero\" id=\"numCarteSecret\">"
+                  ."<input type=\"checkbox\" onclick=\"showSecretData('numCarteSecret')\">"."<i class=\"fa fa-low-vision\">"."</i>"."<br>"."<br>"
+                  ."Date d'expriration : "."<input type=\"password\" value=\"$dateExpiration\" id=\"dateExpCarteSecret\">"
+                  ."<input type=\"checkbox\" onclick=\"showSecretData('dateExpCarteSecret')\">"."<i class=\"fa fa-low-vision\">"."</i>"."<br>"."<br>"
+                  ."CVV : "."<input type=\"password\" value=\"$codeSecurite\" id=\"CVVCarteSecret\">"
+                  ."<input type=\"checkbox\" onclick=\"showSecretData('CVVCarteSecret')\">"."<i class=\"fa fa-low-vision\">"."</i>"."</p>");
+
               }//end while
 
             }//end if

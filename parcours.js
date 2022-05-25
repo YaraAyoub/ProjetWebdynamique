@@ -72,3 +72,13 @@ function dropDownLab() {
   function drPasdispo(elemId){
     document.getElementById(elemId).style.background = "#666";
   }
+
+
+function showSecretData(elemId) {
+  var x = document.getElementById(elemId);
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
