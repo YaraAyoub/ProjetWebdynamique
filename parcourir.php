@@ -125,15 +125,9 @@
           margin-top: 45px;
           border-radius:25%"
         >
-
-<<<<<<< HEAD
-        <h2 id="namedoc" style="padding-right: 40%;padding-left: 220px;margin-top: 9%;text-align: left;">Dr bidule</h2>
-=======
         <div style="position: fixed;top: 120px;width: 260px;margin-left: 214px;padding-right: 20px;text-align: left;">
-          <h2>Dr Machin BIDULE-TRUC</h2>
->>>>>>> 25a4cf002488504e10a1736f6d7ba1a369bd1574
-
-          <h3>Médecin généraliste</h3>
+        <h2 id="namedoc">Dr Machin BIDULE-TRUC</h2>
+        <h3>Médecin généraliste</h3>
         </div>
 
         <div style="position: fixed;top: 120px;margin-left: 494px;">
