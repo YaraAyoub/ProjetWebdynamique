@@ -45,23 +45,45 @@
             $db_found = mysqli_select_db($db_handle, $database);
             //si le BDD existe, faire le traitement
             if ($db_found) {
-              $sql = "SELECT Nom, Prenom, MdP, Email, CarteVital, DateNaissance, Adresse1, Adresse2, CodePostal, Pays FROM client WHERE email='alexandre.teixera@gmail.com'";
+              $sql = "SELECT c.Nom, c.Prenom, c.MdP, c.Email, c.CarteVital, c.DateNaissance, c.Adresse1, c.Adresse2, c.CodePostal, c.Pays, p.Type, p.Numero, p.DateExpiration, p.CodeSecurite
+              FROM client c, payment p
+              WHERE email='alexandre.teixera@profil.com'
+              And c.IdClient=p.IdClient";
 
               $result = mysqli_query($db_handle, $sql);
 
+              while ($data = mysqli_fetch_assoc($result)) {
 
-                $prenom = $result['Prenom'];
+                $prenom = $data['Prenom'];
                 $nom = strtoupper($data['Nom']);
                 $mdp = $data['MdP'];
-                $mdp = $data['Email'];
-                $mdp = $data['CarteVital'];
-                $mdp = $data['DateNaissance'];
-                $mdp = $data['Adresse1'];
+                $email = $data['Email'];
+                $carteVital = $data['CarteVital'];
+                $dateNaissance = $data['DateNaissance'];
+                $adresse1 = $data['Adresse1'];
+                $adresse2 = $data['Adresse2'];
+                $codePostal = $data['CodePostal'];
+                $pays = $data['Pays'];
+                $type = $data['Type'];
+                $numero = $data['Numero'];
+                $dateExpiration = $data['DateExpiration'];
+                $codeSecurite = $data['CodeSecurite'];
 
+                echo ("<p id=\"nomClient\" style=\"margin-bottom: 20px;padding-right: 64px;padding-top: 8px;padding-bottom: 8px;\">"
+                  ."Prénom : ".$prenom."<br>"
+                  ."Nom : ".$nom."<br>"
+                  ."MdP : ".$mdp."<br>"
+                  ."Email : ".$email."<br>"
+                  ."Carte Vital : ".$carteVital."<br>"
+                  ."DateNaissance : ".$dateNaissance."<br>"
+                  ."Adresse : ".$adresse1." ".$adresse2.", ".$codePostal.", ".$pays."<br>"
+                  ."Information Carte de payment : <br>"
+                  .$type."<br>"
+                  .$numero."<br>"
+                  .$dateExpiration."<br>"
+                  .$codeSecurite."</p>");
+              }//end while
 
-
-              echo ("<p id=\"nomClient\" style=\"margin-bottom: 20px;padding-right: 64px;padding-top: 8px;padding-bottom: 8px;\">"
-                ."Prénom: ".$prenom."</p>");
             }//end if
             //si le BDD n'existe pas
             else {
