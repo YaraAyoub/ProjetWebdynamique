@@ -1,81 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
+
+  <head>
+     <title>Omnes Santé</title>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link href="index.css" rel="stylesheet" type="text/css" />
+      <link href="parcourir.css" rel="stylesheet" type="text/css" />
+     <link href="logo.jpg" rel="icon" type="images/x-icon" />
+     <script type="text/javascript" src="parcours.js"></script>
+     <meta charset="utf-8" />
+  </head>
 
-<body>
-<style>
+  <body>
 
-.topnav {
-  background-color: white;
-  position: relative;
-  margin: 30px;
-}
-.topnav #myLinks3{
-	display:none;
-  overflow: auto;
-}
-#myLinks3 a:hover{
- background-color: #ddd;
-  color: black;
-}
+    <div class="topnav">
+      <a href="#home" class="active">Médecine générale</a>
+      <div id="myLinks1">
 
+    <?php
+      //Le nom de la base de donnée visée
+      $database = "omnessante";
+      //connectez-vous dans votre BDD
+      $db_handle = mysqli_connect('localhost', 'root', '' );
+      $db_found = mysqli_select_db($db_handle, $database);
+      //si le BDD existe, faire le traitement
+      if ($db_found) {
+        $sql = "SELECT Nom, Prenom, IdMedecin FROM medecin WHERE Specialiste='generaliste'";
 
-.topnav a {
-  color: black;
-  padding: 25px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  display: block;
-  border-radius: 15px;
-}
+        $result = mysqli_query($db_handle, $sql);
 
-.topnav a.icon {
-  background: #190037;
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-  color: white;
-}
+        while ($data = mysqli_fetch_assoc($result)) {
+          $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
+          $iddoc = $data['IdMedecin'];
+          echo("<a id=$iddoc onclick=\"openForm()\">$doc</a>");
 
-.active {
-  background-color: #ddd;
-  color: white;
-}
+        }//end while
+      }//end if
+      //si le BDD n'existe pas
+      else {
+      echo "Database not found";
+      }//end else
+      //fermer la connection
+      mysqli_close($db_handle);
+    ?>
 
-</style>
+    </div>
 
-<?php
-$txt1 = "laboratoire";
+    <a href="javascript:void(0);" class="icon" onclick="dropDownDoc()">
+    <i class="fa fa-chevron-down"></i>
 
-echo("<p>test</p>");
-echo("<div class=\"topnav\">");
-echo("<a href=\"\" class=\"active\">$txt1</a>");
-echo("<div id=\"myLinks3\">
-              <a href=\"#PriseDeSang\">Prise de sang</a>
-              <a href=\"#ExaminUrine\">Examen de l'urine</a>
-              <a href=\"#DepistageCovid\">Dépistage Covid</a>
-            </div>");
-echo("<a href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction3()\">
-            <i class=\"fa fa-chevron-down\"></i>");
-echo("</div>");
-
-echo("<p>test</p>");
-
-?>
+    </a>
+    </div>
 
 
-<script>
-function myFunction3() {
-    var x = document.getElementById("myLinks3");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } else {
-      x.style.display = "block";
-    }
+    <div class="login-popup">
+      <div class="form-popup" id="popupFormCo" onclick="closeFormCo()"></div>
 
-}
-</script>
+      <div action="/action_page.php" class="form-container-connexion" id="popupCo">
+        <button type="button" class="btn cancel" onclick="closeFormCo()">X</button>
 
-</body>
-</html>
+        <h2 style="margin-top: 50px;margin-bottom: 25px;">
+          J'ai déjà un compte OMNES Santé
+        </h2>
+
+        <input type="text" id="email" placeholder="Adresse email" name="email" required=""
+          style="margin-bottom: 20px;
+            padding-right: 64px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            font-size: 15px;"
+        >
+
+        <input type="password" id="psw" placeholder="Mot de passe" name="psw" required=""
+          style="margin-bottom: 20px;
+            padding-right: 64px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            font-size: 15px;"
+        >
+
+        <a href="compte.php"><button type="submit" class="btn co">Connexion</button></a>
+
+        <h2 style="margin-top: 40px;font-size: 0.9em;">
+          Nouveau sur OMNES Santé ?
+        </h2>
+
+        <a href="inscription.php"><button type="button" class="btn insc" onclick="closeFormCo">S'inscrire</button></a>
+
+      </div>
+    </div>
+
+  </body>

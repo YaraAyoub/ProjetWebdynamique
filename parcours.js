@@ -1,14 +1,13 @@
-function myFunction1() {
+function dropDownDoc() {
   var x = document.getElementById("myLinks1");
   if (x.style.display === "block") {
     x.style.display = "none";
   } else {
     x.style.display = "block";
   }
-
 }
 
-function myFunction2() {
+function dropDownSpe() {
   var x = document.getElementById("myLinks2");
   if (x.style.display === "block") {
     x.style.display = "none";
@@ -17,22 +16,28 @@ function myFunction2() {
   }
 }
 
-function myFunction3() {
+function dropDownLab() {
     var x = document.getElementById("myLinks3");
     if (x.style.display === "block") {
       x.style.display = "none";
     } else {
       x.style.display = "block";
     }
-
 }
 
+  function openForm(name) {
 
+   document.getElementById("namedoc").innerHTML = name;
+
+   document.getElementById("popupForm").style.display = "block";
+   document.getElementById("pagePopup").style.display = "block";
+ }
+/*
   function openForm() {
     document.getElementById("popupForm").style.display = "block";
     document.getElementById("pagePopup").style.display = "block";
   }
-
+*/
   function closeForm() {
     document.getElementById("popupForm").style.display = "none";
     document.getElementById("pagePopup").style.display = "none";
@@ -57,4 +62,13 @@ function myFunction3() {
   function closeFormInsc() {
     document.getElementById("popupFormCo").style.display = "none";
     document.getElementById("popupInsc").style.display = "none";
+  }
+
+
+  function drdispo(elemId){
+    document.getElementById(elemId).style.background = "none";
+  }
+
+  function drPasdispo(elemId){
+    document.getElementById(elemId).style.background = "#666";
   }
