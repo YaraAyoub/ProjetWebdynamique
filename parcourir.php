@@ -48,25 +48,19 @@
           $db_found = mysqli_select_db($db_handle, $database);
           //si le BDD existe, faire le traitement
           if ($db_found) {
-<<<<<<< HEAD
-            $sql = "SELECT Nom, Prenom, Image FROM medecin WHERE Specialiste='generaliste'";
-=======
-            $sql = "SELECT Nom, Prenom, IdMedecin FROM medecin WHERE Specialiste='generaliste'";
->>>>>>> ea3eb553666bc263739514636b8fc52b4b243104
+            $sql = "SELECT Nom, Prenom , Image FROM medecin WHERE Specialiste='generaliste'";
 
             $result = mysqli_query($db_handle, $sql);
 
             while ($data = mysqli_fetch_assoc($result)) {
               $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
-<<<<<<< HEAD
-              $image=$data['Image'];
-              echo("<a onclick=\"openForm()\"> <img src=\"PhotoProfils/$image\" height='120' width='100'> $doc</a>");
-              // echo ("<img src=\"PhotoProfils/$image\" height='120' width='100'>");
-=======
-              $iddoc = $data['IdMedecin'];
-              echo("<a onclick=\"openForm('{$doc}')\">$doc</a>");
 
->>>>>>> ea3eb553666bc263739514636b8fc52b4b243104
+              $image=$data['Image'];
+              echo("<a onclick=\"openForm('{$doc}')\"> <img src=\"PhotoProfils/$image\" height='120' width='100'> $doc</a>");
+              // echo ("<img src=\"PhotoProfils/$image\" height='120' width='100'>");
+
+            //  echo("<a onclick=\"openForm('{$doc}')\">$doc</a>");
+
             }//end while
           }//end if
           //si le BDD n'existe pas
@@ -135,8 +129,9 @@
           margin-top: 45px;
           border-radius:25%"
         >
+        <!--TODO-->
         <div style="position: fixed;top: 120px;width: 260px;margin-left: 214px;padding-right: 20px;text-align: left;">
-        <h2 id="namedoc">Dr Machin BIDULE-TRUC</h2>
+        <h2 id="namedoc"></h2>
         <h3>Médecin généraliste</h3>
         </div>
 
