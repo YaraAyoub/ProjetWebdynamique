@@ -128,7 +128,7 @@
 
 
 
-          <h2 style="margin-top: 40px;font-size: 0.9em;">
+          <h2 style="margin-top: 23px;font-size: 0.9em;">
             Nouveau sur OMNES Santé ?
           </h2>
 
