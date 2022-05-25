@@ -110,6 +110,7 @@
     </div>
 </div>
 
+
     <div class="login-popup">
       <div class="form-popup" id="popupForm" onclick="closeForm()">
 
@@ -117,12 +118,79 @@
 
       <div class="form-container" id="pagePopup">
 
+        <img src="PhotoProfils/Garcia.jpg" alt="photo dr" width="130" height="150"
+          style="position: fixed;
+          margin-left: -30%;
+          margin-top: 3%;
+          border-radius:25%"
+        >
 
-        <h2>Veuillez vous connecter</h2>
+        <h2 style="padding-right: 40%;padding-left: 220px;margin-top: 9%;text-align: left;">Dr bidule</h2>
+
+        <h3 style="padding-right: 40%;padding-left: 220px;margin-top: 3%;text-align: left;">Médecin généraliste</h3>
+
+
+        <p style="padding-right: 50%;padding-left: 50px;margin-top: 70px;text-align: left;">
+          Bureau : 405 <br>
+          Adresse: 23 Boulevard de la Reine <br>
+          DigiCode: - <br><br>
+          Telephone : 0612345678 <br>
+          mail : doc.teur@gmail.com <br>
+        </p>
+
+        <a href="priseRDV.php">
+          <button type="button" onclick="closeForm()"
+            style="background-color: #80008040;
+            font-size: medium;
+            color: black;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            left: 20%;
+            margin-top: 8px;
+            padding: 8px;"
+          >Prendre RDV</button>
+        </a>
+
+        <a href="CV.php">
+          <button type="button" onclick="closeForm()"
+            style="background-color: #80008040;
+            font-size: medium;
+            color: black;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            left: 30%;
+            margin-top: 8px;
+            padding: 8px;"
+          >Voir son CV</button>
+        </a>
+
+        <a href="priseRDV.php">
+          <button type="button" onclick="closeForm()"
+            style="background-color: #80008040;
+            font-size: medium;
+            color: black;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            left: 21%;
+            margin-top: 60px;
+            padding: 8px;"
+          >Communiquer avec le médecin</button>
+        </a>
+
 
         <button type="button" class="btn cancel" onclick="closeForm()">X</button>
       </div>
     </div>
+
 
 
     <div class="login-popup">
