@@ -83,6 +83,7 @@
 
 
 
+
  /* Styles pour le conteneur de forme */
 .form-container {
   display: none;
@@ -128,6 +129,7 @@
   left: 96%;
 }
 
+
 /* Stylez le bouton pour annuler */
 .form-container .cancel {
   background-color: none;
@@ -137,3 +139,4 @@
 .form-container .btn:hover,
 .open-button:hover {
   opacity: 1;
+}
