@@ -1,0 +1,55 @@
+
+#section2{
+  margin-top: 5%;
+    margin-left: 15%;
+    width: 70%;
+    min-height: 100px;
+    text-align: center;
+    overflow: auto;
+}
+
+/*Planning priseRDV docteur*/
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  background-color: #ddd;
+  border-radius: 25px;
+  padding: 10px;
+  margin-left: 50px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #800080;
+  border-radius: 4%;
+  padding: 2px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.grid-container .case{
+  border-bottom: none;
+  border-right: none;
+}
+
+.grid-container .case2{
+  border-bottom: none;
+}
+
+.grid-container .case3{
+  border-right: none;
+}
+
+.grid-container .case4 {
+  border: 3px solid #800080;
+  font-size: 1.2em;
+  border-bottom: 2px solid #800080;
+  border-right: none;
+}
+
+.grid-container .case5 {
+  border: 3px solid #800080;
+  font-size: 1.2em;
+  -border-bottom: none;
+  border-bottom: 2px solid #800080;
+}

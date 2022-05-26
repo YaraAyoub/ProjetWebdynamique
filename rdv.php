@@ -25,7 +25,7 @@
         <div class="btn-group">
           <a onclick="openFormCo()"><button class="button">Votre compte</button></a>
           <a href="rdv.php"><button class="button">RDV</button></a>
-          <a href="recherche.ph"><button class="button">Recherche</button></a>
+          <a href="recherche.php"><button class="button">Recherche</button></a>
           <a href="parcourir.php"><button class="button">Tout Parcourir</button></a>
           <a href="index.php"><button class="button">Accueil</button></a>
 
@@ -38,10 +38,19 @@
         <div id="section2">
 
                 <div class="rdv">
-                  <a href="#home" class="active">blabla</a>
+                  <a class="active">blabla</a>
 
-                <a class="icon" onclick="">
+<!--https://www.delftstack.com/fr/howto/php/onclick-php/#utilisez-du-javascript-simple-pour-ex%25C3%25A9cuter-la-fonction-php-avec-l%25C3%25A9v%25C3%25A9nement-onclick -->
+
+                <a href="#home" class="icon" onclick="clickSuppRdv()">
                 <i class="fa fa-trash-o"></i>
+
+                <?php
+
+                function SuppRdv(){
+                print("supp");
+                }
+                 ?>
 
                 </a>
                 </div>
@@ -79,7 +88,7 @@
 
           <a href="compte.php"><button type="submit" class="btn co">Connexion</button></a>
 
-          <h2 style="margin-top: 40px;font-size: 0.9em;">
+          <h2 style="margin-top: 23px;font-size: 0.9em;">
             Nouveau sur OMNES Santé ?
           </h2>
 

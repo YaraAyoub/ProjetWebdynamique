@@ -66,9 +66,9 @@
       <div class="login-popup">
         <div class="form-popup" id="popupFormCo" onclick="closeFormCo()"></div>
 
-        <form action="compte.php" method="post" class="form-container-connexion" id="popupCo">
+        <form method="post" class="form-container-connexion" id="popupCo">
 
-           
+
           <button type="button" class="btn cancel" onclick="closeFormCo()">X</button>
 
           <h2 style="margin-top: 50px;margin-bottom: 25px;">
@@ -91,10 +91,67 @@
               font-size: 15px;"
           >
 
-          <button type="submit" class="btn co">Connexion</button>
+          <p id="noconnexion" style = "display: none; color: red;">email ou mdp incorrect</p>
+
+          <button type="submit" name= "connexion" class="btn co">Connexion</button>
+
+          <?php
+          //saisir les données du formulaire
+          $email = isset($_POST["email"])? $_POST["email"] : "";
+          $psw = isset($_POST["psw"])? $_POST["psw"] : "";
+
+          //identifier BDD
+          $database = "omnessante";
+          //connectez-vous dans BDD
+          $db_handle = mysqli_connect('localhost', 'root', '');
+          $db_found = mysqli_select_db($db_handle, $database);
+
+          // si le bouton Connexion est cliqué
+          if (isset($_POST["connexion"])){
+            if ($db_found) {
+
+              $sql1 = "SELECT Email
+              FROM client
+              WHERE Email='$email' AND MdP='$psw'";
+
+              $sql2 = "SELECT Email
+              FROM admin
+              WHERE Email='$email' AND MdP='$psw'";
+
+              $sql3 = "SELECT Email
+              FROM medecin
+              WHERE Email='$email' AND MdP='$psw'";
+
+              $result1 = mysqli_query($db_handle, $sql1);
+              $result2 = mysqli_query($db_handle, $sql2);
+              $result3 = mysqli_query($db_handle, $sql3);
+
+             if (mysqli_fetch_assoc($result1)) {  //client
+               //echo("<script>setCo('{$email}')</script>");
+               header("Location: index.php");
+             }
+             else if(mysqli_fetch_assoc($result2))    //admin
+             {
+                header("Location: admin.php");
+                echo("<script>setCo('{$email}')</script>");
+
+             }
+             else if(mysqli_fetch_assoc($result3))    //medecin
+             {
+              //  echo("<script>setCo('{$email}')</script>");
+                header("Location: medecin.php");
+             }
+             else {
+                  echo("<script>noConnexion()</script>");
+                  echo("<script>openFormCo()</script>");
+              }
+            }
+          }
+           ?>
 
 
-          <h2 style="margin-top: 40px;font-size: 0.9em;">
+
+          <h2 style="margin-top: 23px;font-size: 0.9em;">
             Nouveau sur OMNES Santé ?
           </h2>
 

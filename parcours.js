@@ -1,3 +1,16 @@
+
+let co = "test";
+function setCo(emailProfil){
+
+    co = "test2";
+}
+
+function getCo(){
+
+    document.getElementById("titreA").innerHTML += co;
+}
+
+
 function dropDownDoc() {
   var x = document.getElementById("myLinks1");
   if (x.style.display === "block") {
@@ -49,6 +62,7 @@ function dropDownLab() {
   }
 
   function closeFormCo() {
+    initPopupConnexion();
     document.getElementById("popupFormCo").style.display = "none";
     document.getElementById("popupCo").style.display = "none";
   }
@@ -72,3 +86,27 @@ function dropDownLab() {
   function drPasdispo(elemId){
     document.getElementById(elemId).style.background = "#666";
   }
+
+
+
+  function clickSuppRdv(){
+    var result ="<?php SuppRdv(); ?>"
+    document.write(result);
+  }
+
+function showSecretData(elemId) {
+  var x = document.getElementById(elemId);
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+function noConnexion(){
+  document.getElementById("noconnexion").style.display = "block";
+}
+
+function initPopupConnexion(){
+  document.getElementById("noconnexion").style.display = "none";
+}

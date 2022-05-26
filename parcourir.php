@@ -37,7 +37,7 @@
 <div id="section2">
 
         <div class="topnav">
-          <a href="#home" class="active">Médecine générale</a>
+          <a href="#home" class="active" onclick="dropDownDoc()">Médecine générale</a>
           <div id="myLinks1">
 
         <?php
@@ -55,7 +55,7 @@
             while ($data = mysqli_fetch_assoc($result)) {
               $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
               $image=$data['Image'];
-              echo("<a onclick=\"openForm('{$doc}')\"> <img src=\"PhotoProfils/$image\" height='120' width='100'> $doc</a>");
+              echo("<a onclick=\"openForm('{$doc}')\"> <img src=\"PhotoProfils/$image\" height='60' width='50'> $doc</a>");
 
             }//end while
           }//end if
@@ -76,9 +76,9 @@
         </div>
         <!-- Top Navigation Menu -->
         <div class="topnav">
-          <a href="#home" class="active">Médecins spécialistes</a>
+          <a href="#home" class="active" onclick="dropDownSpe()">Médecins spécialistes</a>
           <div id="myLinks2">
-            
+
             <?php
               //Le nom de la base de donnée visée
               $database = "omnessante";
@@ -115,7 +115,7 @@
 
           <!-- Top Navigation Menu -->
           <div class="topnav">
-            <a href="#home" class="active">Laboratoire de biologie médicale</a>
+            <a href="#home" class="active" onclick="dropDownLab()">Laboratoire de biologie médicale</a>
             <div id="myLinks3">
               <a href="#PriseDeSang">Prise de sang</a>
               <a href="#ExaminUrine">Examen de l'urine</a>
@@ -165,25 +165,25 @@
 
         <div class="grid-container">
           <div style="border: none;background: none;"></div>
-          <div style="border-bottom: none;border-right: none;">Lundi</div>
-          <div style="border-bottom: none;border-right: none;">Mardi</div>
-          <div style="border-bottom: none;border-right: none;">Mercredi</div>
-          <div style="border-bottom: none;border-right: none;">Jeudi</div>
-          <div style="border-bottom: none;border-right: none;">Vendredi</div>
-          <div style="border-bottom: none;">Samedi</div>
-          <div style="border-bottom: none;border-right: none;">Matin</div>
-          <div id="lunMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="marMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="merMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="jeuMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="venMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="samMat" style="border-bottom: none;"></div>
-          <div style="border-right: none;">Aprem</div>
-          <div id="lunAprem" style="border-right: none;"></div>
-          <div id="marAprem" style="border-right: none;"></div>
-          <div id="merAprem" style="border-right: none;"></div>
-          <div id="jeuAprem" style="border-right: none;"></div>
-          <div id="venAprem" style="border-right: none;"></div>
+          <div class="case">Lundi</div>
+          <div class="case">Mardi</div>
+          <div class="case">Mercredi</div>
+          <div class="case">Jeudi</div>
+          <div class="case">Vendredi</div>
+          <div class="case2">Samedi</div>
+          <div class="case">Matin</div>
+          <div id="lunMat" class="case"></div>
+          <div id="marMat" class="case"></div>
+          <div id="merMat" class="case"></div>
+          <div id="jeuMat" class="case"></div>
+          <div id="venMat" class="case"></div>
+          <div id="samMat" class="case2"></div>
+          <div class="case3">Aprem</div>
+          <div id="lunAprem" class="case3"></div>
+          <div id="marAprem" class="case3"></div>
+          <div id="merAprem" class="case3"></div>
+          <div id="jeuAprem" class="case3"></div>
+          <div id="venAprem" class="case3"></div>
           <div id="samAprem"></div>
         </div>
 
@@ -267,7 +267,7 @@
 
         <a href="compte.php"><button type="submit" class="btn co">Connexion</button></a>
 
-        <h2 style="margin-top: 40px;font-size: 0.9em;">
+        <h2 style="margin-top: 23px;font-size: 0.9em;">
           Nouveau sur OMNES Santé ?
         </h2>
 
