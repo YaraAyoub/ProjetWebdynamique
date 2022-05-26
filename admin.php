@@ -34,11 +34,11 @@
 
         <div id="section">
 
-
-        <p id="titreA">page admin de </p>
-
-        <script>getCo()</script>
-
+        <?php
+        session_start();
+        $email = $_SESSION['email'];
+        echo($email);
+         ?>
 
         </div>
 

@@ -1,15 +1,4 @@
 
-let co = "test";
-function setCo(emailProfil){
-
-    co = "test2";
-}
-
-function getCo(){
-
-    document.getElementById("titreA").innerHTML += co;
-}
-
 
 function dropDownDoc() {
   var x = document.getElementById("myLinks1");
