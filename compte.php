@@ -5,9 +5,9 @@
      <title>Omnes Santé</title>
      <link href="index.css" rel="stylesheet" type="text/css" />
       <link href="compte.css" rel="stylesheet" type="text/css" />
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-     <link href="logo.jpg" rel="icon" type="images/x-icon" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="logo.jpg" rel="icon" type="images/x-icon" />
       <script type="text/javascript" src="parcours.js"></script>
      <meta charset="utf-8" />
   </head>
@@ -42,6 +42,10 @@
           </h2>
 
           <?php
+
+            session_start();
+            $mailCo = $_SESSION['email'];
+
             //Le nom de la base de donnée visée
             $database = "omnessante";
             //connectez-vous dans votre BDD
@@ -51,7 +55,7 @@
             if ($db_found) {
               $sql = "SELECT c.Image, c.Nom, c.Prenom, c.MdP, c.Email, c.CarteVital, c.DateNaissance, c.Adresse1, c.Adresse2, c.CodePostal, c.Pays, p.Type, p.Numero, p.DateExpiration, p.CodeSecurite
               FROM client c, payment p
-              WHERE email='alexandre.teixera@profil.com'
+              WHERE email='$mailCo'
               AND c.IdClient=p.IdClient";
 
               $result = mysqli_query($db_handle, $sql);
@@ -113,116 +117,6 @@
             mysqli_close($db_handle);
           ?>
 
-
-<!--
-            <input type="text" id="prenom" placeholder="Prénom" name="prenom" required=""
-              style="margin-bottom: 20px;
-                padding-right: 64px;
-                padding-top: 8px;
-                padding-bottom: 8px;
-                font-size: 15px;"
-            >
-
-            <input type="text" id="dateNaissance" placeholder="Date de naissance (AAAA-MM-JJ)" name="dateNaissance" required="" style="margin-bottom: 20px;
-                padding-right: 7px;
-                padding-top: 8px;
-                padding-bottom: 8px;
-                font-size: 15px;
-                width: 250px;"
-            >
-
-            <input type="text" id="adresse" placeholder="Adresse" name="adresse" required=""
-              style="margin-bottom: 20px;
-                padding-right: 64px;
-                padding-top: 8px;
-                padding-bottom: 8px;
-                font-size: 15px;"
-            >
-
-            <input type="number" id="carteVitale" placeholder="Carte Vitale" name="carteVitale" required=""
-              style="margin-bottom: 20px;
-                padding-right: 64px;
-                padding-top: 8px;
-                padding-bottom: 8px;
-                font-size: 15px;"
-            >
-
-
-            <h2 style="margin-top: 40px;font-size: 0.9em;">
-              Information de connexion
-            </h2>
-
-            <input type="text" id="email" placeholder="Adresse email" name="email" required=""
-              style="margin-bottom: 20px;
-                padding-right: 64px;
-                padding-top: 8px;
-                padding-bottom: 8px;
-                font-size: 15px;"
-            >
-
-            <input type="password" id="psw" placeholder="Mot de passe" name="psw" required=""
-              style="margin-bottom: 20px;
-                padding-right: 64px;
-                padding-top: 8px;
-                padding-bottom: 8px;
-                font-size: 15px;"
-            >
-
-            <h2 style="margin-top: 40px;font-size: 0.9em;">
-              Information de paiement
-            </h2>
-
-            <input type="text" id="nomCarte" placeholder="Nom sur la carte" name="nomCarte" required=""
-              style="margin-bottom: 20px;
-                padding-right: 64px;
-                padding-top: 8px;
-                padding-bottom: 8px;
-                font-size: 15px;"
-            >
-            <input type="number" id="numCarte" placeholder="Numero de carte" name="numCarte" required=""
-              style="margin-bottom: 20px;
-                padding-right: 64px;
-                padding-top: 8px;
-                padding-bottom: 8px;
-                font-size: 15px;"
-            >
-            <input type="text" id="typeCarte" placeholder="Type de carte" name="typeCarte" required=""
-              style="margin-bottom: 20px;
-                padding-right: 64px;
-                padding-top: 8px;
-                padding-bottom: 8px;
-                font-size: 15px;"
-            >
-            <input type="text" id="expCarte" placeholder="Date d'expiration (AAAA-MM)" name="expCarte" required=""
-              style="margin-bottom: 20px;
-                padding-right: 7px;
-                width:250px;
-                padding-top: 8px;
-                padding-bottom: 8px;
-                font-size: 15px;"
-            >
-            <input type="number" id="CVV" placeholder="CVV" name="CVV" required="" style="margin-bottom: 20px;
-                padding-right: -7px;
-                padding-top: 8px;
-                padding-bottom: 8px;
-                margin-left: 140px;
-                margin-right: 170px;
-                font-size: 15px;"
-            >
-
-            <a href="compte.php">
-              <button type="submit" class="btn co" style="background-color: #80008040;
-                font-size: large;
-                margin-top: 8px;
-                margin-left: 220px;
-                padding: 10px;
-                border: none;
-                border-radius: 25px;"
-              >Valider</button>
-            </a>
-
-        </div>
--->
       </div>
 
       <div id="footer">Copyright &copy; 2022, Omnes Santé<br>
