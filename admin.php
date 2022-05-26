@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -34,11 +36,12 @@
 
         <div id="section">
 
-        <?php
-        session_start();
-        $email = $_SESSION['email'];
-        echo($email);
-         ?>
+        <p id="titreA">page admin de <?php echo "$_SESSION[email]"; ?></p>
+
+      <!--  <script>getCo()</script> -->
+
+
+
 
         </div>
 

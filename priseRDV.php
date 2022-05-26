@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+  include ('popupConnexion.php');
+ ?>
+
+ <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
   <head>
@@ -37,8 +41,7 @@
 
         <div id="section2">
 
-          <h1>Prise de RDV avec Dr Bidule MUCHE</h1>
-          <h2>Docteur généraliste</h2>
+          <h1>Prise de RDV avec le docteur : Dr Bidule MUCHE</h1>
 
           <div class="grid-container">
             <div class="case4"><strong>Lundi</strong></div>
@@ -118,9 +121,7 @@
 
       </div>
 
-      <?php
-        include ('popupCo.php');
-       ?>
+
 
       <div id="footer">Copyright &copy; 2022, Omnes Santé<br>
         <a href="mailto:omnes.sante@gmail.com">omnes.sante@gmail.com</a>

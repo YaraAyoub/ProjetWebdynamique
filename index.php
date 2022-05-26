@@ -1,3 +1,7 @@
+<?php
+  include ('popupConnexion.php');
+ ?>
+ 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -93,9 +97,7 @@
 
       </div>
 
-      <?php
-        include ('popupCo.php');
-       ?>
+
 
       <div id="footer">Copyright &copy; 2022, Omnes Santé<br>
         <a href="mailto:omnes.sante@gmail.com">omnes.sante@gmail.com</a>

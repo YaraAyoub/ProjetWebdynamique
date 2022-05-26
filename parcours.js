@@ -1,4 +1,15 @@
 
+let co = "test";
+function setCo(emailProfil){
+  
+    co = "test2";
+}
+
+function getCo(){
+
+    document.getElementById("titreA").innerHTML += co;
+}
+
 
 function dropDownDoc() {
   var x = document.getElementById("myLinks1");
@@ -27,7 +38,7 @@ function dropDownLab() {
     }
 }
 
-  function openForm(data) {
+function openForm(data) {
 
     console.log(data);
 
@@ -50,6 +61,8 @@ function dropDownLab() {
     document.getElementById("pagePopup").style.display = "block";
   }
 */
+
+
   function closeForm() {
     document.getElementById("popupForm").style.display = "none";
     document.getElementById("pagePopup").style.display = "none";

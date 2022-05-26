@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -5,9 +7,9 @@
      <title>Omnes Santé</title>
      <link href="index.css" rel="stylesheet" type="text/css" />
       <link href="compte.css" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link href="logo.jpg" rel="icon" type="images/x-icon" />
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link href="logo.jpg" rel="icon" type="images/x-icon" />
       <script type="text/javascript" src="parcours.js"></script>
      <meta charset="utf-8" />
   </head>
@@ -43,8 +45,7 @@
 
           <?php
 
-            session_start();
-            $mailCo = $_SESSION['email'];
+            $mail = $_SESSION['email'];
 
             //Le nom de la base de donnée visée
             $database = "omnessante";
@@ -55,7 +56,7 @@
             if ($db_found) {
               $sql = "SELECT c.Image, c.Nom, c.Prenom, c.MdP, c.Email, c.CarteVital, c.DateNaissance, c.Adresse1, c.Adresse2, c.CodePostal, c.Pays, p.Type, p.Numero, p.DateExpiration, p.CodeSecurite
               FROM client c, payment p
-              WHERE email='$mailCo'
+              WHERE email='$mail'
               AND c.IdClient=p.IdClient";
 
               $result = mysqli_query($db_handle, $sql);

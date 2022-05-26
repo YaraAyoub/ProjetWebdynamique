@@ -1,3 +1,7 @@
+<?php
+  include ('popupConnexion.php');
+ ?>
+ 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -263,44 +267,6 @@
         </a>
 
         <button type="button" class="btn cancel" onclick="closeForm()">X</button>
-      </div>
-    </div>
-
-
-    <div class="login-popup">
-      <div class="form-popup" id="popupFormCo" onclick="closeFormCo()"></div>
-
-      <div action="/action_page.php" class="form-container-connexion" id="popupCo">
-        <button type="button" class="btn cancel" onclick="closeFormCo()">X</button>
-
-        <h2 style="margin-top: 50px;margin-bottom: 25px;">
-          J'ai déjà un compte OMNES Santé
-        </h2>
-
-        <input type="text" id="email" placeholder="Adresse email" name="email" required=""
-          style="margin-bottom: 20px;
-            padding-right: 64px;
-            padding-top: 8px;
-            padding-bottom: 8px;
-            font-size: 15px;"
-        >
-
-        <input type="password" id="psw" placeholder="Mot de passe" name="psw" required=""
-          style="margin-bottom: 20px;
-            padding-right: 64px;
-            padding-top: 8px;
-            padding-bottom: 8px;
-            font-size: 15px;"
-        >
-
-        <a href="compte.php"><button type="submit" class="btn co">Connexion</button></a>
-
-        <h2 style="margin-top: 23px;font-size: 0.9em;">
-          Nouveau sur OMNES Santé ?
-        </h2>
-
-        <a href="inscription.php"><button type="button" class="btn insc" onclick="closeFormCo">S'inscrire</button></a>
-
       </div>
     </div>
 

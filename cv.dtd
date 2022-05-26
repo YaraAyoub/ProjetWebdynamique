@@ -1,0 +1,9 @@
+<!ELEMENT liste_cv (cv+)>
+<!ELEMENT cv (etatcivil,formation*,experience*)>
+<!ELEMENT etatcivil (nom, prenom)>
+<!ELEMENT formation (date,titre)>
+<!ELEMENT experience (date, titre)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT prenom (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT titre (#PCDATA)>

@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+  include ('popupConnexion.php');
+ ?>
+
+ <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
   <head>
@@ -52,8 +56,7 @@
     </a>
     </div>
 
-    <?php
-      include ('popupCo.php');
-     ?>
+
+
 
   </body>

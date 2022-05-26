@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+  include ('popupConnexion.php');
+ ?>
+
+ <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
   <head>
@@ -37,8 +41,6 @@
 
         <div id="section2">
 
-          <h2>Rendez-vous à venir</h2>
-
                 <div class="rdv">
                   <a class="active">blabla</a>
 
@@ -57,48 +59,12 @@
                 </a>
                 </div>
 
-          <h2>Historique des rendez-vous</h2>
-
-          <!-- Top Navigation Menu -->
-          <div class="historiqueRDV">
-
-              <?php
-                //Le nom de la base de donnée visée
-                $database = "omnessante";
-                //connectez-vous dans votre BDD
-                $db_handle = mysqli_connect('localhost', 'root', '' );
-                $db_found = mysqli_select_db($db_handle, $database);
-                //si le BDD existe, faire le traitement
-                if ($db_found) {
-                  $sql = "SELECT NomMedecin, NoteMedecin, DateHeure FROM rendezvous Order by DateHeure";
-
-                  $result = mysqli_query($db_handle, $sql);
-
-                  if (mysqli_fetch_assoc($result)){
-                    while ($data = mysqli_fetch_assoc($result)) {
-                      $spe = ucwords($data['Specialiste']);
-                      echo("<a href=\"#{$spe}\">$spe</a>");
-
-                    }//end while
-                  }
-                  else {
-                    echo("Aucun rendez-vous passés");
-                  }
-
-                }//end if
-                //si le BDD n'existe pas
-                else {
-                echo "Database not found";
-                }//end else
-                //fermer la connection
-                mysqli_close($db_handle);
-              ?>
-
-          </div>
 
         </div>
 
       </div>
+
+
 
       <div id="footer">Copyright &copy; 2022, Omnes Santé<br>
         <a href="mailto:omnes.sante@gmail.com">omnes.sante@gmail.com</a>
