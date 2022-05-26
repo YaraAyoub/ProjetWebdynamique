@@ -79,7 +79,11 @@
       if (mysqli_fetch_assoc($result1)) {  //client
 
          $_SESSION["email"] = $email;
+<<<<<<< HEAD
          header("Location: compte.php");
+=======
+         header("Location: index.php");
+>>>>>>> 1477acabd3de6075465ed89e4d65c8c1bd97e19e
        }
        else if(mysqli_fetch_assoc($result2))    //admin
        {
