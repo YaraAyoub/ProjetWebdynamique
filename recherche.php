@@ -127,18 +127,18 @@
               $result3 = mysqli_query($db_handle, $sql3);
 
              if (mysqli_fetch_assoc($result1)) {  //client
-               //echo("<script>setCo('{$email}')</script>");
+
+               $_SESSION["email"] = $email;
                header("Location: index.php");
              }
              else if(mysqli_fetch_assoc($result2))    //admin
              {
+               $_SESSION["email"] = $email;
                 header("Location: admin.php");
-                echo("<script>setCo('{$email}')</script>");
-
              }
              else if(mysqli_fetch_assoc($result3))    //medecin
              {
-              //  echo("<script>setCo('{$email}')</script>");
+                $_SESSION["email"] = $email;
                 header("Location: medecin.php");
              }
              else {
