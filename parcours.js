@@ -31,9 +31,15 @@ function dropDownLab() {
 
     console.log(data);
 
+    document.getElementById("photodoc").src = "PhotoProfils/"+data["Image"];
+
    document.getElementById("namedoc").innerHTML = "Dr. "+data["Prenom"]+" "+data['Nom'];
    document.getElementById("spedoc").innerHTML = data["Specialiste"].charAt(0).toUpperCase() + data["Specialiste"].slice(1);
-   // document.getElementById("maildoc").innerHTML = data["Email"];
+   document.getElementById("infodoc").innerHTML = "Bureau : "+data["Bureau"]+" <br>"+
+                                                   "Adresse: "+data["Adresse"]+"<br>"+
+                                                   "DigiCode: "+data["DigiCode"]+" <br><br>"+
+                                                   "Telephone : "+data["Telephone"]+" <br>"+
+                                                   "mail : "+data["Email"]+" <br>";
 
    document.getElementById("popupForm").style.display = "block";
    document.getElementById("pagePopup").style.display = "block";
