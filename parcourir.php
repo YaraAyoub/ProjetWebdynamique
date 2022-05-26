@@ -117,10 +117,40 @@
           <div class="topnav">
             <a href="#home" class="active" onclick="dropDownLab()">Laboratoire de biologie médicale</a>
             <div id="myLinks3">
-              <a href="#PriseDeSang">Prise de sang</a>
+              <!-- <a href="#PriseDeSang">Prise de sang</a>
               <a href="#ExaminUrine">Examen de l'urine</a>
-              <a href="#DepistageCovid">Dépistage Covid</a>
-            </div>
+              <a href="#DepistageCovid">Dépistage Covid</a> -->
+
+            <?php
+              //Le nom de la base de donnée visée
+              $database = "omnessante";
+              //connectez-vous dans votre BDD
+              $db_handle = mysqli_connect('localhost', 'root', '' );
+              $db_found = mysqli_select_db($db_handle, $database);
+              //si le BDD existe, faire le traitement
+              if ($db_found) {
+                $sql = "SELECT DISTINCT s.Nom FROM service s, prestation p
+                        WHERE s.IdService = p.IdService
+                        And p.IdMedLab>=100
+                        Order BY s.Nom";
+
+                $result = mysqli_query($db_handle, $sql);
+
+                while ($data = mysqli_fetch_assoc($result)) {
+                  $exam = $data['Nom'];
+                  echo("<a href=\"#{$exam}\">$exam</a>");
+
+                }//end while
+              }//end if
+              //si le BDD n'existe pas
+              else {
+              echo "Database not found";
+              }//end else
+              //fermer la connection
+              mysqli_close($db_handle);
+            ?>
+
+          </div>
 
             <a href="javascript:void(0);" class="icon" onclick="dropDownLab()">
             <i class="fa fa-chevron-down"></i>
