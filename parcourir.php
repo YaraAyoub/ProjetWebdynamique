@@ -48,11 +48,14 @@
           $db_found = mysqli_select_db($db_handle, $database);
           //si le BDD existe, faire le traitement
           if ($db_found) {
-            $sql = "SELECT Nom, Prenom, Specialiste, Image FROM medecin WHERE Specialiste='generaliste' Order by Nom, Prenom";
+            $sql = "SELECT Nom, Prenom, Specialiste, Email, Bureau, Adresse, DigiCode, Telephone, Image FROM medecin WHERE Specialiste='generaliste' Order by Nom, Prenom";
 
             $result = mysqli_query($db_handle, $sql);
 
             while ($data = mysqli_fetch_assoc($result)) {
+              // $sql2="SELECT Adresse FROM medecin WHERE Specialiste='generaliste' Order by Nom, Prenom";
+              // $result2 = mysqli_query($db_handle, $sql2);
+
               $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
               $image=$data['Image'];
               // echo("<a onclick=\"openForm('{$doc}')\"> <img src=\"PhotoProfils/$image\" height='60' width='50'> $doc</a>");
@@ -169,13 +172,14 @@
 
       <div class="form-container" id="pagePopup">
 
-
-        <img src="PhotoProfils/Garcia.jpg" alt="photo dr" width="130" height="150"
+        <!-- <div id="photodoc"></div> -->
+        <img id="photodoc" src="" alt="photo dr" width="130" height="150"
           style="position: fixed;
           margin-left: -385px;
           margin-top: 45px;
           border-radius:25%"
         >
+
         <!--TODO-->
         <div style="position: fixed;top: 120px;width: 260px;margin-left: 214px;padding-right: 20px;text-align: left;">
         <h2 id="namedoc"></h2>
@@ -183,13 +187,7 @@
         </div>
 
         <div style="position: fixed;top: 120px;margin-left: 494px;">
-          <p style="padding-right: 30px;text-align: left;">
-            Bureau : 405 <br>
-            Adresse: 123 Boulevard de la Reine, 78000, Versailles <br>
-            DigiCode: - <br><br>
-            Telephone : 0612345678 <br>
-            mail : doc.teur@gmail.com <br>
-          </p>
+          <p id="infodoc" style="padding-right: 30px;text-align: left;"> </p>
         </div>
 
 
