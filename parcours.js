@@ -1,3 +1,5 @@
+
+
 function dropDownDoc() {
   var x = document.getElementById("myLinks1");
   if (x.style.display === "block") {
@@ -25,9 +27,19 @@ function dropDownLab() {
     }
 }
 
-  function openForm(name) {
+  function openForm(data) {
 
-   document.getElementById("namedoc").innerHTML = name;
+    console.log(data);
+
+    document.getElementById("photodoc").src = "PhotoProfils/"+data["Image"];
+
+   document.getElementById("namedoc").innerHTML = "Dr. "+data["Prenom"]+" "+data['Nom'];
+   document.getElementById("spedoc").innerHTML = data["Specialiste"].charAt(0).toUpperCase() + data["Specialiste"].slice(1);
+   document.getElementById("infodoc").innerHTML = "Bureau : "+data["Bureau"]+" <br>"+
+                                                   "Adresse: "+data["Adresse"]+"<br>"+
+                                                   "DigiCode: "+data["DigiCode"]+" <br><br>"+
+                                                   "Telephone : "+data["Telephone"]+" <br>"+
+                                                   "mail : "+data["Email"]+" <br>";
 
    document.getElementById("popupForm").style.display = "block";
    document.getElementById("pagePopup").style.display = "block";
@@ -49,6 +61,7 @@ function dropDownLab() {
   }
 
   function closeFormCo() {
+    initPopupConnexion();
     document.getElementById("popupFormCo").style.display = "none";
     document.getElementById("popupCo").style.display = "none";
   }
@@ -72,3 +85,27 @@ function dropDownLab() {
   function drPasdispo(elemId){
     document.getElementById(elemId).style.background = "#666";
   }
+
+
+
+  function clickSuppRdv(){
+    var result ="<?php SuppRdv(); ?>"
+    document.write(result);
+  }
+
+function showSecretData(elemId) {
+  var x = document.getElementById(elemId);
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+function noConnexion(){
+  document.getElementById("noconnexion").style.display = "block";
+}
+
+function initPopupConnexion(){
+  document.getElementById("noconnexion").style.display = "none";
+}

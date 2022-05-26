@@ -37,7 +37,7 @@
 <div id="section2">
 
         <div class="topnav">
-          <a href="#home" class="active">Médecine générale</a>
+          <a href="#home" class="active" onclick="dropDownDoc()">Médecine générale</a>
           <div id="myLinks1">
 
         <?php
@@ -48,15 +48,20 @@
           $db_found = mysqli_select_db($db_handle, $database);
           //si le BDD existe, faire le traitement
           if ($db_found) {
-            $sql = "SELECT Nom, Prenom, Image FROM medecin WHERE Specialiste='generaliste'";
+            $sql = "SELECT Nom, Prenom, Specialiste, Email, Bureau, Adresse, DigiCode, Telephone, Image FROM medecin WHERE Specialiste='generaliste' Order by Nom, Prenom";
 
             $result = mysqli_query($db_handle, $sql);
 
             while ($data = mysqli_fetch_assoc($result)) {
+              // $sql2="SELECT Adresse FROM medecin WHERE Specialiste='generaliste' Order by Nom, Prenom";
+              // $result2 = mysqli_query($db_handle, $sql2);
+
               $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
               $image=$data['Image'];
-              echo("<a onclick=\"openForm('{$doc}')\"> <img src=\"PhotoProfils/$image\" height='120' width='100'> $doc</a>");
-            
+              // echo("<a onclick=\"openForm('{$doc}')\"> <img src=\"PhotoProfils/$image\" height='60' width='50'> $doc</a>");
+              echo "<a onclick='openForm(".json_encode($data).")'> <img src='PhotoProfils/$image' height='60' width='50'> $doc</a>";
+
+
             }//end while
           }//end if
           //si le BDD n'existe pas
@@ -76,16 +81,35 @@
         </div>
         <!-- Top Navigation Menu -->
         <div class="topnav">
-          <a href="#home" class="active">Médecins spécialistes</a>
+          <a href="#home" class="active" onclick="dropDownSpe()">Médecins spécialistes</a>
           <div id="myLinks2">
-            <a href="#Addictologie">Addictologie</a>
-            <a href="#Andrologie">Andrologie</a>
-            <a href="#Cardiologie">Cardiologie</a>
-            <a href="#Dermatologie">Dermatologie</a>
-            <a href="#GastroHepatoEnterologie">Gastro-Hépato-Entérologie</a>
-            <a href="#Gynecologie">Gynécologie</a>
-            <a href="#IST">I.S.T.</a>
-            <a href="#Osteopathie">Ostéopathie</a>
+
+            <?php
+              //Le nom de la base de donnée visée
+              $database = "omnessante";
+              //connectez-vous dans votre BDD
+              $db_handle = mysqli_connect('localhost', 'root', '' );
+              $db_found = mysqli_select_db($db_handle, $database);
+              //si le BDD existe, faire le traitement
+              if ($db_found) {
+                $sql = "SELECT Distinct Specialiste FROM medecin Order by Specialiste";
+
+                $result = mysqli_query($db_handle, $sql);
+
+                while ($data = mysqli_fetch_assoc($result)) {
+                  $spe = ucwords($data['Specialiste']);
+                  echo("<a href=\"#{$spe}\">$spe</a>");
+
+                }//end while
+              }//end if
+              //si le BDD n'existe pas
+              else {
+              echo "Database not found";
+              }//end else
+              //fermer la connection
+              mysqli_close($db_handle);
+            ?>
+
           </div>
 
           <a href="javascript:void(0);" class="icon" onclick="dropDownSpe()">
@@ -96,11 +120,39 @@
 
           <!-- Top Navigation Menu -->
           <div class="topnav">
-            <a href="#home" class="active">Laboratoire de biologie médicale</a>
+            <a href="#home" class="active" onclick="dropDownLab()">Laboratoire de biologie médicale</a>
+
             <div id="myLinks3">
-              <a href="#PriseDeSang">Prise de sang</a>
-              <a href="#ExaminUrine">Examen de l'urine</a>
-              <a href="#DepistageCovid">Dépistage Covid</a>
+
+              <?php
+                //Le nom de la base de donnée visée
+                $database = "omnessante";
+                //connectez-vous dans votre BDD
+                $db_handle = mysqli_connect('localhost', 'root', '' );
+                $db_found = mysqli_select_db($db_handle, $database);
+                //si le BDD existe, faire le traitement
+                if ($db_found) {
+                  $sql = "SELECT DISTINCT s.Nom FROM service s, prestation p
+                          WHERE s.IdService = p.IdService
+                          And p.IdMedLab>=100
+                          Order BY s.Nom";
+
+                  $result = mysqli_query($db_handle, $sql);
+
+                  while ($data = mysqli_fetch_assoc($result)) {
+                    $exam = $data['Nom'];
+                    echo("<a href=\"#{$exam}\">$exam</a>");
+
+                  }//end while
+                }//end if
+                //si le BDD n'existe pas
+                else {
+                echo "Database not found";
+                }//end else
+                //fermer la connection
+                mysqli_close($db_handle);
+              ?>
+
             </div>
 
             <a href="javascript:void(0);" class="icon" onclick="dropDownLab()">
@@ -120,51 +172,46 @@
 
       <div class="form-container" id="pagePopup">
 
-
-        <img src="PhotoProfils/Garcia.jpg" alt="photo dr" width="130" height="150"
+        <!-- <div id="photodoc"></div> -->
+        <img id="photodoc" src="" alt="photo dr" width="130" height="150"
           style="position: fixed;
           margin-left: -385px;
           margin-top: 45px;
           border-radius:25%"
         >
+
         <!--TODO-->
         <div style="position: fixed;top: 120px;width: 260px;margin-left: 214px;padding-right: 20px;text-align: left;">
         <h2 id="namedoc"></h2>
-        <h3>Médecin généraliste</h3>
+        <h3 id="spedoc"></h3>
         </div>
 
         <div style="position: fixed;top: 120px;margin-left: 494px;">
-          <p style="padding-right: 30px;text-align: left;">
-            Bureau : 405 <br>
-            Adresse: 123 Boulevard de la Reine, 78000, Versailles <br>
-            DigiCode: - <br><br>
-            Telephone : 0612345678 <br>
-            mail : doc.teur@gmail.com <br>
-          </p>
+          <p id="infodoc" style="padding-right: 30px;text-align: left;"> </p>
         </div>
 
 
         <div class="grid-container">
           <div style="border: none;background: none;"></div>
-          <div style="border-bottom: none;border-right: none;">Lundi</div>
-          <div style="border-bottom: none;border-right: none;">Mardi</div>
-          <div style="border-bottom: none;border-right: none;">Mercredi</div>
-          <div style="border-bottom: none;border-right: none;">Jeudi</div>
-          <div style="border-bottom: none;border-right: none;">Vendredi</div>
-          <div style="border-bottom: none;">Samedi</div>
-          <div style="border-bottom: none;border-right: none;">Matin</div>
-          <div id="lunMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="marMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="merMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="jeuMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="venMat" style="border-bottom: none;border-right: none;"></div>
-          <div id="samMat" style="border-bottom: none;"></div>
-          <div style="border-right: none;">Aprem</div>
-          <div id="lunAprem" style="border-right: none;"></div>
-          <div id="marAprem" style="border-right: none;"></div>
-          <div id="merAprem" style="border-right: none;"></div>
-          <div id="jeuAprem" style="border-right: none;"></div>
-          <div id="venAprem" style="border-right: none;"></div>
+          <div class="case">Lundi</div>
+          <div class="case">Mardi</div>
+          <div class="case">Mercredi</div>
+          <div class="case">Jeudi</div>
+          <div class="case">Vendredi</div>
+          <div class="case2">Samedi</div>
+          <div class="case">Matin</div>
+          <div id="lunMat" class="case"></div>
+          <div id="marMat" class="case"></div>
+          <div id="merMat" class="case"></div>
+          <div id="jeuMat" class="case"></div>
+          <div id="venMat" class="case"></div>
+          <div id="samMat" class="case2"></div>
+          <div class="case3">Aprem</div>
+          <div id="lunAprem" class="case3"></div>
+          <div id="marAprem" class="case3"></div>
+          <div id="merAprem" class="case3"></div>
+          <div id="jeuAprem" class="case3"></div>
+          <div id="venAprem" class="case3"></div>
           <div id="samAprem"></div>
         </div>
 
@@ -248,7 +295,7 @@
 
         <a href="compte.php"><button type="submit" class="btn co">Connexion</button></a>
 
-        <h2 style="margin-top: 40px;font-size: 0.9em;">
+        <h2 style="margin-top: 23px;font-size: 0.9em;">
           Nouveau sur OMNES Santé ?
         </h2>
 

@@ -23,9 +23,9 @@
       <div id="header">
 
         <div class="btn-group">
-          <a onclick="openFormCo()"><button class="button">Votre compte</button></a>
+          <a href="compte.php"><button class="button">Votre compte</button></a>
           <a href="rdv.php"><button class="button">RDV</button></a>
-          <a href="recherche.ph"><button class="button">Recherche</button></a>
+          <a href="recherche.php"><button class="button">Recherche</button></a>
           <a href="parcourir.php"><button class="button">Tout Parcourir</button></a>
           <a href="index.php"><button class="button">Accueil</button></a>
 
@@ -37,55 +37,67 @@
 
         <div id="section2">
 
-                <div class="rdv">
-                  <a href="#home" class="active">blabla</a>
+          <h2>Rendez-vous à venir</h2>
 
-                <a class="icon" onclick="">
+                <div class="rdv">
+                  <a class="active">blabla</a>
+
+<!--https://www.delftstack.com/fr/howto/php/onclick-php/#utilisez-du-javascript-simple-pour-ex%25C3%25A9cuter-la-fonction-php-avec-l%25C3%25A9v%25C3%25A9nement-onclick -->
+
+                <a href="#home" class="icon" onclick="clickSuppRdv()">
                 <i class="fa fa-trash-o"></i>
+
+                <?php
+
+                function SuppRdv(){
+                print("supp");
+                }
+                 ?>
 
                 </a>
                 </div>
 
+          <h2>Historique des rendez-vous</h2>
+
+          <!-- Top Navigation Menu -->
+          <div class="historiqueRDV">
+
+              <?php
+                //Le nom de la base de donnée visée
+                $database = "omnessante";
+                //connectez-vous dans votre BDD
+                $db_handle = mysqli_connect('localhost', 'root', '' );
+                $db_found = mysqli_select_db($db_handle, $database);
+                //si le BDD existe, faire le traitement
+                if ($db_found) {
+                  $sql = "SELECT NomMedecin, NoteMedecin, DateHeure FROM rendezvous Order by DateHeure";
+
+                  $result = mysqli_query($db_handle, $sql);
+
+                  if (mysqli_fetch_assoc($result)){
+                    while ($data = mysqli_fetch_assoc($result)) {
+                      $spe = ucwords($data['Specialiste']);
+                      echo("<a href=\"#{$spe}\">$spe</a>");
+
+                    }//end while
+                  }
+                  else {
+                    echo("Aucun rendez-vous passés");
+                  }
+
+                }//end if
+                //si le BDD n'existe pas
+                else {
+                echo "Database not found";
+                }//end else
+                //fermer la connection
+                mysqli_close($db_handle);
+              ?>
+
+          </div>
 
         </div>
 
-      </div>
-
-      <div class="login-popup">
-        <div class="form-popup" id="popupFormCo" onclick="closeFormCo()"></div>
-
-        <div action="/action_page.php" class="form-container-connexion" id="popupCo">
-          <button type="button" class="btn cancel" onclick="closeFormCo()">X</button>
-
-          <h2 style="margin-top: 50px;margin-bottom: 25px;">
-            J'ai déjà un compte OMNES Santé
-          </h2>
-
-          <input type="text" id="email" placeholder="Adresse email" name="email" required=""
-            style="margin-bottom: 20px;
-              padding-right: 64px;
-              padding-top: 8px;
-              padding-bottom: 8px;
-              font-size: 15px;"
-          >
-
-          <input type="password" id="psw" placeholder="Mot de passe" name="psw" required=""
-            style="margin-bottom: 20px;
-              padding-right: 64px;
-              padding-top: 8px;
-              padding-bottom: 8px;
-              font-size: 15px;"
-          >
-
-          <a href="compte.php"><button type="submit" class="btn co">Connexion</button></a>
-
-          <h2 style="margin-top: 40px;font-size: 0.9em;">
-            Nouveau sur OMNES Santé ?
-          </h2>
-
-          <a href="inscription.php"><button type="button" class="btn insc" onclick="closeFormCo">S'inscrire</button></a>
-
-        </div>
       </div>
 
       <div id="footer">Copyright &copy; 2022, Omnes Santé<br>

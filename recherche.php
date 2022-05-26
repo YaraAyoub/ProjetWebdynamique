@@ -63,45 +63,9 @@
 
       </div>
 
-      <div class="login-popup">
-        <div class="form-popup" id="popupFormCo" onclick="closeFormCo()"></div>
-
-        <form action="compte.php" method="post" class="form-container-connexion" id="popupCo">
-
-           
-          <button type="button" class="btn cancel" onclick="closeFormCo()">X</button>
-
-          <h2 style="margin-top: 50px;margin-bottom: 25px;">
-            J'ai déjà un compte OMNES Santé
-          </h2>
-
-          <input type="email" id="email" placeholder="Adresse email" name="email" required
-            style="margin-bottom: 20px;
-              padding-right: 64px;
-              padding-top: 8px;
-              padding-bottom: 8px;
-              font-size: 15px;"
-          >
-
-          <input type="password" id="psw" placeholder="Mot de passe" name="psw" required
-            style="margin-bottom: 20px;
-              padding-right: 64px;
-              padding-top: 8px;
-              padding-bottom: 8px;
-              font-size: 15px;"
-          >
-
-          <button type="submit" class="btn co">Connexion</button>
-
-
-          <h2 style="margin-top: 40px;font-size: 0.9em;">
-            Nouveau sur OMNES Santé ?
-          </h2>
-
-          <a href="inscription.php"><button type="button" class="btn insc" onclick="closeFormCo">S'inscrire</button></a>
-
-        </form>
-      </div>
+      <?php
+        include ('popupCo.php');
+       ?>
 
       <div id="footer">Copyright &copy; 2022, Omnes Santé<br>
         <a href="mailto:omnes.sante@gmail.com">omnes.sante@gmail.com</a>
