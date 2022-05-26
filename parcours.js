@@ -1,3 +1,16 @@
+
+let co = "test";
+function setCo(emailProfil){
+
+    co = "test2";
+}
+
+function getCo(){
+
+    document.getElementById("titreA").innerHTML += co;
+}
+
+
 function dropDownDoc() {
   var x = document.getElementById("myLinks1");
   if (x.style.display === "block") {
@@ -49,6 +62,7 @@ function dropDownLab() {
   }
 
   function closeFormCo() {
+    initPopupConnexion();
     document.getElementById("popupFormCo").style.display = "none";
     document.getElementById("popupCo").style.display = "none";
   }
@@ -91,4 +105,8 @@ function showSecretData(elemId) {
 
 function noConnexion(){
   document.getElementById("noconnexion").style.display = "block";
+}
+
+function initPopupConnexion(){
+  document.getElementById("noconnexion").style.display = "none";
 }

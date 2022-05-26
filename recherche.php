@@ -110,17 +110,40 @@
           if (isset($_POST["connexion"])){
             if ($db_found) {
 
-              $sql = "SELECT Email
+              $sql1 = "SELECT Email
               FROM client
-              WHERE Email='alexandre.teixera@profil.com' AND MdP='zeefez'";
+              WHERE Email='$email' AND MdP='$psw'";
 
-              $result = mysqli_query($db_handle, $sql);
+              $sql2 = "SELECT Email
+              FROM admin
+              WHERE Email='$email' AND MdP='$psw'";
 
-             if (mysqli_fetch_assoc($result)) {
+              $sql3 = "SELECT Email
+              FROM medecin
+              WHERE Email='$email' AND MdP='$psw'";
 
-            }
-              else {
+              $result1 = mysqli_query($db_handle, $sql1);
+              $result2 = mysqli_query($db_handle, $sql2);
+              $result3 = mysqli_query($db_handle, $sql3);
+
+             if (mysqli_fetch_assoc($result1)) {  //client
+               //echo("<script>setCo('{$email}')</script>");
+               header("Location: index.php");
+             }
+             else if(mysqli_fetch_assoc($result2))    //admin
+             {
+                header("Location: admin.php");
+                echo("<script>setCo('{$email}')</script>");
+
+             }
+             else if(mysqli_fetch_assoc($result3))    //medecin
+             {
+              //  echo("<script>setCo('{$email}')</script>");
+                header("Location: medecin.php");
+             }
+             else {
                   echo("<script>noConnexion()</script>");
+                  echo("<script>openFormCo()</script>");
               }
             }
           }
