@@ -48,7 +48,7 @@
           $db_found = mysqli_select_db($db_handle, $database);
           //si le BDD existe, faire le traitement
           if ($db_found) {
-            $sql = "SELECT Nom, Prenom, Image FROM medecin WHERE Specialiste='generaliste'";
+            $sql = "SELECT Nom, Prenom, Image FROM medecin WHERE Specialiste='generaliste' Order by Nom, Prenom";
 
             $result = mysqli_query($db_handle, $sql);
 
@@ -56,7 +56,7 @@
               $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
               $image=$data['Image'];
               echo("<a onclick=\"openForm('{$doc}')\"> <img src=\"PhotoProfils/$image\" height='120' width='100'> $doc</a>");
-            
+
             }//end while
           }//end if
           //si le BDD n'existe pas
@@ -78,14 +78,33 @@
         <div class="topnav">
           <a href="#home" class="active">Médecins spécialistes</a>
           <div id="myLinks2">
-            <a href="#Addictologie">Addictologie</a>
-            <a href="#Andrologie">Andrologie</a>
-            <a href="#Cardiologie">Cardiologie</a>
-            <a href="#Dermatologie">Dermatologie</a>
-            <a href="#GastroHepatoEnterologie">Gastro-Hépato-Entérologie</a>
-            <a href="#Gynecologie">Gynécologie</a>
-            <a href="#IST">I.S.T.</a>
-            <a href="#Osteopathie">Ostéopathie</a>
+            
+            <?php
+              //Le nom de la base de donnée visée
+              $database = "omnessante";
+              //connectez-vous dans votre BDD
+              $db_handle = mysqli_connect('localhost', 'root', '' );
+              $db_found = mysqli_select_db($db_handle, $database);
+              //si le BDD existe, faire le traitement
+              if ($db_found) {
+                $sql = "SELECT Distinct Specialiste FROM medecin Order by Specialiste";
+
+                $result = mysqli_query($db_handle, $sql);
+
+                while ($data = mysqli_fetch_assoc($result)) {
+                  $spe = ucwords($data['Specialiste']);
+                  echo("<a href=\"#{$spe}\">$spe</a>");
+
+                }//end while
+              }//end if
+              //si le BDD n'existe pas
+              else {
+              echo "Database not found";
+              }//end else
+              //fermer la connection
+              mysqli_close($db_handle);
+            ?>
+
           </div>
 
           <a href="javascript:void(0);" class="icon" onclick="dropDownSpe()">
