@@ -48,14 +48,16 @@
           $db_found = mysqli_select_db($db_handle, $database);
           //si le BDD existe, faire le traitement
           if ($db_found) {
-            $sql = "SELECT Nom, Prenom, Image FROM medecin WHERE Specialiste='generaliste' Order by Nom, Prenom";
+            $sql = "SELECT Nom, Prenom, Specialiste, Image FROM medecin WHERE Specialiste='generaliste' Order by Nom, Prenom";
 
             $result = mysqli_query($db_handle, $sql);
 
             while ($data = mysqli_fetch_assoc($result)) {
               $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
               $image=$data['Image'];
-              echo("<a onclick=\"openForm('{$doc}')\"> <img src=\"PhotoProfils/$image\" height='60' width='50'> $doc</a>");
+              // echo("<a onclick=\"openForm('{$doc}')\"> <img src=\"PhotoProfils/$image\" height='60' width='50'> $doc</a>");
+              echo "<a onclick='openForm(".json_encode($data).")'> <img src='PhotoProfils/$image' height='60' width='50'> $doc</a>";
+
 
             }//end while
           }//end if
@@ -177,7 +179,7 @@
         <!--TODO-->
         <div style="position: fixed;top: 120px;width: 260px;margin-left: 214px;padding-right: 20px;text-align: left;">
         <h2 id="namedoc"></h2>
-        <h3>Médecin généraliste</h3>
+        <h3 id="spedoc"></h3>
         </div>
 
         <div style="position: fixed;top: 120px;margin-left: 494px;">

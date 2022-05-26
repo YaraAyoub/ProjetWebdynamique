@@ -38,9 +38,13 @@ function dropDownLab() {
     }
 }
 
-  function openForm(name) {
+  function openForm(data) {
 
-   document.getElementById("namedoc").innerHTML = name;
+    console.log(data);
+
+   document.getElementById("namedoc").innerHTML = "Dr. "+data["Prenom"]+" "+data['Nom'];
+   document.getElementById("spedoc").innerHTML = data["Specialiste"].charAt(0).toUpperCase() + data["Specialiste"].slice(1);
+   // document.getElementById("maildoc").innerHTML = data["Email"];
 
    document.getElementById("popupForm").style.display = "block";
    document.getElementById("pagePopup").style.display = "block";
