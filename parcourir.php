@@ -67,17 +67,19 @@ session_start();
                $sql2 = "SELECT idClient, DateHeure FROM rendezvous WHERE NomMedecin = '$data[Nom]' ";
 
                 $result2 = mysqli_query($db_handle, $sql2);
+                $libre = array();
+                $nonlibre = array();
 
                 while($data2 = mysqli_fetch_assoc($result2))
                 {
                       if($data2['idClient'] == NULL)
-                          $libre = $data2['DateHeure'];
+                          array_push($libre, $data2['DateHeure']);
                       else
-                          $nonlibre = $data2['DateHeure'];
+                          array_push($nonlibre, $data2['DateHeure']);
                 }
                 // echo("<a onclick=\"openForm('{$doc}')\"> <img src=\"PhotoProfils/$image\" height='60' width='50'> $doc</a>");
-                echo "<a onclick='openForm(".json_encode($data).")'> <img src='PhotoProfils/$image' height='60' width='50'>$doc</a>";
-                
+                echo "<a onclick='openForm(".json_encode($data).",".json_encode($libre).",".json_encode($nonlibre).")'> <img src='PhotoProfils/$image' height='60' width='50'>$doc</a>";
+
                 //remplir le tableau RDV
 
               }//end while
@@ -116,7 +118,8 @@ session_start();
 
                   while ($data = mysqli_fetch_assoc($result)) {
                     $spe = ucwords($data['Specialiste']);
-                    echo("<a href=\"#{$spe}\">$spe</a>");
+                    //echo("<a href=\"#{$spe}\">$spe</a>");
+                    echo ("<a href=\"#{$spe}\" onclick=\"showDocSpe()\">$spe</a>");
 
                   }//end while
                 }//end if
@@ -350,13 +353,6 @@ session_start();
         <a href = "#" id="jeu12" class="case" style="color:black;">12:00</a>
         <a href = "#" id="ven12" class="case" style="color:black;">12:00</a>
         <a href = "#" id="sam12" class="case2" style="color:black;">12:00</a>
-
-        <a href = "#" id="lun13" class="case" style="color:black;">13:00</a>
-        <a href = "#" id="mar13" class="case" style="color:black;">13:00</a>
-        <a href = "#" id="mer13" class="case" style="color:black;">13:00</a>
-        <a href = "#" id="jeu13" class="case" style="color:black;">13:00</a>
-        <a href = "#" id="ven13" class="case" style="color:black;">13:00</a>
-        <a href = "#" id="sam13" class="case2" style="color:black;">13:00</a>
 
         <a href = "#" id="lun14" class="case" style="color:black;">14:00</a>
         <a href = "#" id="mar14" class="case" style="color:black;">14:00</a>
