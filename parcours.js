@@ -37,6 +37,7 @@ function dropDownLab() {
       x.style.display = "block";
     }
 }
+
 let data2;
 function openForm(data) {
 

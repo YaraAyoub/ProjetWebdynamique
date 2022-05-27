@@ -376,7 +376,7 @@ session_start();
         <div id="mer17" class="case3">17:00</div>
         <div id="jeu17" class="case3">17:00</div>
         <div id="ven17" class="case3">17:00</div>
-        <div id="sam17">17:00</div>
+        <div id="sam17" style="border: 2px solid #800080;">17:00</div>
 
       </div>
 
