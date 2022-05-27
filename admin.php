@@ -58,7 +58,7 @@
                                 height: 50%;">
 
           <h1>Ajouter un médecin:</h1>
-          <form method="post">
+          <form method="post" enctype="multipart/form-data">
 
             <input type="text" name="nom" placeholder="Nom" required>
             <input type="text" name="prenom" placeholder="Prenom" required> <br>
@@ -68,21 +68,103 @@
             <input type="txt" name="bureau" placeholder="Bureau" required><br>
             <input type="Adresse" name="adresse" placeholder="Adresse" required>
             <input type="txt" name="code" placeholder="Digicode" required><br>
-            <input type="tel" name="tel" placeholder="Telephone" required>
-            <input type="image" name="img" placeholder="Image" required><br>
+            <input type="tel" name="tel" placeholder="Telephone" required></br>
+            <!-- <input type="image" name="img" placeholder="Image" required><br> -->
+            <label>Photo de Profil (.jpg)</label>
+            <input type="file" name="img" placeholder="Image" required><br>
 
+            <input type="submit" name="submit" value="Ajouter" class="btn co" style="background-color: #80008040;
+              font-size: large;
+              margin-top: 8px;
+              margin-left: 220px;
+              padding: 10px;
+              border: none;
+              border-radius: 25px;">
+
+              <?php
+              $nomPP = "pas de photo";
+               //Vérifie si un fichier est Ajouter
+               if(isset($_FILES['img']) AND !empty($_FILES['img']['name'])) {
+                 $tailleMax = 2097152;//taille Max de fichier
+            	   $extensionsValides = array('jpg');
+            	   if($_FILES['img']['size'] <= $tailleMax) {
+            	      $extensionUpload = strtolower(substr(strrchr($_FILES['img']['name'], '.'), 1));
+            	      if(in_array($extensionUpload, $extensionsValides)) {//Vérification du format
+            	         $chemin = "PhotoProfils/".$_POST['nom'].".".$extensionUpload;
+            	         $resultat = move_uploaded_file($_FILES['img']['tmp_name'], $chemin);
+            	         if($resultat) {
+                         $nomPP = $_POST['nom'].".".$extensionUpload;
+
+            	         } else {
+            	            $msg = "Erreur durant l'importation de votre photo de profil";
+            	         }
+            	      } else {
+            	         $msg = "Votre photo de profil doit être au format jpg";
+            	      }
+            	   } else {
+            	      $msg = "Votre photo ne doit pas dépasser 2Mo";
+            	   }
+               }
+               // Vérifier si le formulaire est envoyé
+               if ( isset( $_POST['submit'] ) ) {
+                 $nom = $_POST['nom'];
+                 $prenom = $_POST['prenom'];
+                 $mdp = $_POST['mdp'];
+                 $cv = $_POST['cv'];
+                 $email = $_POST['email'];
+                 $bureau = $_POST['bureau'];
+                 $adresse = $_POST['adresse'];
+                 $code = $_POST['code'];
+                 $tel = $_POST['tel'];
+                 // $img = $_POST['img'];
+                 //Ajout a la base de donné
+
+                 //Le nom de la base de donnée visée
+                 $database = "omnessante";
+                 //connectez-vous dans votre BDD
+                 $db_handle = mysqli_connect('localhost', 'root', '' );
+                 $db_found = mysqli_select_db($db_handle, $database);
+
+                 //si le BDD existe, faire le traitement
+                 if ($db_found) {
+
+                   $sqlcheck = "SELECT count(*) nmb FROM `medecin` WHERE Email='$email'";
+
+                   $resultatcheck = mysqli_query($db_handle, $sqlcheck);
+                   $datacheck = mysqli_fetch_assoc($resultatcheck);
+                   $countcheck = $datacheck['nmb'];
+
+                   if($countcheck==0){
+                     $sqlCalendrier="INSERT INTO `calendrier` (`IdCalendrier`) VALUES (NULL);";
+                     //echo '<script>alert("ERROR : '.$sqlCalendrier.' '.$sqlCalendrier.'")</script>';
+                     mysqli_query($db_handle, $sqlCalendrier);
+
+                     $sqlCalendrier="SELECT MAX(IdCalendrier) as max FROM calendrier";
+                     $resultatcalendrier=mysqli_query($db_handle, $sqlCalendrier);
+                     $datacalendrier = mysqli_fetch_assoc($resultatcalendrier);
+                     $nmbCalendrier = $datacalendrier['max'];
+
+                     $sql="INSERT INTO medecin (`IdMedecin`, `IdCalendrier`, `Nom`, `Prenom`, `MdP`, `Specialiste`, `CV`, `Email`, `Bureau`, `Adresse`, `DigiCode`, `Telephone`, `Image`) VALUES (NULL, $nmbCalendrier, '$nom', '$prenom', '$mdp', 'generaliste', '$cv', '$email', '$bureau', '$adresse', '$code', '$tel', '$nomPP')";
+                     
+                     if(mysqli_query($db_handle, $sql))
+                      echo '<script>alert("Le medecin a été ajouter")</script>';
+                     else
+                      echo '<script>alert("ERROR erg:'.$sql.'")</script>';
+                   }
+                 }
+                 //si le BDD n'existe pas
+                 else {
+                 echo "Database not found";
+                 }
+                 mysqli_close($db_handle);
+
+                 // afficher le résultat
+                 // echo '<h3>Informations récupérées en utilisant POST</h3>';
+                 // echo 'Nom : ' . $nom . ' Age : ' . $img . ' Adresse : ' . $adresse;
+                 exit;
+              }
+            ?>
           </form>
-
-          <button type="submit" class="btn co" style="background-color: #80008040;
-            font-size: large;
-            margin-top: 8px;
-            margin-left: 220px;
-            padding: 10px;
-            border: none;
-            border-radius: 25px;"
-          >Ajouter</button>
-
-        </form>
 
         </div>
 <!--TODO-->
