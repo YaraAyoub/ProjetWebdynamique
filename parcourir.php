@@ -60,6 +60,7 @@ session_start();
                 // $sql2="SELECT Adresse FROM medecin WHERE Specialiste='generaliste' Order by Nom, Prenom";
                 // $result2 = mysqli_query($db_handle, $sql2);
 
+
                 $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
                 $image=$data['Image'];
 
@@ -75,13 +76,9 @@ session_start();
                           $nonlibre = $data2['DateHeure'];
                 }
                 // echo("<a onclick=\"openForm('{$doc}')\"> <img src=\"PhotoProfils/$image\" height='60' width='50'> $doc</a>");
-                echo "<a onclick='openForm(".json_encode($data).")'> <img src='PhotoProfils/$image' height='60' width='50'> $doc</a>";
-
-
+                echo "<a onclick='openForm(".json_encode($data).")'> <img src='PhotoProfils/$image' height='60' width='50'>$doc</a>";
+                
                 //remplir le tableau RDV
-
-
-
 
               }//end while
             }//end if
@@ -214,25 +211,25 @@ session_start();
 
         <div class="grid-container">
           <div style="border: none;background: none;"></div>
-          <div class="case">Lundi</div>
-          <div class="case">Mardi</div>
-          <div class="case">Mercredi</div>
-          <div class="case">Jeudi</div>
-          <div class="case">Vendredi</div>
-          <div class="case2">Samedi</div>
-          <div class="case">Matin</div>
-          <div id="lunMat" class="case"></div>
-          <div id="marMat" class="case"></div>
-          <div id="merMat" class="case"></div>
-          <div id="jeuMat" class="case"></div>
-          <div id="venMat" class="case"></div>
-          <div id="samMat" class="case2"></div>
-          <div class="case3">Aprem</div>
-          <div id="lunAprem" class="case3"></div>
-          <div id="marAprem" class="case3"></div>
-          <div id="merAprem" class="case3"></div>
-          <div id="jeuAprem" class="case3"></div>
-          <div id="venAprem" class="case3"></div>
+          <div class="case0">Lundi</div>
+          <div class="case0">Mardi</div>
+          <div class="case0">Mercredi</div>
+          <div class="case0">Jeudi</div>
+          <div class="case0">Vendredi</div>
+          <div class="case2.0">Samedi</div>
+          <div class="case0">Matin</div>
+          <div id="lunMat" class="case0"></div>
+          <div id="marMat" class="case0"></div>
+          <div id="merMat" class="case0"></div>
+          <div id="jeuMat" class="case0"></div>
+          <div id="venMat" class="case0"></div>
+          <div id="samMat" class="case2.0"></div>
+          <div class="case0.1">Aprem</div>
+          <div id="lunAprem" class="case0.1"></div>
+          <div id="marAprem" class="case0.1"></div>
+          <div id="merAprem" class="case0.1"></div>
+          <div id="jeuAprem" class="case0.1"></div>
+          <div id="venAprem" class="case0.1"></div>
           <div id="samAprem"></div>
         </div>
 
@@ -320,75 +317,79 @@ session_start();
 
 
         <a href = "#" id="lun8" class="case" style="color:black;">08:00</a>
-        <div id="mar8" class="case">08:00</div>
-        <div id="mer8" class="case">08:00</div>
-        <div id="jeu8" class="case">08:00</div>
-        <div id="ven8" class="case">08:00</div>
-        <div id="sam8" class="case2">08:00</div>
+        <a href = "#" id="mar8" class="case" style="color:black;">08:00</a>
+        <a href = "#" id="mer8" class="case" style="color:black;">08:00</a>
+        <a href = "#" id="jeu8" class="case" style="color:black;">08:00</a>
+        <a href = "#" id="ven8" class="case" style="color:black;">08:00</a>
+        <a href = "#" id="sam8" class="case2" style="color:black;">08:00</a>
 
-        <div id="lun9" class="case">09:00</div>
-        <div id="mar9" class="case">09:00</div>
-        <div id="mer9" class="case">09:00</div>
-        <div id="jeu9" class="case">09:00</div>
-        <div id="ven9" class="case">09:00</div>
-        <div id="sam9" class="case2">09:00</div>
+        <a href = "#" id="lun9" class="case" style="color:black;">09:00</a>
+        <a href = "#" id="mar9" class="case" style="color:black;">09:00</a>
+        <a href = "#" id="mer9" class="case" style="color:black;">09:00</a>
+        <a href = "#" id="jeu9" class="case" style="color:black;">09:00</a>
+        <a href = "#" id="ven9" class="case" style="color:black;">09:00</a>
+        <a href = "#" id="sam9" class="case2" style="color:black;">09:00</a>
 
-        <div id="lun10" class="case">10:00</div>
-        <div id="mar10" class="case">10:00</div>
-        <div id="mer10" class="case">10:00</div>
-        <div id="jeu10" class="case">10:00</div>
-        <div id="ven10" class="case">10:00</div>
-        <div id="sam10" class="case2">10:00</div>
+        <a href = "#" id="lun10" class="case" style="color:black;">10:00</a>
+        <a href = "#" id="mar10" class="case" style="color:black;">10:00</a>
+        <a href = "#" id="mer10" class="case" style="color:black;">10:00</a>
+        <a href = "#" id="jeu10" class="case" style="color:black;">10:00</a>
+        <a href = "#" id="ven10" class="case" style="color:black;">10:00</a>
+        <a href = "#" id="sam10" class="case2" style="color:black;">10:00</a>
 
-        <div id="lun11" class="case">11:00</div>
-        <div id="mar11" class="case">11:00</div>
-        <div id="mer11" class="case">11:00</div>
-        <div id="jeu11" class="case">11:00</div>
-        <div id="ven11" class="case">11:00</div>
-        <div id="sam11" class="case2">11:00</div>
+        <a href = "#" id="lun11" class="case" style="color:black;">11:00</a>
+        <a href = "#" id="mar11" class="case" style="color:black;">11:00</a>
+        <a href = "#" id="mer11" class="case" style="color:black;">11:00</a>
+        <a href = "#" id="jeu11" class="case" style="color:black;">11:00</a>
+        <a href = "#" id="ven11" class="case" style="color:black;">11:00</a>
+        <a href = "#" id="sam11" class="case2" style="color:black;">11:00</a>
 
-        <div id="lun12" class="case">12:00</div>
-        <div id="mar12" class="case">12:00</div>
-        <div id="mer12" class="case">12:00</div>
-        <div id="jeu12" class="case">12:00</div>
-        <div id="ven12" class="case">12:00</div>
-        <div id="sam12" class="case2">12:00</div>
+        <a href = "#" id="lun12" class="case" style="color:black;">12:00</a>
+        <a href = "#" id="mar12" class="case" style="color:black;">12:00</a>
+        <a href = "#" id="mer12" class="case" style="color:black;">12:00</a>
+        <a href = "#" id="jeu12" class="case" style="color:black;">12:00</a>
+        <a href = "#" id="ven12" class="case" style="color:black;">12:00</a>
+        <a href = "#" id="sam12" class="case2" style="color:black;">12:00</a>
 
-        <div id="lun14" class="case">14:00</div>
-        <div id="mar14" class="case">14:00</div>
-        <div id="mer14" class="case">14:00</div>
-        <div id="jeu14" class="case">14:00</div>
-        <div id="ven14" class="case">14:00</div>
-        <div id="sam14" class="case2">14:00</div>
+        <a href = "#" id="lun13" class="case" style="color:black;">13:00</a>
+        <a href = "#" id="mar13" class="case" style="color:black;">13:00</a>
+        <a href = "#" id="mer13" class="case" style="color:black;">13:00</a>
+        <a href = "#" id="jeu13" class="case" style="color:black;">13:00</a>
+        <a href = "#" id="ven13" class="case" style="color:black;">13:00</a>
+        <a href = "#" id="sam13" class="case2" style="color:black;">13:00</a>
 
-        <div id="lun15" class="case">15:00</div>
-        <div id="mar15" class="case">15:00</div>
-        <div id="mer15" class="case">15:00</div>
-        <div id="jeu15" class="case">15:00</div>
-        <div id="ven15" class="case">15:00</div>
-        <div id="sam15" class="case2">15:00</div>
+        <a href = "#" id="lun14" class="case" style="color:black;">14:00</a>
+        <a href = "#" id="mar14" class="case" style="color:black;">14:00</a>
+        <a href = "#" id="mer14" class="case" style="color:black;">14:00</a>
+        <a href = "#" id="jeu14" class="case" style="color:black;">14:00</a>
+        <a href = "#" id="ven14" class="case" style="color:black;">14:00</a>
+        <a href = "#" id="sam14" class="case2" style="color:black;">14:00</a>
 
-        <div id="lun16" class="case">16:00</div>
-        <div id="mar16" class="case">16:00</div>
-        <div id="mer16" class="case">16:00</div>
-        <div id="jeu16" class="case">16:00</div>
-        <div id="ven16" class="case">16:00</div>
-        <div id="sam16" class="case2">16:00</div>
+        <a href = "#" id="lun15" class="case" style="color:black;">15:00</a>
+        <a href = "#" id="mar15" class="case" style="color:black;">15:00</a>
+        <a href = "#" id="mer15" class="case" style="color:black;">15:00</a>
+        <a href = "#" id="jeu15" class="case" style="color:black;">15:00</a>
+        <a href = "#" id="ven15" class="case" style="color:black;">15:00</a>
+        <a href = "#" id="sam15" class="case2" style="color:black;">15:00</a>
 
-        <div id="lun17" class="case3">17:00</div>
-        <div id="mar17" class="case3">17:00</div>
-        <div id="mer17" class="case3">17:00</div>
-        <div id="jeu17" class="case3">17:00</div>
-        <div id="ven17" class="case3">17:00</div>
-        <div id="sam17" style="border: 2px solid #800080;">17:00</div>
+        <a href = "#" id="lun16" class="case" style="color:black;">16:00</a>
+        <a href = "#" id="mar16" class="case" style="color:black;">16:00</a>
+        <a href = "#" id="mer16" class="case" style="color:black;">16:00</a>
+        <a href = "#" id="jeu16" class="case" style="color:black;">16:00</a>
+        <a href = "#" id="ven16" class="case" style="color:black;">16:00</a>
+        <a href = "#" id="sam16" class="case2" style="color:black;">16:00</a>
+
+        <a href = "#" id="lun17" class="case3" style="color:black;">17:00</a>
+        <a href = "#" id="mar17" class="case3" style="color:black;">17:00</a>
+        <a href = "#" id="mer17" class="case3" style="color:black;">17:00</a>
+        <a href = "#" id="jeu17" class="case3" style="color:black;">17:00</a>
+        <a href = "#" id="ven17" class="case3" style="color:black;">17:00</a>
+        <a href = "#" id="sam17" class="case3" style="color:black; border: 2px solid #800080;">17:00</a>
 
       </div>
 
 
     </div>
-
-
-
 
       <div id="footer">Copyright &copy; 2022, Omnes Santé<br>
         <a href="mailto:omnes.sante@gmail.com">omnes.sante@gmail.com</a>
