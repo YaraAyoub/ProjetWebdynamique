@@ -178,3 +178,32 @@
 .grid-container .case3{
   border-right: none;
 }
+
+
+
+.case{
+  border-bottom: none;
+  border-right: none;
+}
+
+.case2{
+  border-bottom: none;
+}
+
+.case3{
+  border-right: none;
+}
+
+.case4 {
+  border: 3px solid #800080;
+  font-size: 1.2em;
+  border-bottom: 2px solid #800080;
+  border-right: none;
+}
+
+.case5 {
+  border: 3px solid #800080;
+  font-size: 1.2em;
+  -border-bottom: none;
+  border-bottom: 2px solid #800080;
+}
