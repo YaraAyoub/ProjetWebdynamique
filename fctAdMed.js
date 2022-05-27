@@ -51,7 +51,7 @@ function conslt()
 
 function compteM()
 {
-  document.getElementById("ajout").style.display = "none";
-  document.getElementById("supp").style.display = "none";
+  document.getElementById("conslt").style.display = "none";
+  document.getElementById("chatroom").style.display = "none";
   document.getElementById("compteM").style.display = "block";
 }
