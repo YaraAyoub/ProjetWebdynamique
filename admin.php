@@ -133,7 +133,7 @@
 
                    $resultatcheck = mysqli_query($db_handle, $sqlcheck);
                    $datacheck = mysqli_fetch_assoc($resultatcheck);
-                   $countcheck = $datacheck['nmb'];
+                   $countcheck = $datacheck['nmb']; 
 
                    if($countcheck==0){
                      $sqlCalendrier="INSERT INTO `calendrier` (`IdCalendrier`) VALUES (NULL);";
