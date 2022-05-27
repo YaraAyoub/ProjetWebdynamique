@@ -48,7 +48,7 @@
               <li class="slide-container">
                 <div class="slide-image">
 
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Timisoara_-_Regional_Business_Centre.jpg">
+                  <img src="lab.jpg">
 
                 </div>
 
@@ -65,7 +65,7 @@
               <input type="radio" name="radio-buttons" id="img-2" />
               <li class="slide-container">
                 <div class="slide-image">
-                  <img src="https://content.r9cdn.net/rimg/dimg/db/02/06b291e8-city-14912-171317ad83a.jpg?width=1750&height=1000&xhint=3040&yhint=2553&crop=true">
+                  <img src="vaccin.jpg">
                 </div>
                 <div class="carousel-controls">
                   <label for="img-1" class="prev-slide">
@@ -79,7 +79,7 @@
               <input type="radio" name="radio-buttons" id="img-3" />
               <li class="slide-container">
                 <div class="slide-image">
-                  <img src="https://speakzeasy.files.wordpress.com/2015/05/twa_blogpic_timisoara-4415.jpg">
+                  <img src="assistant.jpg">
                 </div>
                 <div class="carousel-controls">
                   <label for="img-2" class="prev-slide">
@@ -96,6 +96,11 @@
                 <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
               </div>
             </ul>
+          </div>
+
+          <div id="chiffreCle">
+            <h2 style="text-align:center">Bienvenue sur OMNES Santé !</h2>
+            <p>Votre plateforme pour prendre un rendez-vous médical pour la communauté Omnes Education</p>
           </div>
         </div>
 

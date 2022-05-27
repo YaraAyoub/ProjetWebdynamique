@@ -49,6 +49,18 @@ overflow: auto;
  overflow: auto;
 }
 
+#chiffreCle {
+  float: center;
+  background-color: white;
+  width: 70%;
+  min-height: 500px;
+  height: 100%;
+  color: black;
+  overflow: auto;
+  margin-left: 15%;
+  padding-top: 10px;
+}
+
 #footer { font
 -size: .60em;
 width: 100%;
@@ -136,7 +148,7 @@ source : https://codepen.io/ancaspatariu/pen/WpQYOP
 ul.slides {
     -display: block;
     position: relative;
-    height: 600px;          - taille a changer ici
+    height: 800px;          - taille a changer ici
     -min-height: 600px;
     margin: 0;
     padding: 0;
