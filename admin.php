@@ -68,7 +68,8 @@
             <input type="txt" name="bureau" placeholder="Bureau" required><br>
             <input type="Adresse" name="adresse" placeholder="Adresse" required>
             <input type="txt" name="code" placeholder="Digicode" required><br>
-            <input type="tel" name="tel" placeholder="Telephone" required></br>
+            <input type="tel" name="tel" placeholder="Telephone" required>
+            <input type="tel" name="spe" placeholder="Specialisation" required></br>
             <!-- <input type="image" name="img" placeholder="Image" required><br> -->
             <label>Photo de Profil (.jpg)</label>
             <input type="file" name="img" placeholder="Image" required><br>
@@ -116,7 +117,7 @@
                  $adresse = $_POST['adresse'];
                  $code = $_POST['code'];
                  $tel = $_POST['tel'];
-                 // $img = $_POST['img'];
+                 $spe = $_POST['spe'];
                  //Ajout a la base de donné
 
                  //Le nom de la base de donnée visée
@@ -136,7 +137,6 @@
 
                    if($countcheck==0){
                      $sqlCalendrier="INSERT INTO `calendrier` (`IdCalendrier`) VALUES (NULL);";
-                     //echo '<script>alert("ERROR : '.$sqlCalendrier.' '.$sqlCalendrier.'")</script>';
                      mysqli_query($db_handle, $sqlCalendrier);
 
                      $sqlCalendrier="SELECT MAX(IdCalendrier) as max FROM calendrier";
@@ -144,8 +144,8 @@
                      $datacalendrier = mysqli_fetch_assoc($resultatcalendrier);
                      $nmbCalendrier = $datacalendrier['max'];
 
-                     $sql="INSERT INTO medecin (`IdMedecin`, `IdCalendrier`, `Nom`, `Prenom`, `MdP`, `Specialiste`, `CV`, `Email`, `Bureau`, `Adresse`, `DigiCode`, `Telephone`, `Image`) VALUES (NULL, $nmbCalendrier, '$nom', '$prenom', '$mdp', 'generaliste', '$cv', '$email', '$bureau', '$adresse', '$code', '$tel', '$nomPP')";
-                     
+                     $sql="INSERT INTO medecin (`IdMedecin`, `IdCalendrier`, `Nom`, `Prenom`, `MdP`, `Specialiste`, `CV`, `Email`, `Bureau`, `Adresse`, `DigiCode`, `Telephone`, `Image`) VALUES (NULL, $nmbCalendrier, '$nom', '$prenom', '$mdp', '$spe', '$cv', '$email', '$bureau', '$adresse', '$code', '$tel', '$nomPP')";
+
                      if(mysqli_query($db_handle, $sql))
                       echo '<script>alert("Le medecin a été ajouter")</script>';
                      else
@@ -157,10 +157,6 @@
                  echo "Database not found";
                  }
                  mysqli_close($db_handle);
-
-                 // afficher le résultat
-                 // echo '<h3>Informations récupérées en utilisant POST</h3>';
-                 // echo 'Nom : ' . $nom . ' Age : ' . $img . ' Adresse : ' . $adresse;
                  exit;
               }
             ?>
