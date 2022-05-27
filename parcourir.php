@@ -62,8 +62,22 @@ session_start();
 
                 $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
                 $image=$data['Image'];
+
+            /*    $sql2 = "SELECT idClient, DateHeure FROM rendezvous WHERE NomMedecin = '$data['Nom']';"
+
+                $result2 = mysqli_query($db_handle, $sql);
+
+                while($data2 = mysqli_fetch_assoc($result2))
+                {
+
+                }*/
                 // echo("<a onclick=\"openForm('{$doc}')\"> <img src=\"PhotoProfils/$image\" height='60' width='50'> $doc</a>");
                 echo "<a onclick='openForm(".json_encode($data).")'> <img src='PhotoProfils/$image' height='60' width='50'> $doc</a>";
+
+
+                //remplir le tableau RDV
+
+
 
 
               }//end while
@@ -220,7 +234,7 @@ session_start();
         </div>
 
 
-          <button type="button" onclick="openPriseRDV()" style="background-color: #80008040;
+          <button id="buttonRDV" type="button" onclick="openPriseRDV()" style="background-color: #80008040;
             font-size: medium;
             color: black;
             border: none;
@@ -301,7 +315,7 @@ session_start();
         <div class="case4"><strong>Vendredi</strong></div>
         <div class="case5"><strong>Samedi</strong></div>
 
-        <div id="lun8" class="case">08:00</div>
+        <div id="lun8" class="case" onclick="">08:00</div>
         <div id="mar8" class="case">08:00</div>
         <div id="mer8" class="case">08:00</div>
         <div id="jeu8" class="case">08:00</div>

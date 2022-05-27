@@ -37,7 +37,7 @@ function dropDownLab() {
       x.style.display = "block";
     }
 }
-
+let data2;
 function openForm(data) {
 
     console.log(data);
@@ -55,21 +55,22 @@ function openForm(data) {
    document.getElementById("popupForm").style.display = "block";
    document.getElementById("pagePopup").style.display = "block";
 
-   document.getElementById("priseRDVnomDoc").innerHTML = "Dr. "+data["Prenom"]+" "+data['Nom'];
-   document.getElementById("priseRDVspeDoc").innerHTML = data["Specialiste"].charAt(0).toUpperCase() + data["Specialiste"].slice(1);
+   //document.getElementById("boutonRDV").onclick = openPriseRDV;
 
+   data2 = data;
  }
 
 
 function openPriseRDV() {
+
+  document.getElementById("priseRDVnomDoc").innerHTML += "Dr. "+data2["Prenom"]+" "+data2['Nom'];
+  document.getElementById("priseRDVspeDoc").innerHTML = data2["Specialiste"].charAt(0).toUpperCase() + data2["Specialiste"].slice(1);
 
    document.getElementById("popupForm").style.display = "none";
    document.getElementById("pagePopup").style.display = "none";
    document.getElementById("section2").style.display = "none";
    document.getElementById("priseRDV").style.display = "block";
 }
-
-
 
 
   function closeForm() {
