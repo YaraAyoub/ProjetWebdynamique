@@ -301,7 +301,7 @@ session_start();
         <div class="case4"><strong>Vendredi</strong></div>
         <div class="case5"><strong>Samedi</strong></div>
 
-        <div id="lun8" class="case">08:00</div>
+        <div id="lun8" class="case" onclick="">08:00</div>
         <div id="mar8" class="case">08:00</div>
         <div id="mer8" class="case">08:00</div>
         <div id="jeu8" class="case">08:00</div>
@@ -362,7 +362,7 @@ session_start();
         <div id="mer17" class="case3">17:00</div>
         <div id="jeu17" class="case3">17:00</div>
         <div id="ven17" class="case3">17:00</div>
-        <div id="sam17">17:00</div>
+        <div id="sam17" style="border: 2px solid #800080;">17:00</div>
 
       </div>
 
