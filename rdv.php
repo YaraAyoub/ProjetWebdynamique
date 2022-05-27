@@ -2,6 +2,7 @@
 session_start();
 ?>
 
+<!--https://www.delftstack.com/fr/howto/php/onclick-php/#utilisez-du-javascript-simple-pour-ex%25C3%25A9cuter-la-fonction-php-avec-l%25C3%25A9v%25C3%25A9nement-onclick -->
  <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -41,24 +42,143 @@ session_start();
 
         <div id="section2">
 
-                <div class="rdv">
-                  <a class="active">blabla</a>
+          <h2>Rendez-vous à venir</h2>
 
-<!--https://www.delftstack.com/fr/howto/php/onclick-php/#utilisez-du-javascript-simple-pour-ex%25C3%25A9cuter-la-fonction-php-avec-l%25C3%25A9v%25C3%25A9nement-onclick -->
+          <?php
+            //Le nom de la base de donnée visée
+            $database = "omnessante";
+            //connectez-vous dans votre BDD
+            $db_handle = mysqli_connect('localhost', 'root', '' );
+            $db_found = mysqli_select_db($db_handle, $database);
 
-                <a href="#home" class="icon" onclick="clickSuppRdv()">
-                <i class="fa fa-trash-o"></i>
+            $email = $_SESSION['email'];
 
-                <?php
+            //si le BDD existe, faire le traitement
+            if ($db_found) {
+              $sql = "SELECT NomMedecin, NoteMedecin, DateHeure FROM rendezvous r, client c
+                      WHERE r.idClient = c.idClient AND c.Email = '$email' AND NoteMedecin IS NULL";
 
-                function SuppRdv(){
-                print("supp");
+              $result = mysqli_query($db_handle, $sql);
+
+              while ($data = mysqli_fetch_assoc($result)) {
+                $nomDoc = $data['NomMedecin'];
+                $noteDoc = $data['NoteMedecin'];
+                $date = $data['DateHeure'];
+                $jour = substr($date, 0, 3);
+                if(strlen($date) == 4){
+                  $heure = substr($date, -1);
                 }
-                 ?>
+                else {
+                  $heure = substr($date, -2);
+                }
 
-                </a>
-                </div>
+                switch ($jour) {
+                  case 'lun':
+                    $jour = "lundi";
+                    break;
+                  case 'mar':
+                    $jour = "mardi";
+                    break;
+                  case 'mer':
+                    $jour = "mercredi";
+                    break;
+                  case 'jeu':
+                    $jour = "jeudi";
+                    break;
+                  case 'ven':
+                    $jour = "vendredi";
+                    break;
+                  case 'sam':
+                    $jour = "samedi";
+                    break;
+                }
 
+
+                echo("
+                <div class=\"rdv\">
+                  <a class=\"active\">Dr $nomDoc <br>Ce $jour à $heure:00 heure</a>
+
+                  <a href=\"#home\" class=\"icon\" onclick=\"clickSuppRdv()\">
+                    <i class=\"fa fa-trash-o\"></i>
+                  </a>
+                </div>");
+
+
+              }//end while
+            }//end if
+            //si le BDD n'existe pas
+            else {
+            echo "Database not found";
+            }//end else
+            //fermer la connection
+            mysqli_close($db_handle);
+          ?>
+
+          <h2>Rendez-vous passés</h2>
+          <?php
+            //Le nom de la base de donnée visée
+            $database = "omnessante";
+            //connectez-vous dans votre BDD
+            $db_handle = mysqli_connect('localhost', 'root', '' );
+            $db_found = mysqli_select_db($db_handle, $database);
+
+            $email = $_SESSION['email'];
+
+            //si le BDD existe, faire le traitement
+            if ($db_found) {
+              $sql = "SELECT NomMedecin, NoteMedecin, DateHeure FROM rendezvous r, client c
+                      WHERE r.idClient = c.idClient AND c.Email = '$email' AND NoteMedecin IS NOT NULL";
+
+              $result = mysqli_query($db_handle, $sql);
+
+              while ($data = mysqli_fetch_assoc($result)) {
+                $nomDoc = $data['NomMedecin'];
+                $noteDoc = $data['NoteMedecin'];
+                $date = $data['DateHeure'];
+                $jour = substr($date, 0, 3);
+                if(strlen($date) == 4){
+                  $heure = substr($date, -1);
+                }
+                else {
+                  $heure = substr($date, -2);
+                }
+
+                switch ($jour) {
+                  case 'lun':
+                    $jour = "lundi";
+                    break;
+                  case 'mar':
+                    $jour = "mardi";
+                    break;
+                  case 'mer':
+                    $jour = "mercredi";
+                    break;
+                  case 'jeu':
+                    $jour = "jeudi";
+                    break;
+                  case 'ven':
+                    $jour = "vendredi";
+                    break;
+                  case 'sam':
+                    $jour = "samedi";
+                    break;
+                }
+
+                echo("
+                <div class=\"rdv\">
+                  <a class=\"active\">Dr $nomDoc <br>Note du docteur: $noteDoc <br>Le $jour à $heure:00 heure</a>
+                </div>");
+
+
+              }//end while
+            }//end if
+            //si le BDD n'existe pas
+            else {
+            echo "Database not found";
+            }//end else
+            //fermer la connection
+            mysqli_close($db_handle);
+          ?>
 
         </div>
 
