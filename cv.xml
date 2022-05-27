@@ -427,4 +427,74 @@
       <titre>Chef de clinique - Hôpital Européen Georges-Pompidou - Paris - Dermatologie</titre>
     </experience>
   </cv>
+  <cv>
+    <etatcivil>
+      <nom>Vidal</nom>
+      <prenom>Frederic </prenom>
+    </etatcivil>
+    <formation>
+      <date>1981</date>
+      <titre>D.E.S. Médecine générale - Faculté de médecine Bichat</titre>
+    </formation>
+    <experience>
+      <date>1981</date>
+      <titre>Cabinet - Asnières-sur-Seine</titre>
+    </experience>
+  </cv>
+  <cv>
+    <etatcivil>
+      <nom>Hervault</nom>
+      <prenom>Amélie</prenom>
+    </etatcivil>
+    <formation>
+      <date>2019</date>
+      <titre>D.I.U. Santé de l'enfant - Université Paris 5 - Paris-Descartes</titre>
+    </formation>
+    <formation>
+      <date>2018</date>
+      <titre>Diplôme d'État de docteur en médecine - Université Paris 7 - Diderot</titre>
+    </formation>
+    <formation>
+      <date>2018</date>
+      <titre>D.I.U. Contraception et prévention en gynécologie - Université Paris 7 - Diderot</titre>
+    </formation>
+    <formation>
+      <date>2018</date>
+      <titre>D.E.S. Médecine générale - Université Paris 7 - Diderot</titre>
+    </formation>
+  </cv>
+  <cv>
+    <etatcivil>
+      <nom>Masot</nom>
+      <prenom>Emmanuel</prenom>
+    </etatcivil>
+    <formation>
+      <date>2016</date>
+      <titre>D.I.U. Médecine esthétique - Université Paris 5 - Paris-Descartes</titre>
+    </formation>
+    <formation>
+      <date>2012</date>
+      <titre>D.I.U. Hypnose médicale, clinique et thérapeutique - Université Paris 6 - La Pitié Salpetrière</titre>
+    </formation>
+    <formation>
+      <date>2009</date>
+      <titre>Master Santé des populations - Université Paris 13 - Bobigny</titre>
+    </formation>
+    <formation>
+      <date>2009</date>
+      <titre>D.U. Nutrition - Faculté de médecine de Dijon</titre>
+    </formation>
+    <formation>
+      <date>2009</date>
+      <titre>D.I.U. Lasers médicaux - Université Paris 5 - Paris-Descartes</titre>
+    </formation>
+    <experience>
+      <date>2009 – 2010</date>
+      <titre>Cabinet - Paris</titre>
+    </experience>
+    <experience>
+      <date>2006 – 2009</date>
+      <titre>Interne - Hôpital Calmette - Lille</titre>
+    </experience>
+  </cv>
 </liste_cv>
