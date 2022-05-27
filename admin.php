@@ -48,7 +48,6 @@
 
         <p id="titreA">page admin de <?php echo "$_SESSION[email]"; ?></p>
 
-<!--TODO-->
         <div id="ajout" style ="display: none;
                                 margin-top: 5%;
                                 margin-left: 32%;
@@ -133,7 +132,7 @@
 
                    $resultatcheck = mysqli_query($db_handle, $sqlcheck);
                    $datacheck = mysqli_fetch_assoc($resultatcheck);
-                   $countcheck = $datacheck['nmb']; 
+                   $countcheck = $datacheck['nmb'];
 
                    if($countcheck==0){
                      $sqlCalendrier="INSERT INTO `calendrier` (`IdCalendrier`) VALUES (NULL);";
@@ -163,6 +162,7 @@
           </form>
 
         </div>
+
 <!--TODO-->
         <div id="supp" style ="display: none;
                                 margin-top: 5%;
@@ -180,14 +180,46 @@
             <input type="text" name="prenom" placeholder="Prenom" required> <br>
             <input type="email" name="email" placeholder="Email" required><br>
 
-            <button type="submit" class="btn co" style="background-color: #80008040;
+            <input type="submit" name="submit1" value="Supprimer" class="btn co" style="background-color: #80008040;
               font-size: large;
               margin-top: 8px;
               margin-left: 220px;
               padding: 10px;
               border: none;
-              border-radius: 25px;"
-            >Supprimer</button>
+              border-radius: 25px;">
+
+            <?php
+              if ( isset( $_POST['submit1'] ) ){
+                $nom = $_POST['nom'];
+                $prenom = $_POST['prenom'];
+                $email = $_POST['email'];
+
+                $sql = "DELETE FROM `medecin` WHERE `medecin`.`Email` = '$email'";
+
+                //Le nom de la base de donnée visée
+                $database = "omnessante";
+                //connectez-vous dans votre BDD
+                $db_handle = mysqli_connect('localhost', 'root', '' );
+                $db_found = mysqli_select_db($db_handle, $database);
+
+                //si le BDD existe, faire le traitement
+                if ($db_found) {
+                  // $sql = "DELETE FROM `medecin` WHERE `medecin`.`Email` = '$email'";
+                  echo '<script>alert("'.$sql.'")</script>';
+                  if(mysqli_query($db_handle, $sql))
+                   echo '<script>alert("Le medecin a été supprimer")</script>';
+                  else
+                   echo '<script>alert("ERROR erg:'.$sql.'")</script>';
+
+                }//end if
+                //si le BDD n'existe pas
+                else {
+                echo "Database not found";
+                }//end else
+                //fermer la connection
+                mysqli_close($db_handle);
+              }
+            ?>
 
           </form>
 
