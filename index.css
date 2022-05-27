@@ -288,7 +288,7 @@ input:checked + .slide-container .nav label { display: block; }
 
  /* Styles pour le conteneur de forme de la connexion ou inscription*/
 .form-container-connexion {
-  display: none;
+  display: block;
   z-index: 11;
   -max-width: 300px;
   -padding: 20px;

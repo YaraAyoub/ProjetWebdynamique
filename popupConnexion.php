@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -14,12 +14,12 @@
 
 
   <div class="login-popup">
-    <div class="form-popup" id="popupFormCo" onclick="closeFormCo()"></div>
+  <!--  <div class="form-popup" id="popupFormCo" onclick="closeFormCo()"></div>-->
 
     <form method="post" class="form-container-connexion" id="popupCo">
 
 
-      <button type="button" class="btn cancel" onclick="closeFormCo()">X</button>
+    <!--  <button type="button" class="btn cancel" onclick="closeFormCo()">X</button>-->
 
       <h2 style="margin-top: 50px;margin-bottom: 25px;">
         J'ai déjà un compte OMNES Santé
@@ -46,6 +46,7 @@
       <button type="submit" name= "connexion" class="btn co">Connexion</button>
 
       <?php
+
       //saisir les données du formulaire
       $email = isset($_POST["email"])? $_POST["email"] : "";
       $psw = isset($_POST["psw"])? $_POST["psw"] : "";
@@ -79,11 +80,13 @@
          if (mysqli_fetch_assoc($result1)) {  //client
            //echo("<script>setCo('{$email}')</script>");
            $_SESSION['email'] = $email;
+           $_SESSION['type'] = "client";
            header("Location: compte.php");
          }
          else if(mysqli_fetch_assoc($result2))    //admin
          {
             $_SESSION['email'] = $email;
+            $_SESSION['type'] = "admin";
             header("Location: admin.php");
             //echo("<script>setCo('{$email}')</script>");
 
@@ -92,6 +95,7 @@
          {
           //  echo("<script>setCo('{$email}')</script>");
             $_SESSION['email'] = $email;
+            $_SESSION['type'] = "medecin";
             header("Location: medecin.php");
          }
          else {

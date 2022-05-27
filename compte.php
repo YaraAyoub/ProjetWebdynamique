@@ -43,6 +43,9 @@
               <i class="fa fa-user"></i> Vos informations personnelles:
           </h2>
 
+          <p id="titreA">page de <?php echo "$_SESSION[email]"; echo"de type  $_SESSION[type]";?></p>
+
+
           <?php
 
             $mail = $_SESSION['email'];
@@ -116,7 +119,24 @@
             }//end else
             //fermer la connection
             mysqli_close($db_handle);
+
           ?>
+
+          <a href="popupConnexion.php">
+                  <button type="button"
+                    style="background-color: #80008040;
+                    font-size: medium;
+                    color: black;
+                    border: none;
+                    border-radius: 25px;
+                    cursor: pointer;
+                    opacity: 0.8;
+                    position: absolute;
+                    top: 125px;
+                    margin-left: 50%;
+                    padding: 8px;"
+                  >Déconnexion</button>
+                </a>
 
       </div>
 

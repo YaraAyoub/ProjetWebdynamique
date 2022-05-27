@@ -1,6 +1,6 @@
 <?php
-  include ('popupConnexion.php');
- ?>
+session_start();
+?>
 
  <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -27,7 +27,7 @@
       <div id="header">
 
         <div class="btn-group">
-          <a onclick="openFormCo()"><button class="button">Votre compte</button></a>
+          <a href="compte.php"><button class="button">Votre compte</button></a>
           <a href="rdv.php"><button class="button">RDV</button></a>
           <a href="recherche.php"><button class="button">Recherche</button></a>
           <a href="parcourir.php"><button class="button">Tout Parcourir</button></a>

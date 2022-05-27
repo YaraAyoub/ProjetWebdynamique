@@ -1,7 +1,7 @@
 
 let co = "test";
 function setCo(emailProfil){
-  
+
     co = "test2";
 }
 
@@ -74,7 +74,6 @@ function openForm(data) {
   }
 
   function closeFormCo() {
-    initPopupConnexion();
     document.getElementById("popupFormCo").style.display = "none";
     document.getElementById("popupCo").style.display = "none";
   }
