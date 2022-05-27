@@ -38,8 +38,8 @@ function dropDownLab() {
     }
 }
 
-let data2;
-function openForm(data) {
+let data2, dlibre, dnonlibre;
+function openForm(data, libre, nonlibre) {
 
     console.log(data);
 
@@ -59,6 +59,8 @@ function openForm(data) {
    //document.getElementById("boutonRDV").onclick = openPriseRDV;
 
    data2 = data;
+   dlibre = libre;
+   dnonlibre = nonlibre;
  }
 
 
@@ -66,6 +68,12 @@ function openPriseRDV() {
 
   document.getElementById("priseRDVnomDoc").innerHTML += "Dr. "+data2["Prenom"]+" "+data2['Nom'];
   document.getElementById("priseRDVspeDoc").innerHTML = data2["Specialiste"].charAt(0).toUpperCase() + data2["Specialiste"].slice(1);
+
+  for(var i=0; i<dlibre.length;i++)
+  {
+    document.getElementById(dlibre[i]).style.cursor = "not-allowed";
+    document.getElementById(dlibre[i]).style.opacity = "0.6";
+  }
 
    document.getElementById("popupForm").style.display = "none";
    document.getElementById("pagePopup").style.display = "none";

@@ -210,3 +210,16 @@
   -border-bottom: none;
   border-bottom: 2px solid #800080;
 }
+
+.case:hover{
+ background-color: gray;
+  color: black;
+}
+.case2:hover{
+ background-color: gray;
+  color: black;
+}
+.case3:hover{
+ background-color: gray;
+  color: black;
+}

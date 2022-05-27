@@ -63,14 +63,17 @@ session_start();
                 $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
                 $image=$data['Image'];
 
-            /*    $sql2 = "SELECT idClient, DateHeure FROM rendezvous WHERE NomMedecin = '$data['Nom']';"
+               $sql2 = "SELECT idClient, DateHeure FROM rendezvous WHERE NomMedecin = '$data[Nom]' ";
 
-                $result2 = mysqli_query($db_handle, $sql);
+                $result2 = mysqli_query($db_handle, $sql2);
 
                 while($data2 = mysqli_fetch_assoc($result2))
                 {
-
-                }*/
+                      if($data2['idClient'] == NULL)
+                          $libre = $data2['DateHeure'];
+                      else
+                          $nonlibre = $data2['DateHeure'];
+                }
                 // echo("<a onclick=\"openForm('{$doc}')\"> <img src=\"PhotoProfils/$image\" height='60' width='50'> $doc</a>");
                 echo "<a onclick='openForm(".json_encode($data).")'> <img src='PhotoProfils/$image' height='60' width='50'> $doc</a>";
 
@@ -315,7 +318,8 @@ session_start();
         <div class="case4"><strong>Vendredi</strong></div>
         <div class="case5"><strong>Samedi</strong></div>
 
-        <div id="lun8" class="case" onclick="">08:00</div>
+
+        <a href = "#" id="lun8" class="case" style="color:black;">08:00</a>
         <div id="mar8" class="case">08:00</div>
         <div id="mer8" class="case">08:00</div>
         <div id="jeu8" class="case">08:00</div>
