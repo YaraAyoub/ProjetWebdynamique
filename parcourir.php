@@ -35,6 +35,11 @@ session_start();
         </div>
       </div>
 
+      <form action="specialiste.php" method="POST">
+        <input id="choixSpe" name="choixSpe" type="text" style="display:none; position:absolute; top:0%" value="" required>
+        <input id="submitChoixSpe" class="submitbtn" type="submit" value="Voir cette spe" style="display: none;">
+      </form>
+
 
       <div id="section" >
 
