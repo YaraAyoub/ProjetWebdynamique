@@ -65,6 +65,14 @@ function openForm(data, libre, nonlibre) {
    dnonlibre = nonlibre;
  }
 
+function showDocSpe(spe){
+
+  console.log(spe);
+
+  document.getElementById("choixSpe").value = spe ;
+  document.submitSpe.submit() ;
+
+}
 
 function openPriseRDV() {
 

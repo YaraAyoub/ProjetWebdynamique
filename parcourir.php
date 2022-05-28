@@ -35,7 +35,7 @@ session_start();
         </div>
       </div>
 
-      <form action="specialiste.php" method="POST">
+      <form name="submitSpe"action="specialiste.php" method="POST">
         <input id="choixSpe" name="choixSpe" type="text" style="display:none; position:absolute; top:0%" value="" required>
         <input id="submitChoixSpe" class="submitbtn" type="submit" value="Voir cette spe" style="display: none;">
       </form>
@@ -124,7 +124,7 @@ session_start();
                   while ($data = mysqli_fetch_assoc($result)) {
                     $spe = ucwords($data['Specialiste']);
                     //echo("<a href=\"#{$spe}\">$spe</a>");
-                    echo ("<a href=\"#{$spe}\" onclick=\"showDocSpe()\">$spe</a>");
+                    echo ("<a href=\"#{$spe}\" onclick=\"showDocSpe('{$spe}')\">".$spe."</a>");
 
                   }//end while
                 }//end if
