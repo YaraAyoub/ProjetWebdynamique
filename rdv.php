@@ -94,14 +94,28 @@ session_start();
                 }
 
 
-                echo("
-                <div class=\"rdv\">
-                  <a class=\"active\">Dr $nomDoc <br>Ce $jour à $heure:00 heure</a>
+                if(($nomDoc == "Prise de sang")||($nomDoc == "Test PCR Covid")||($nomDoc == "Examen urinaire")||($nomDoc == "Examen des selles"))
+                  {
+                    echo("
+                    <div class=\"rdv\">
+                      <a class=\"active\"> $nomDoc <br>Ce $jour à $heure:00 heure</a>
 
-                  <a href=\"#home\" class=\"icon\" onclick=\"clickSuppRdv()\">
-                    <i class=\"fa fa-trash-o\"></i>
-                  </a>
-                </div>");
+                      <a href=\"#home\" class=\"icon\" onclick=\"clickSuppRdv()\">
+                        <i class=\"fa fa-trash-o\"></i>
+                      </a>
+                    </div>");
+                  }
+                  else
+                  {
+                    echo("
+                    <div class=\"rdv\">
+                      <a class=\"active\">Dr $nomDoc <br>Ce $jour à $heure:00 heure</a>
+
+                      <a href=\"#home\" class=\"icon\" onclick=\"clickSuppRdv()\">
+                        <i class=\"fa fa-trash-o\"></i>
+                      </a>
+                    </div>");
+                  }
 
 
               }//end while

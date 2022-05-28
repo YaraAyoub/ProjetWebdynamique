@@ -48,80 +48,7 @@ session_start();
         //  $idService = $_POST["choixIdService"];
 
           echo ("<h2>Service : ".$service."</h2>");
-
-          //Le nom de la base de donnée visée
-          $database = "omnessante";
-          //connectez-vous dans votre BDD
-          $db_handle = mysqli_connect('localhost', 'root', '' );
-          $db_found = mysqli_select_db($db_handle, $database);
-          //si le BDD existe, faire le traitement
-          if ($db_found) {
-            $sql = "SELECT idClient, DateHeure FROM rendezvous WHERE NomMedecin = '$service' ";
-
-            $result = mysqli_query($db_handle, $sql);
-
-            $libre = array();
-            $nonlibre = array();
-
-            while ($data = mysqli_fetch_assoc($result)) {
-
-
-              if($data['idClient'] == NULL)
-                  array_push($libre, $data['DateHeure']);
-              else
-                  array_push($nonlibre, $data['DateHeure']);
-
-            }
-
-            echo "<script type=\"text/javascript\">
-
-              calendrierSL(".json_encode($libre).");
-
-            </script>
-            ";
-
-            echo "<a href = \"#\" id=\"lun8\" onclick=\"takeResa('lun8')\" class=\"case\" style=\"color:black;\">08:00</a>";
-
-
-/*
-            while ($data = mysqli_fetch_assoc($result)) {
-
-              if($data['idClient'] == NULL){
-                $libre = $data['DateHeure'];
-
-                echo "<script type=\"text/javascript\">
-
-                  calendrierSLLibre('{$libre}');
-
-                </script>";
-              }
-
-
-              else{
-                $nonlibre = $data['DateHeure'];
-
-                echo "<script type=\"text/javascript\">
-
-                  calendrierSLnonLibre('{$nonlibre}');
-
-                </script>";
-              }
-
-            }//end while
-
-*/
-
-
-          }//end if
-          //si le BDD n'existe pas
-          else {
-          echo "Database not found";
-          }//end else
-          //fermer la connection
-          mysqli_close($db_handle);
         ?>
-
-<!--
 
         <div style ="display: grid;
                   grid-template-columns: auto auto auto auto auto auto;
@@ -202,22 +129,87 @@ session_start();
 
         </div>
 
--->
+                <form action="confirmRDVLab.php" method="POST">
+                  <input id="choixLabRDV" name="choixLabRDV" type="text" style="display:none; position:absolute; top:2%" value="">
+                  <input id="choixDateRDV" name="choixDateLabRDV" type="text" style="display:none; position:absolute; top:0%" value="" required>
+                  <input id="submitChoixLabRDV" class="submitbtn" type="submit" value="Choisir ce RDV" style="display: block;">
+                </form>
+
+        <?php
+          //Le nom de la base de donnée visée
+          $database = "omnessante";
+          //connectez-vous dans votre BDD
+          $db_handle = mysqli_connect('localhost', 'root', '' );
+          $db_found = mysqli_select_db($db_handle, $database);
+          //si le BDD existe, faire le traitement
+          if ($db_found) {
+            $sql = "SELECT idClient, DateHeure FROM rendezvous WHERE NomMedecin = '$service' ";
+
+            $result = mysqli_query($db_handle, $sql);
+
+            $libre = array();
+            $nonlibre = array();
+
+            while ($data = mysqli_fetch_assoc($result)) {
+
+
+              if($data['idClient'] == NULL)
+                  array_push($libre, $data['DateHeure']);
+              else
+                  array_push($nonlibre, $data['DateHeure']);
+
+            }
+
+            echo "<script type=\"text/javascript\">
+
+              calendrierSL(".json_encode($service).",".json_encode($libre).",".json_encode($nonlibre).");
+
+            </script>
+            ";
+
+/*
+            while ($data = mysqli_fetch_assoc($result)) {
+
+              if($data['idClient'] == NULL){
+                $libre = $data['DateHeure'];
+
+                echo "<script type=\"text/javascript\">
+
+                  calendrierSLLibre('{$libre}');
+
+                </script>";
+              }
+
+
+              else{
+                $nonlibre = $data['DateHeure'];
+
+                echo "<script type=\"text/javascript\">
+
+                  calendrierSLnonLibre('{$nonlibre}');
+
+                </script>";
+              }
+
+            }//end while
+
+*/
+
+
+          }//end if
+          //si le BDD n'existe pas
+          else {
+          echo "Database not found";
+          }//end else
+          //fermer la connection
+          mysqli_close($db_handle);
+        ?>
 
         </div>
 
 
 
       </div>
-
-
-
-    <form action="confirmationRDV.php" method="POST">
-      <input id="choixLabRDV" name="choixLabRDV" type="text" style="display:none; position:absolute; top:2%" value="">
-      <input id="choixDateLabRDV" name="choixDateLabRDV" type="text" style="display:none; position:absolute; top:0%" value="" required>
-      <input id="submitChoixLabRDV" class="submitbtn" type="submit" value="Choisir ce RDV" style="display: block;">
-    </form>
-
 
       <div id="footer">Copyright &copy; 2022, Omnes Santé<br>
         <a href="mailto:omnes.sante@gmail.com">omnes.sante@gmail.com</a>

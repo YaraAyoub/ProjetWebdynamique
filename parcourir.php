@@ -152,9 +152,7 @@ session_start();
 
             <!-- Top Navigation Menu -->
             <div class="topnav">
-              <a href="#home" class="active" onclick="dropDownLab()">Laboratoire de biologie médicale</a>
 
-              <div id="myLinks3">
 
                 <?php
                   //Le nom de la base de donnée visée
@@ -165,7 +163,6 @@ session_start();
                   //si le BDD existe, faire le traitement
                   if ($db_found) {
 
-// TODO: a remplir ou enlever
                     $sql = "SELECT Bureau, Email, Telephone, Image FROM laboratoire WHERE IdLaboratoire = '100'";
 
                     $result = mysqli_query($db_handle, $sql);
@@ -175,12 +172,22 @@ session_start();
                       $email = $data['Email'];
                       $telephone = $data['Telephone'];
                       $image = $data['Image'];
-                      //echo " <img src='PhotoProfils/$image' height='60' width='50'>$bureau";
+
 
                     }//end while
 
-////////////////
+                    echo ("<a href=\"#home\" class=\"active\" onclick=\"dropDownLab()\">Laboratoire de biologie médicale
+                    <img src=\"PhotoProfils/BioGroup.jpg\" height=\"80\" width=\"70\" style=\"float: left;margin-right: 30px;margin-top: -2px;\"><br>
+                    salle : $bureau<br>
+                    $telephone<br>
+                    $email<br>
+                    </a>");
 
+
+                    echo("<div id=\"myLinks3\">");
+                    
+                  ?>
+                  <?php
                     $sql = "SELECT Nom, IdServiceLab FROM servicelab Order BY Nom";
 
                     $result = mysqli_query($db_handle, $sql);

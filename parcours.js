@@ -68,7 +68,7 @@ function openForm(data, libre, nonlibre) {
  }
 
 //remplir calendrier d'un service du labo
-function calendrierSL(libre, nonlibre) {
+function calendrierSL(type,libre, nonlibre) {
 
   dlibre = libre;
 
@@ -82,34 +82,11 @@ function calendrierSL(libre, nonlibre) {
   for(let i=0;i<dnonlibre.length;i++){
     document.getElementById(dnonlibre[i]).style.background = "purple" ;
     document.getElementById(dnonlibre[i]).style.cursor = "not-allowed" ;
+      document.getElementById(dnonlibre[i]).onclick = "" ;
   }
 
+  document.getElementById("choixLabRDV").value = type ;
 }
-
-/*
-function calendrierSLnonLibre(nonlibre) {
-
-  document.getElementById(nonlibre).style.background = "purple" ;
-  document.getElementById(nonlibre).style.cursor = "not-allowed" ;
-
-
-  dnonlibre.array_push(nonlibre);
-
-  console.log(dnonlibre);
-
-}
-
-function calendrierSLLibre(libre) {
-console.log(libre);
-  console.log("libre");
-  dlibre.push(libre);
-  console.log(dlibre);
-
-  document.getElementById(dlibre).style.background = "none" ;
-
-}
-*/
-
 
 
 function showDocSpe(spe){
@@ -141,6 +118,7 @@ function openPriseRDV() {
   for(let i=0;i<dnonlibre.length;i++){
     document.getElementById(dnonlibre[i]).style.background = "purple" ;
     document.getElementById(dnonlibre[i]).style.cursor = "not-allowed" ;
+      document.getElementById(dnonlibre[i]).onclick = "" ;
   }
 
    document.getElementById("popupForm").style.display = "none";
