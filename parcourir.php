@@ -40,6 +40,12 @@ session_start();
         <input id="submitChoixSpe" class="submitbtn" type="submit" value="Voir cette spe" style="display: none;">
       </form>
 
+      <form name="submitService"action="service.php" method="POST">
+        <input id="choixService" name="choixService" type="text" style="display:none; position:absolute; top:0%" value="" required>
+        <input id="choixIdService" name="choixIdService" type="text" style="display:none; position:absolute; top:0%" value="" required>
+        <input id="submitChoixService" class="submitbtn" type="submit" value="Voir ce service" style="display: none;">
+      </form>
+
 
       <div id="section" >
 
@@ -158,16 +164,31 @@ session_start();
                   $db_found = mysqli_select_db($db_handle, $database);
                   //si le BDD existe, faire le traitement
                   if ($db_found) {
-                    $sql = "SELECT DISTINCT s.Nom FROM service s, prestation p
-                            WHERE s.IdService = p.IdService
-                            And p.IdMedLab>=100
-                            Order BY s.Nom";
+
+// TODO: a remplir ou enlever
+                    $sql = "SELECT Bureau, Email, Telephone, Image FROM laboratoire WHERE IdLaboratoire = '100'";
 
                     $result = mysqli_query($db_handle, $sql);
 
                     while ($data = mysqli_fetch_assoc($result)) {
-                      $exam = $data['Nom'];
-                      echo("<a href=\"#{$exam}\">$exam</a>");
+                      $bureau = $data['Bureau'];
+                      $email = $data['Email'];
+                      $telephone = $data['Telephone'];
+                      $image = $data['Image'];
+                      //echo " <img src='PhotoProfils/$image' height='60' width='50'>$bureau";
+
+                    }//end while
+
+////////////////
+
+                    $sql = "SELECT Nom, IdServiceLab FROM servicelab Order BY Nom";
+
+                    $result = mysqli_query($db_handle, $sql);
+
+                    while ($data = mysqli_fetch_assoc($result)) {
+                      $service = $data['Nom'];
+                      $idService = $data['IdServiceLab'];
+                      echo ("<a href=\"#{$service}\" onclick=\"showServiceLab('{$service}','{$idService}')\">".$service."</a>");
 
                     }//end while
                   }//end if

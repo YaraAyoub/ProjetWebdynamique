@@ -56,6 +56,7 @@ session_start();
 
           $nomMedecin = $_POST["choixDocRDV"];
           $dateHeure = $_POST["choixDateRDV"];
+          $email = $_SESSION['email'];
 
           $jour = substr($dateHeure, 0, 3);
           if(strlen($dateHeure) == 4){
@@ -97,7 +98,7 @@ session_start();
           $db_found = mysqli_select_db($db_handle, $database);
           //si le BDD existe, faire le traitement
           if ($db_found) {
-            $sqlId = "SELECT IdClient FROM client WHERE Email = 'gilbert.clement@profil.com'";
+            $sqlId = "SELECT IdClient FROM client WHERE Email = '$email'";
 
             $resultatIdClient = mysqli_query($db_handle, $sqlId);
             $dataId = mysqli_fetch_assoc($resultatIdClient );

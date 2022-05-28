@@ -1,4 +1,4 @@
-
+/*
 let co = "test";
 function setCo(emailProfil){
 
@@ -9,8 +9,9 @@ function getCo(){
 
     document.getElementById("titreA").innerHTML += co;
 }
+*/
 
-
+// afficher les docteurs généraliste tout parcourir
 function dropDownDoc() {
   var x = document.getElementById("myLinks1");
   if (x.style.display === "block") {
@@ -20,6 +21,7 @@ function dropDownDoc() {
   }
 }
 
+// afficher les specialité tout parcourir
 function dropDownSpe() {
   var x = document.getElementById("myLinks2");
   if (x.style.display === "block") {
@@ -29,6 +31,7 @@ function dropDownSpe() {
   }
 }
 
+// afficher les services du laboratoire tout parcourir
 function dropDownLab() {
     var x = document.getElementById("myLinks3");
     if (x.style.display === "block") {
@@ -38,10 +41,9 @@ function dropDownLab() {
     }
 }
 
+//affichage info d'un doc
 let data2, dlibre, dnonlibre;
 function openForm(data, libre, nonlibre) {
-
-    console.log(data);
 
     document.getElementById("photodoc").src = "PhotoProfils/"+data["Image"];
 
@@ -65,12 +67,65 @@ function openForm(data, libre, nonlibre) {
    dnonlibre = nonlibre;
  }
 
-function showDocSpe(spe){
+//remplir calendrier d'un service du labo
+function calendrierSL(libre, nonlibre) {
 
-  console.log(spe);
+  dlibre = libre;
+
+    console.log(dlibre);
+  dnonlibre = nonlibre;
+
+  for(let i=0;i<dlibre.length;i++){
+    document.getElementById(dlibre[i]).style.background = "none" ;
+  }
+
+  for(let i=0;i<dnonlibre.length;i++){
+    document.getElementById(dnonlibre[i]).style.background = "purple" ;
+    document.getElementById(dnonlibre[i]).style.cursor = "not-allowed" ;
+  }
+
+}
+
+/*
+function calendrierSLnonLibre(nonlibre) {
+
+  document.getElementById(nonlibre).style.background = "purple" ;
+  document.getElementById(nonlibre).style.cursor = "not-allowed" ;
+
+
+  dnonlibre.array_push(nonlibre);
+
+  console.log(dnonlibre);
+
+}
+
+function calendrierSLLibre(libre) {
+console.log(libre);
+  console.log("libre");
+  dlibre.push(libre);
+  console.log(dlibre);
+
+  document.getElementById(dlibre).style.background = "none" ;
+
+}
+*/
+
+
+
+function showDocSpe(spe){
 
   document.getElementById("choixSpe").value = spe ;
   document.submitSpe.submit() ;
+
+}
+
+function showServiceLab(service, idService){
+
+  console.log(service);
+
+  document.getElementById("choixService").value = service ;
+  document.getElementById("choixIdService").value = idService ;
+  document.submitService.submit() ;
 
 }
 
