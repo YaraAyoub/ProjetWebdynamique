@@ -39,6 +39,8 @@
             Inscription
           </h2>
 
+          <form method="post" enctype="multipart/form-data">
+
             <input type="text" id="nom" placeholder="Nom" name="nom" required=""
               style="margin-bottom: 20px;
                 padding-right: 64px;
@@ -62,14 +64,6 @@
                 width: 250px;"
             >
 
-            <input type="text" id="adresse" placeholder="Adresse" name="adresse" required=""
-              style="margin-bottom: 20px;
-                padding-right: 64px;
-                padding-top: 8px;
-                padding-bottom: 8px;
-                font-size: 15px;"
-            >
-
             <input type="number" id="carteVitale" placeholder="Carte Vitale" name="carteVitale" required=""
               style="margin-bottom: 20px;
                 padding-right: 64px;
@@ -77,6 +71,49 @@
                 padding-bottom: 8px;
                 font-size: 15px;"
             >
+
+            <input type="tel" id="tel" placeholder="Telephone" name="tel" required=""
+              style="margin-bottom: 20px;
+                padding-right: 64px;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                font-size: 15px;"
+            ><br>
+
+            <input type="text" id="adresse1" placeholder="Adresse 1" name="adresse1" required=""
+              style="margin-bottom: 20px;
+                padding-right: 64px;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                font-size: 15px;"
+            >
+
+            <input type="text" id="adresse2" placeholder="Adresse 2" name="adresse2"
+              style="margin-bottom: 20px;
+                padding-right: 64px;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                font-size: 15px;"
+            >
+
+            <input type="number" id="codePostal" placeholder="Code Postal " name="codePostal" required=""
+              style="margin-bottom: 20px;
+                padding-right: 64px;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                font-size: 15px;"
+            >
+
+            <input type="text" id="pays" placeholder="Pays" name="pays" required=""
+              style="margin-bottom: 20px;
+                padding-right: 64px;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                font-size: 15px;"
+            >
+            <br>
+            <label>Photo de Profil (.jpg)</label>
+            <input type="file" name="img" placeholder="Image" required>
 
 
             <h2 style="margin-top: 40px;font-size: 0.9em;">
@@ -142,16 +179,110 @@
             >
 
             <a href="compte.php">
-              <button type="submit" class="btn co" style="background-color: #80008040;
+              <input type="submit" name="submit" value="Valider" class="btn co" style="background-color: #80008040;
                 font-size: large;
                 margin-top: 8px;
                 margin-left: 220px;
                 padding: 10px;
                 border: none;
                 border-radius: 25px;"
-              >Valider</button>
+                >
             </a>
 
+            <?php
+            $nomPP = "pas de photo";
+             //Vérifie si un fichier est Ajouter
+             if(isset($_FILES['img']) AND !empty($_FILES['img']['name'])) {
+               $tailleMax = 2097152;//taille Max de fichier
+               $extensionsValides = array('jpg');
+               if($_FILES['img']['size'] <= $tailleMax) {
+                  $extensionUpload = strtolower(substr(strrchr($_FILES['img']['name'], '.'), 1));
+                  if(in_array($extensionUpload, $extensionsValides)) {//Vérification du format
+                     $chemin = "PhotoProfils/".$_POST['nom'].".".$extensionUpload;
+                     $resultat = move_uploaded_file($_FILES['img']['tmp_name'], $chemin);
+                     if($resultat) {
+                       $nomPP = $_POST['nom'].".".$extensionUpload;
+
+                     } else {
+                        $msg = "Erreur durant l'importation de votre photo de profil";
+                     }
+                  } else {
+                     $msg = "Votre photo de profil doit être au format jpg";
+                  }
+               } else {
+                  $msg = "Votre photo ne doit pas dépasser 2Mo";
+               }
+             }
+             // Vérifier si le formulaire est envoyé
+             if ( isset( $_POST['submit'] ) ) {
+               $nom = $_POST['nom'];
+               $prenom = $_POST['prenom'];
+               $dateNaissance = $_POST['dateNaissance'];
+               $carteVitale = $_POST['carteVitale'];
+               $telphone = $_POST['tel'];
+               $adresse1  = $_POST['adresse1'];
+               $adresse2 = $_POST['adresse2'];
+               $codePostal = $_POST['codePostal'];
+               $pays = $_POST['pays'];
+               $email = $_POST['email'];
+               $mdp = $_POST['psw'];
+               $nomCarte = $_POST['nomCarte'];
+               $numCarte = $_POST['numCarte'];
+               $typeCarte = $_POST['typeCarte'];
+               $expCarte = $_POST['expCarte'];
+               $CVV = $_POST['CVV'];
+               //Ajout a la base de donné
+
+               //Le nom de la base de donnée visée
+               $database = "omnessante";
+               //connectez-vous dans votre BDD
+               $db_handle = mysqli_connect('localhost', 'root', '' );
+               $db_found = mysqli_select_db($db_handle, $database);
+
+               //si le BDD existe, faire le traitement
+               if ($db_found) {
+
+                 $sqlcheck = "SELECT count(*) nmb FROM `client` WHERE Email='$email'";
+
+                 $resultatcheck = mysqli_query($db_handle, $sqlcheck);
+                 $datacheck = mysqli_fetch_assoc($resultatcheck);
+                 $countcheck = $datacheck['nmb'];
+
+                 if($countcheck==0){
+                   $sqlPayment="INSERT INTO `payment` (`IdPayment`, `IdClient`,  `Type`,  `Numero`,  `Nom`,  `DateExpiration`,  `CodeSecurite`) VALUES (NULL, 0, '$typeCarte', '$numCarte', '$nomCarte', '$expCarte', '$CVV');";
+                   // mysqli_query($db_handle, $sqlPayment);
+                   if(mysqli_query($db_handle, $sqlPayment)){
+                     echo '<script>alert("Succès ajout payment")</script>';
+
+                     $sqlPayment="SELECT MAX(IdPayment) as max FROM payment";
+                     $resultatpayment=mysqli_query($db_handle, $sqlPayment);
+                     $datapayment = mysqli_fetch_assoc($resultatpayment);
+                     $nmbPayment = $datapayment['max'];
+
+                     $sql="INSERT INTO client (`IdClient`, `IdPayment`, `Nom`, `Prenom`, `MdP`, `Telephone`, `Email`, `CarteVital`, `DateNaissance`, `Adresse1`, `Adresse2`, `CodePostal`, `Pays`, `Image`) VALUES (NULL, $nmbPayment, '$nom', '$prenom', '$mdp', '$telphone', '$email', '$carteVitale', '$dateNaissance', '$adresse1', '$adresse2', '$codePostal', '$pays', '$nomPP')";
+
+                     if(mysqli_query($db_handle, $sql))
+                      echo '<script>alert("Votre profil a été créé")</script>';
+                     else
+                      echo '<script>alert("ERROR erg:'.$sql.'")</script>';
+
+                      $sqlUpdate="UPDATE `payment` SET `IdClient` = (SELECT IdClient FROM client WHERE Nom ='$nom') WHERE `payment`.`IdClient` = 0; ";
+                      mysqli_query($db_handle, $sqlUpdate);
+                   }
+
+                   else
+                    echo '<script>alert("ERROR erg:'.$sqlPayment.'")</script>';
+                 }
+               }
+               //si le BDD n'existe pas
+               else {
+               echo "Database not found";
+               }
+               mysqli_close($db_handle);
+               exit;
+            }
+          ?>
+          </form>
         </div>
       </div>
 
