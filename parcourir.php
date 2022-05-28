@@ -251,7 +251,7 @@ session_start();
           >Prendre RDV</button>
 
 
-        <a href="CV.php">
+        <!-- <a href="CV.php">
           <button type="button" onclick="closeForm()"
             style="background-color: #80008040;
             font-size: medium;
@@ -265,7 +265,19 @@ session_start();
             margin-left: -70px;
             padding: 8px;"
           >Voir son CV</button>
-        </a>
+        </a> -->
+        <button id="buttonCV" type="button" onclick="openCV()" style="background-color: #80008040;
+          font-size: medium;
+          color: black;
+          border: none;
+          border-radius: 25px;
+          cursor: pointer;
+          opacity: 0.8;
+          position: fixed;
+          top: 470px;
+          margin-left: -70px;
+          padding: 8px;"
+        >Voir son CV</button>
 
         <a href="priseRDV.php">
           <button type="button" onclick="closeForm()"
@@ -388,6 +400,21 @@ session_start();
 
       </div>
 
+    </div>
+
+    <div id="monCv" style ="display:none;
+                            margin-top: 5%;
+                            margin-left: 15%;
+                            background-color: transparent;
+                            width: 70%;
+                            min-height: 100px;
+                            height: 50%;
+                            text-align: center;
+                            position: absolute;
+                            top: 10%;
+                            overflow: auto;">
+      <h1 id="CVnomDoc">Le CV de : </h1>
+      <h2 id="CVspeDoc">Médecin </h2>
     </div>
 
       <div id="footer">Copyright &copy; 2022, Omnes Santé<br>

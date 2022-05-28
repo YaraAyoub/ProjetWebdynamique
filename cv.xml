@@ -1,500 +1,496 @@
 <?xml version="1.0" encoding="iso-8859-1" standalone="no" ?>
 <!DOCTYPE liste_cv SYSTEM "cv.dtd">
 <liste_cv>
-  <cv>
-    <etatcivil>
-      <nom>Garcia</nom>
-      <prenom>Coppelia</prenom>
-    </etatcivil>
-
-    <formation>
-      <date>Actuellement</date>
-      <titre>en formation en "psychodrame, thérapie de groupe et techniques d’action" (centre d’études CEPSY Moreno de Paris)</titre>
-    </formation>
-    <formation>
-      <date>2017</date>
-      <titre>master 1 et 2 en "psychologie de l’enfance, de l’adolescence et des institutions" (université de Nanterre)</titre>
-    </formation>
-    <formation>
-      <date>2012</date>
-      <titre>diplôme universitaire en "psychothérapie par le jeu" (université autonome du Mexique)</titre>
-    </formation>
-    <formation>
-      <date>2010</date>
-      <titre>diplôme universitaire en "théorie et techniques de psychanalyse" (société psychanalytique du Mexique)</titre>
-    </formation>
-    <formation>
-      <date>2009</date>
-      <titre>master 1 de psychologie clinique (université Ibéro-américaine, Mexique).</titre>
-    </formation>
-
-    <experience>
-      <date>2019</date>
-      <titre>cabinet privé en psychologie, Asnières-sur-Seine</titre>
-    </experience>
-    <experience>
-      <date>2020</date>
-      <titre>psychologue dans l'association ESPEREM Foyer Clair Matin Grégoire, Paris</titre>
-    </experience>
-    <experience>
-      <date>2018 - 2020</date>
-      <titre>psychologue dans l'association Parrains Par Mille, Paris</titre>
-    </experience>
-    <experience>
-      <date>2016 - 2017</date>
-      <titre>stagiaire au sein du centre médical psychologique Wladimir Granoff, Nanterre</titre>
-    </experience>
-    <experience>
-      <date>2015 - 2017</date>
-      <titre>stagiaire dans l'éducation nationale, Les Lillas</titre>
-    </experience>
-    <experience>
-      <date>2010 - 2012</date>
-      <titre>hôpital pédiatrique d’Iztapalapa, Mexique</titre>
-    </experience>
-    <experience>
-      <date>2010 –2011</date>
-      <titre>institut clinico-psychopédagogique Lapierre, Mexique</titre>
-    </experience>
-  </cv>
-  <cv>
-    <etatcivil>
-      <nom>Ploye</nom>
-      <prenom>Julien</prenom>
-    </etatcivil>
-
-    <formation>
-      <date>2020</date>
-      <titre>Thérapie processuelle - Action Form</titre>
-    </formation>
-    <formation>
-      <date>2017</date>
-      <titre>Spécialisation Thérapie des Schémas - AFTCC</titre>
-    </formation>
-    <formation>
-      <date>2016</date>
-      <titre>Formation au psycho traumatisme (PTSD) - AFAR</titre>
-    </formation>
-    <formation>
-      <date>2015</date>
-      <titre>Spécialisation Affirmation de soi - AFTCC</titre>
-    </formation>
-    <formation>
-      <date>2014</date>
-      <titre>Spécialisation Mindfullness ( Méditation de Pleine conscience) - AFTCC</titre>
-    </formation>
-    <formation>
-      <date>2013</date>
-      <titre>Spécialisation Thérapie d'Acceptation et d'Engagement - AFTCC</titre>
-    </formation>
-    <formation>
-      <date>2011</date>
-      <titre>Diplôme AFTCC de formation aux Thérapies Comportementales et Cognitives - Formation théorique, pratique et supervision de 3 ans après le Master de psychologie</titre>
-    </formation>
-    <formation>
-      <date>2007</date>
-      <titre>Master de psychologie clinique, psychopathologie et psychologie de la santé - Neuropsychologie - Université Lille 3</titre>
-    </formation>
-    <experience>
-      <date>2017</date>
-      <titre>Cabinet - Asnières, 92600</titre>
-    </experience>
-    <experience>
-      <date>2017</date>
-      <titre>Cabinet - Levallois, 92300</titre>
-    </experience>
-    <experience>
-      <date>2012 - 2017</date>
-      <titre>Cabinet - Courbevoie, 92400</titre>
-    </experience>
-    <experience>
-      <date>2007 - 2017</date>
-      <titre>Praticien - Centre Hospitalier Rives de Seine - Courbevoie – Gérontologie</titre>
-    </experience>
-  </cv>
-  <cv>
-    <etatcivil>
-      <nom>Grauzam</nom>
-      <prenom>Geraldine</prenom>
-    </etatcivil>
-    <formation>
-      <date>2016</date>
-      <titre>D.I.U. Médecine esthétique - Université Paris 5 - Paris-Descartes</titre>
-    </formation>
-    <formation>
-      <date>2012</date>
-      <titre>D.I.U. Hypnose médicale, clinique et thérapeutique - Université Paris 6 - La Pitié Salpetrière</titre>
-    </formation>
-    <formation>
-      <date>2009</date>
-      <titre>Master Santé des populations - Université Paris 13 - Bobigny</titre>
-    </formation>
-    <formation>
-      <date>2009</date>
-      <titre>D.U. Nutrition - Faculté de médecine de Dijon</titre>
-    </formation>
-    <formation>
-      <date>2009</date>
-      <titre>D.I.U. Lasers médicaux - Université Paris 5 - Paris-Descartes</titre>
-    </formation>
-    <experience>
-      <date>2009 – 2010</date>
-      <titre>Cabinet - Paris</titre>
-    </experience>
-    <experience>
-      <date>2006 – 2009</date>
-      <titre>Interne - Hôpital Calmette - Lille</titre>
-    </experience>
-  </cv>
-  <cv>
-    <etatcivil>
-      <nom>Bah</nom>
-      <prenom>Hassimiou</prenom>
-    </etatcivil>
-    <experience>
-      <date>2021</date>
-      <titre>Assistant généraliste - Hôpital de Coulommiers - Médecine polyvalente</titre>
-    </experience>
-    <experience>
-      <date>2015</date>
-      <titre>Assistant généraliste - Hôpital Marne La vallée - Médecine interne</titre>
-    </experience>
-
-  </cv>
-  <cv>
-    <etatcivil>
-      <nom>Coudreau</nom>
-      <prenom>Sylvie</prenom>
-    </etatcivil>
-    <formation>
-      <date>2003</date>
-      <titre>Diplôme d’Etude Spécialisé Complémentaire de Nutrition - Université Paris 6 -Pierre et Marie</titre>
-    </formation>
-    <formation>
-      <date>2002</date>
-      <titre>Thèse de Médecine - Université Paris 6 -Pierre et Marie</titre>
-    </formation>
-    <formation>
-      <date>2002</date>
-      <titre>DES Endocrinologie, Diabète et Métabolisme - Université Pierre et Marie Curie (UPMC)</titre>
-    </formation>
-    <formation>
-      <date>2001</date>
-      <titre>Diplôme d’Etudes Approfondies d’Endocrinologie et Interactions Cellulaires - Université Paris 11 - Kremlin-Bicêtre</titre>
-    </formation>
-    <experience>
-      <date>2002</date>
-      <titre>Cabinet - Formations à des médecins généralistes et pharmaciens en Endocrinologie, Diabétologie et Nutrition</titre>
-    </experience>
-    <experience>
-      <date>2007 – 2014</date>
-      <titre>Praticienne attachée - Hôpital universitaire Pitié-Salpêtrière - Paris - Pôle d'Endocrinologie, Diabétologie et Nutrition</titre>
-    </experience>
-    <experience>
-      <date>2006 – 2012</date>
-      <titre>Cabinet - Membre du commité de scientifique la revue "Réalité en Nutrition et Diabétologie"</titre>
-    </experience>
-    <experience>
-      <date>2003 – 2009</date>
-      <titre>Cabinet - Membre du comité pédagogique du Diplôme Universitaire de « l’obésité de l’enfant et de l’adolescent »</titre>
-    </experience>
-    <experience>
-      <date>2004 – 2007</date>
-      <titre>Praticienne attachée - Hôpital Hôtel-Dieu - Paris – Nutrition</titre>
-    </experience>
-    <experience>
-      <date>2004 – 2005</date>
-      <titre>Cabinet - Membre du comité scientifique de la campagne « jeune et alimentation »</titre>
-    </experience>
-    <experience>
-      <date>2002 – 2004</date>
-      <titre>Chef de clinique assistante - Hôpital Hôtel-Dieu - Paris - Diabétologie et Nutrition</titre>
-    </experience>
-  </cv>
-  <cv>
-    <etatcivil>
-      <nom>Fysekids</nom>
-      <prenom>Marinos </prenom>
-    </etatcivil>
-    <formation>
-      <date>2019</date>
-      <titre>D.E.S.C. Nutrition - Sorbonne Université</titre>
-    </formation>
-    <formation>
-      <date>2016</date>
-      <titre>Doctorat en sciences - École doctorale Galilée</titre>
-    </formation>
-    <formation>
-      <date>2009</date>
-      <titre>Diplôme universitaire de « Médecine et Biologie de la reproduction » - UPMC Paris VI</titre>
-    </formation>
-    <formation>
-      <date>2007</date>
-      <titre>Diplôme Universitaire « Diététique et Nutrition clinique et thérapeutique » - Paris VII</titre>
-    </formation>
-    <formation>
-      <date>2006</date>
-      <titre>Master de Recherche. Biologie Cellulaire Physiologie Pathologie (BCPP) Spécialité «Nutrition-Métabolisme Energétique - Signalisation» - Paris VII</titre>
-    </formation>
-    <formation>
-      <date>2004</date>
-      <titre>Diplôme Universitaire « Tumeurs Endocrines» - Paris V</titre>
-    </formation>
-    <formation>
-      <date>2004</date>
-      <titre>D.U. Pharmacologie Endocrinienne - Paris VII</titre>
-    </formation>
-    <formation>
-      <date>2003</date>
-      <titre>D.U. Pathologie Hypothalamo-Hypohysaire - Paris XI</titre>
-    </formation>
-    <formation>
-      <date>1995</date>
-      <titre>Diplôme d'État de docteur en médecine - Université Aristote de Thessalonique</titre>
-    </formation>
-    <experience>
-      <date>2019</date>
-      <titre>Cabinet - Aulnay-sous-Bois</titre>
-    </experience>
-    <experience>
-      <date>2019</date>
-      <titre>Cabinet - Limeil-Brévannes</titre>
-    </experience>
-    <experience>
-      <date>2013 – 2019</date>
-      <titre>Praticien hospitalier - Hôpital Avicenne - Bobigny - Endocrinologie-diabétologie-nutrition</titre>
-    </experience>
-    <experience>
-      <date>2009 – 2010</date>
-      <titre>Chef de clinique des universités-assistant des hôpitaux - Hôpital Avicenne - Bobigny - Endocrinologie-diabétologie-nutrition</titre>
-    </experience>
-    <experience>
-      <date>2007 – 2008</date>
-      <titre>Chef de clinique des universités-assistant des hôpitaux - Hôpital Tenon - Paris - Explorations fonctionnelles</titre>
-    </experience>
-    <experience>
-      <date>2006 – 2007</date>
-      <titre>Chef de clinique des universités-assistant des hôpitaux - Hôpital Bichat-Claude Bernard - Paris - Endocrinologie-diabétologie-nutrition</titre>
-    </experience>
-  </cv>
-  <cv>
-    <etatcivil>
-      <nom>Margulies</nom>
-      <prenom>Pierre</prenom>
-    </etatcivil>
-    <formation>
-      <date>2016</date>
-      <titre>Chargé d'enseignement - Faculté de Médecine - Paris XIII</titre>
-    </formation>
-    <formation>
-      <date>2014</date>
-      <titre>Diplôme Inter-Universitaire de Médecine Manuelle Ostéopathie - Faculté de Médecine - Paris XIII</titre>
-    </formation>
-    <experience>
-      <date>2018</date>
-      <titre>Médecin ostéopathe - Clinique Geoffroy Saint-Hilaire - Paris - Institut Parisien du Dos</titre>
-    </experience>
-  </cv>
-  <cv>
-    <etatcivil>
-      <nom>Lebkowski</nom>
-      <prenom>Anna</prenom>
-    </etatcivil>
-    <formation>
-      <date>2000</date>
-      <titre>D.U. Échographie gynécologique et obstétricale - Université Paris 6 - La Pitié Salpetrière</titre>
-    </formation>
-    <experience>
-      <date>1989</date>
-      <titre>Cabinet – Paris</titre>
-    </experience>
-    <experience>
-      <date>1979 – 2012</date>
-      <titre>Praticienne attachée - Hôpital universitaire Pitié-Salpêtrière - Paris - Gynécologie obstétrique</titre>
-    </experience>
-  </cv>
-  <cv>
-    <etatcivil>
-      <nom>Aeberhard</nom>
-      <prenom>Patrick</prenom>
-    </etatcivil>
-    <formation>
-      <date>2000</date>
-      <titre>Diplôme d'État de docteur en médecine - Université Paris 7 - Lariboisière</titre>
-    </formation>
-    <experience>
-      <date>2014</date>
-      <titre>Cabinet - Paris</titre>
-    </experience>
-    <experience>
-      <date>2000 – 2015</date>
-      <titre>Chef de service - Centre Cardiologique du Nord de la Porte de Paris - Saint Denis - Cardiologie</titre>
-    </experience>
-  </cv>
-  <cv>
-    <etatcivil>
-      <nom>Beranger</nom>
-      <prenom>Géraldine </prenom>
-    </etatcivil>
-    <formation>
-      <date>2015</date>
-      <titre>Master de psychologie clinique et psychothérapies - Université Paris 8 - Vincennes Saint-Denis</titre>
-    </formation>
-    <formation>
-      <date>2014</date>
-      <titre>D.U. Psychopathologie et psychotraumatisme - Université Paris 5 - Paris-Descartes</titre>
-    </formation>
-    <formation>
-      <date>2013</date>
-      <titre>D.U. Clinique de la relation et intervention stratégique - Université Paris 8 - Vincennes Saint-Denis</titre>
-    </formation>
-    <formation>
-      <date>2012</date>
-      <titre>D.E.S.U. Prise en charge des addictions - Université Paris 8 - Vincennes Saint-Denis</titre>
-    </formation>
-    <experience>
-      <date>2016</date>
-      <titre>cabinet Paris</titre>
-    </experience>
-  </cv>
-  <cv>
-    <etatcivil>
-      <nom>Canesi</nom>
-      <prenom>Michel-François </prenom>
-    </etatcivil>
-    <formation>
-      <date>1983</date>
-      <titre>Docteur en Dermatologie</titre>
-    </formation>
-    <experience>
-      <date>1982</date>
-      <titre>cabinet Paris</titre>
-    </experience>
-  </cv>
-  <cv>
-    <etatcivil>
-      <nom>Scialom</nom>
-      <prenom>Sophie </prenom>
-    </etatcivil>
-    <formation>
-      <date>2017</date>
-      <titre>D.E.S.C. Cancérologie - Université Paris 5 - Paris-Descartes</titre>
-    </formation>
-    <formation>
-      <date>2013</date>
-      <titre>Diplôme d'État de docteur en médecine - Université Paris 5 - Paris-Descartes</titre>
-    </formation>
-    <formation>
-      <date>2012</date>
-      <titre>D.I.U. Études approfondies des maladies inflammatoires chroniques intestinales - Université Paris 5 - Paris-Descartes</titre>
-    </formation>
-    <formation>
-      <date>2005</date>
-      <titre>Ingénieur civil - Ecole des Mines de Nancy</titre>
-    </formation>
-    <experience>
-      <date>2019</date>
-      <titre>Praticien attaché - Hôpital Cochin - Paris - Gastro-entérologie</titre>
-    </experience>
-    <experience>
-      <date>2017 – 2019</date>
-      <titre>Médecin - Royal London Hospital - Londres - Gastro-entérologie</titre>
-    </experience>
-    <experience>
-      <date>2016 – 2016</date>
-      <titre>Cabinet - Cachan</titre>
-    </experience>
-    <experience>
-      <date>2013 – 2016</date>
-      <titre> Chef de clinique - Hôpital Européen Georges-Pompidou - Paris - Gastro-entérologie</titre>
-    </experience>
-    <experience>
-      <date>2009 – 2013</date>
-      <titre>Interne - Assistance Publique - Hôpitaux de Paris</titre>
-    </experience>
-  </cv>
-  <cv>
-    <etatcivil>
-      <nom>Bellaiche</nom>
-      <prenom>Philippe </prenom>
-    </etatcivil>
-    <experience>
-      <date>2016</date>
-      <titre>Attaché à l'Hôpital - Hôpital Saint-Louis - Paris - Service Sabouraud</titre>
-    </experience>
-    <experience>
-      <date>2015</date>
-      <titre>Chef de clinique - Hôpital Européen Georges-Pompidou - Paris - Dermatologie</titre>
-    </experience>
-  </cv>
-  <cv>
-    <etatcivil>
-      <nom>Vidal</nom>
-      <prenom>Frederic </prenom>
-    </etatcivil>
-    <formation>
-      <date>1981</date>
-      <titre>D.E.S. Médecine générale - Faculté de médecine Bichat</titre>
-    </formation>
-    <experience>
-      <date>1981</date>
-      <titre>Cabinet - Asnières-sur-Seine</titre>
-    </experience>
-  </cv>
-  <cv>
-    <etatcivil>
-      <nom>Hervault</nom>
-      <prenom>Amélie</prenom>
-    </etatcivil>
-    <formation>
-      <date>2019</date>
-      <titre>D.I.U. Santé de l'enfant - Université Paris 5 - Paris-Descartes</titre>
-    </formation>
-    <formation>
-      <date>2018</date>
-      <titre>Diplôme d'État de docteur en médecine - Université Paris 7 - Diderot</titre>
-    </formation>
-    <formation>
-      <date>2018</date>
-      <titre>D.I.U. Contraception et prévention en gynécologie - Université Paris 7 - Diderot</titre>
-    </formation>
-    <formation>
-      <date>2018</date>
-      <titre>D.E.S. Médecine générale - Université Paris 7 - Diderot</titre>
-    </formation>
-  </cv>
-  <cv>
-    <etatcivil>
-      <nom>Masot</nom>
-      <prenom>Emmanuel</prenom>
-    </etatcivil>
-    <formation>
-      <date>2016</date>
-      <titre>D.I.U. Médecine esthétique - Université Paris 5 - Paris-Descartes</titre>
-    </formation>
-    <formation>
-      <date>2012</date>
-      <titre>D.I.U. Hypnose médicale, clinique et thérapeutique - Université Paris 6 - La Pitié Salpetrière</titre>
-    </formation>
-    <formation>
-      <date>2009</date>
-      <titre>Master Santé des populations - Université Paris 13 - Bobigny</titre>
-    </formation>
-    <formation>
-      <date>2009</date>
-      <titre>D.U. Nutrition - Faculté de médecine de Dijon</titre>
-    </formation>
-    <formation>
-      <date>2009</date>
-      <titre>D.I.U. Lasers médicaux - Université Paris 5 - Paris-Descartes</titre>
-    </formation>
-    <experience>
-      <date>2009 – 2010</date>
-      <titre>Cabinet - Paris</titre>
-    </experience>
-    <experience>
-      <date>2006 – 2009</date>
-      <titre>Interne - Hôpital Calmette - Lille</titre>
-    </experience>
-  </cv>
+	<cv>
+		<etatcivil>
+			<nom>Garcia</nom>
+			<prenom>Coppelia</prenom>
+		</etatcivil>
+		<formation>
+			<date>Actuellement</date>
+			<titre>en formation en "psychodrame, thérapie de groupe et techniques d’action" (centre d’études CEPSY Moreno de Paris)</titre>
+		</formation>
+		<formation>
+			<date>2017</date>
+			<titre>master 1 et 2 en "psychologie de l’enfance, de l’adolescence et des institutions" (université de Nanterre)</titre>
+		</formation>
+		<formation>
+			<date>2012</date>
+			<titre>diplôme universitaire en "psychothérapie par le jeu" (université autonome du Mexique)</titre>
+		</formation>
+		<formation>
+			<date>2010</date>
+			<titre>diplôme universitaire en "théorie et techniques de psychanalyse" (société psychanalytique du Mexique)</titre>
+		</formation>
+		<formation>
+			<date>2009</date>
+			<titre>master 1 de psychologie clinique (université Ibéro-américaine, Mexique).</titre>
+		</formation>
+		<experience>
+			<date>2019</date>
+			<titre>cabinet privé en psychologie, Asnières-sur-Seine</titre>
+		</experience>
+		<experience>
+			<date>2020</date>
+			<titre>psychologue dans l'association ESPEREM Foyer Clair Matin Grégoire, Paris</titre>
+		</experience>
+		<experience>
+			<date>2018 - 2020</date>
+			<titre>psychologue dans l'association Parrains Par Mille, Paris</titre>
+		</experience>
+		<experience>
+			<date>2016 - 2017</date>
+			<titre>stagiaire au sein du centre médical psychologique Wladimir Granoff, Nanterre</titre>
+		</experience>
+		<experience>
+			<date>2015 - 2017</date>
+			<titre>stagiaire dans l'éducation nationale, Les Lillas</titre>
+		</experience>
+		<experience>
+			<date>2010 - 2012</date>
+			<titre>hôpital pédiatrique d’Iztapalapa, Mexique</titre>
+		</experience>
+		<experience>
+			<date>2010 –2011</date>
+			<titre>institut clinico-psychopédagogique Lapierre, Mexique</titre>
+		</experience>
+	</cv>
+	<cv>
+		<etatcivil>
+			<nom>Ploye</nom>
+			<prenom>Julien</prenom>
+		</etatcivil>
+		<formation>
+			<date>2020</date>
+			<titre>Thérapie processuelle - Action Form</titre>
+		</formation>
+		<formation>
+			<date>2017</date>
+			<titre>Spécialisation Thérapie des Schémas - AFTCC</titre>
+		</formation>
+		<formation>
+			<date>2016</date>
+			<titre>Formation au psycho traumatisme (PTSD) - AFAR</titre>
+		</formation>
+		<formation>
+			<date>2015</date>
+			<titre>Spécialisation Affirmation de soi - AFTCC</titre>
+		</formation>
+		<formation>
+			<date>2014</date>
+			<titre>Spécialisation Mindfullness ( Méditation de Pleine conscience) - AFTCC</titre>
+		</formation>
+		<formation>
+			<date>2013</date>
+			<titre>Spécialisation Thérapie d'Acceptation et d'Engagement - AFTCC</titre>
+		</formation>
+		<formation>
+			<date>2011</date>
+			<titre>Diplôme AFTCC de formation aux Thérapies Comportementales et Cognitives - Formation théorique, pratique et supervision de 3 ans après le Master de psychologie</titre>
+		</formation>
+		<formation>
+			<date>2007</date>
+			<titre>Master de psychologie clinique, psychopathologie et psychologie de la santé - Neuropsychologie - Université Lille 3</titre>
+		</formation>
+		<experience>
+			<date>2017</date>
+			<titre>Cabinet - Asnières, 92600</titre>
+		</experience>
+		<experience>
+			<date>2017</date>
+			<titre>Cabinet - Levallois, 92300</titre>
+		</experience>
+		<experience>
+			<date>2012 - 2017</date>
+			<titre>Cabinet - Courbevoie, 92400</titre>
+		</experience>
+		<experience>
+			<date>2007 - 2017</date>
+			<titre>Praticien - Centre Hospitalier Rives de Seine - Courbevoie – Gérontologie</titre>
+		</experience>
+	</cv>
+	<cv>
+		<etatcivil>
+			<nom>Grauzam</nom>
+			<prenom>Geraldine</prenom>
+		</etatcivil>
+		<formation>
+			<date>2016</date>
+			<titre>D.I.U. Médecine esthétique - Université Paris 5 - Paris-Descartes</titre>
+		</formation>
+		<formation>
+			<date>2012</date>
+			<titre>D.I.U. Hypnose médicale, clinique et thérapeutique - Université Paris 6 - La Pitié Salpetrière</titre>
+		</formation>
+		<formation>
+			<date>2009</date>
+			<titre>Master Santé des populations - Université Paris 13 - Bobigny</titre>
+		</formation>
+		<formation>
+			<date>2009</date>
+			<titre>D.U. Nutrition - Faculté de médecine de Dijon</titre>
+		</formation>
+		<formation>
+			<date>2009</date>
+			<titre>D.I.U. Lasers médicaux - Université Paris 5 - Paris-Descartes</titre>
+		</formation>
+		<experience>
+			<date>2009 – 2010</date>
+			<titre>Cabinet - Paris</titre>
+		</experience>
+		<experience>
+			<date>2006 – 2009</date>
+			<titre>Interne - Hôpital Calmette - Lille</titre>
+		</experience>
+	</cv>
+	<cv>
+		<etatcivil>
+			<nom>Bah</nom>
+			<prenom>Hassimiou</prenom>
+		</etatcivil>
+		<experience>
+			<date>2021</date>
+			<titre>Assistant généraliste - Hôpital de Coulommiers - Médecine polyvalente</titre>
+		</experience>
+		<experience>
+			<date>2015</date>
+			<titre>Assistant généraliste - Hôpital Marne La vallée - Médecine interne</titre>
+		</experience>
+	</cv>
+	<cv>
+		<etatcivil>
+			<nom>Coudreau</nom>
+			<prenom>Sylvie</prenom>
+		</etatcivil>
+		<formation>
+			<date>2003</date>
+			<titre>Diplôme d’Etude Spécialisé Complémentaire de Nutrition - Université Paris 6 -Pierre et Marie</titre>
+		</formation>
+		<formation>
+			<date>2002</date>
+			<titre>Thèse de Médecine - Université Paris 6 -Pierre et Marie</titre>
+		</formation>
+		<formation>
+			<date>2002</date>
+			<titre>DES Endocrinologie, Diabète et Métabolisme - Université Pierre et Marie Curie (UPMC)</titre>
+		</formation>
+		<formation>
+			<date>2001</date>
+			<titre>Diplôme d’Etudes Approfondies d’Endocrinologie et Interactions Cellulaires - Université Paris 11 - Kremlin-Bicêtre</titre>
+		</formation>
+		<experience>
+			<date>2002</date>
+			<titre>Cabinet - Formations à des médecins généralistes et pharmaciens en Endocrinologie, Diabétologie et Nutrition</titre>
+		</experience>
+		<experience>
+			<date>2007 – 2014</date>
+			<titre>Praticienne attachée - Hôpital universitaire Pitié-Salpêtrière - Paris - Pôle d'Endocrinologie, Diabétologie et Nutrition</titre>
+		</experience>
+		<experience>
+			<date>2006 – 2012</date>
+			<titre>Cabinet - Membre du commité de scientifique la revue "Réalité en Nutrition et Diabétologie"</titre>
+		</experience>
+		<experience>
+			<date>2003 – 2009</date>
+			<titre>Cabinet - Membre du comité pédagogique du Diplôme Universitaire de « l’obésité de l’enfant et de l’adolescent »</titre>
+		</experience>
+		<experience>
+			<date>2004 – 2007</date>
+			<titre>Praticienne attachée - Hôpital Hôtel-Dieu - Paris – Nutrition</titre>
+		</experience>
+		<experience>
+			<date>2004 – 2005</date>
+			<titre>Cabinet - Membre du comité scientifique de la campagne « jeune et alimentation »</titre>
+		</experience>
+		<experience>
+			<date>2002 – 2004</date>
+			<titre>Chef de clinique assistante - Hôpital Hôtel-Dieu - Paris - Diabétologie et Nutrition</titre>
+		</experience>
+	</cv>
+	<cv>
+		<etatcivil>
+			<nom>Fysekids</nom>
+			<prenom>Marinos </prenom>
+		</etatcivil>
+		<formation>
+			<date>2019</date>
+			<titre>D.E.S.C. Nutrition - Sorbonne Université</titre>
+		</formation>
+		<formation>
+			<date>2016</date>
+			<titre>Doctorat en sciences - École doctorale Galilée</titre>
+		</formation>
+		<formation>
+			<date>2009</date>
+			<titre>Diplôme universitaire de « Médecine et Biologie de la reproduction » - UPMC Paris VI</titre>
+		</formation>
+		<formation>
+			<date>2007</date>
+			<titre>Diplôme Universitaire « Diététique et Nutrition clinique et thérapeutique » - Paris VII</titre>
+		</formation>
+		<formation>
+			<date>2006</date>
+			<titre>Master de Recherche. Biologie Cellulaire Physiologie Pathologie (BCPP) Spécialité «Nutrition-Métabolisme Energétique - Signalisation» - Paris VII</titre>
+		</formation>
+		<formation>
+			<date>2004</date>
+			<titre>Diplôme Universitaire « Tumeurs Endocrines» - Paris V</titre>
+		</formation>
+		<formation>
+			<date>2004</date>
+			<titre>D.U. Pharmacologie Endocrinienne - Paris VII</titre>
+		</formation>
+		<formation>
+			<date>2003</date>
+			<titre>D.U. Pathologie Hypothalamo-Hypohysaire - Paris XI</titre>
+		</formation>
+		<formation>
+			<date>1995</date>
+			<titre>Diplôme d'État de docteur en médecine - Université Aristote de Thessalonique</titre>
+		</formation>
+		<experience>
+			<date>2019</date>
+			<titre>Cabinet - Aulnay-sous-Bois</titre>
+		</experience>
+		<experience>
+			<date>2019</date>
+			<titre>Cabinet - Limeil-Brévannes</titre>
+		</experience>
+		<experience>
+			<date>2013 – 2019</date>
+			<titre>Praticien hospitalier - Hôpital Avicenne - Bobigny - Endocrinologie-diabétologie-nutrition</titre>
+		</experience>
+		<experience>
+			<date>2009 – 2010</date>
+			<titre>Chef de clinique des universités-assistant des hôpitaux - Hôpital Avicenne - Bobigny - Endocrinologie-diabétologie-nutrition</titre>
+		</experience>
+		<experience>
+			<date>2007 – 2008</date>
+			<titre>Chef de clinique des universités-assistant des hôpitaux - Hôpital Tenon - Paris - Explorations fonctionnelles</titre>
+		</experience>
+		<experience>
+			<date>2006 – 2007</date>
+			<titre>Chef de clinique des universités-assistant des hôpitaux - Hôpital Bichat-Claude Bernard - Paris - Endocrinologie-diabétologie-nutrition</titre>
+		</experience>
+	</cv>
+	<cv>
+		<etatcivil>
+			<nom>Margulies</nom>
+			<prenom>Pierre</prenom>
+		</etatcivil>
+		<formation>
+			<date>2016</date>
+			<titre>Chargé d'enseignement - Faculté de Médecine - Paris XIII</titre>
+		</formation>
+		<formation>
+			<date>2014</date>
+			<titre>Diplôme Inter-Universitaire de Médecine Manuelle Ostéopathie - Faculté de Médecine - Paris XIII</titre>
+		</formation>
+		<experience>
+			<date>2018</date>
+			<titre>Médecin ostéopathe - Clinique Geoffroy Saint-Hilaire - Paris - Institut Parisien du Dos</titre>
+		</experience>
+	</cv>
+	<cv>
+		<etatcivil>
+			<nom>Lebkowski</nom>
+			<prenom>Anna</prenom>
+		</etatcivil>
+		<formation>
+			<date>2000</date>
+			<titre>D.U. Échographie gynécologique et obstétricale - Université Paris 6 - La Pitié Salpetrière</titre>
+		</formation>
+		<experience>
+			<date>1989</date>
+			<titre>Cabinet – Paris</titre>
+		</experience>
+		<experience>
+			<date>1979 – 2012</date>
+			<titre>Praticienne attachée - Hôpital universitaire Pitié-Salpêtrière - Paris - Gynécologie obstétrique</titre>
+		</experience>
+	</cv>
+	<cv>
+		<etatcivil>
+			<nom>Aeberhard</nom>
+			<prenom>Patrick</prenom>
+		</etatcivil>
+		<formation>
+			<date>2000</date>
+			<titre>Diplôme d'État de docteur en médecine - Université Paris 7 - Lariboisière</titre>
+		</formation>
+		<experience>
+			<date>2014</date>
+			<titre>Cabinet - Paris</titre>
+		</experience>
+		<experience>
+			<date>2000 – 2015</date>
+			<titre>Chef de service - Centre Cardiologique du Nord de la Porte de Paris - Saint Denis - Cardiologie</titre>
+		</experience>
+	</cv>
+	<cv>
+		<etatcivil>
+			<nom>Beranger</nom>
+			<prenom>Géraldine </prenom>
+		</etatcivil>
+		<formation>
+			<date>2015</date>
+			<titre>Master de psychologie clinique et psychothérapies - Université Paris 8 - Vincennes Saint-Denis</titre>
+		</formation>
+		<formation>
+			<date>2014</date>
+			<titre>D.U. Psychopathologie et psychotraumatisme - Université Paris 5 - Paris-Descartes</titre>
+		</formation>
+		<formation>
+			<date>2013</date>
+			<titre>D.U. Clinique de la relation et intervention stratégique - Université Paris 8 - Vincennes Saint-Denis</titre>
+		</formation>
+		<formation>
+			<date>2012</date>
+			<titre>D.E.S.U. Prise en charge des addictions - Université Paris 8 - Vincennes Saint-Denis</titre>
+		</formation>
+		<experience>
+			<date>2016</date>
+			<titre>cabinet Paris</titre>
+		</experience>
+	</cv>
+	<cv>
+		<etatcivil>
+			<nom>Canesi</nom>
+			<prenom>Michel-François </prenom>
+		</etatcivil>
+		<formation>
+			<date>1983</date>
+			<titre>Docteur en Dermatologie</titre>
+		</formation>
+		<experience>
+			<date>1982</date>
+			<titre>cabinet Paris</titre>
+		</experience>
+	</cv>
+	<cv>
+		<etatcivil>
+			<nom>Scialom</nom>
+			<prenom>Sophie </prenom>
+		</etatcivil>
+		<formation>
+			<date>2017</date>
+			<titre>D.E.S.C. Cancérologie - Université Paris 5 - Paris-Descartes</titre>
+		</formation>
+		<formation>
+			<date>2013</date>
+			<titre>Diplôme d'État de docteur en médecine - Université Paris 5 - Paris-Descartes</titre>
+		</formation>
+		<formation>
+			<date>2012</date>
+			<titre>D.I.U. Études approfondies des maladies inflammatoires chroniques intestinales - Université Paris 5 - Paris-Descartes</titre>
+		</formation>
+		<formation>
+			<date>2005</date>
+			<titre>Ingénieur civil - Ecole des Mines de Nancy</titre>
+		</formation>
+		<experience>
+			<date>2019</date>
+			<titre>Praticien attaché - Hôpital Cochin - Paris - Gastro-entérologie</titre>
+		</experience>
+		<experience>
+			<date>2017 – 2019</date>
+			<titre>Médecin - Royal London Hospital - Londres - Gastro-entérologie</titre>
+		</experience>
+		<experience>
+			<date>2016 – 2016</date>
+			<titre>Cabinet - Cachan</titre>
+		</experience>
+		<experience>
+			<date>2013 – 2016</date>
+			<titre> Chef de clinique - Hôpital Européen Georges-Pompidou - Paris - Gastro-entérologie</titre>
+		</experience>
+		<experience>
+			<date>2009 – 2013</date>
+			<titre>Interne - Assistance Publique - Hôpitaux de Paris</titre>
+		</experience>
+	</cv>
+	<cv>
+		<etatcivil>
+			<nom>Bellaiche</nom>
+			<prenom>Philippe </prenom>
+		</etatcivil>
+		<experience>
+			<date>2016</date>
+			<titre>Attaché à l'Hôpital - Hôpital Saint-Louis - Paris - Service Sabouraud</titre>
+		</experience>
+		<experience>
+			<date>2015</date>
+			<titre>Chef de clinique - Hôpital Européen Georges-Pompidou - Paris - Dermatologie</titre>
+		</experience>
+	</cv>
+	<cv>
+		<etatcivil>
+			<nom>Vidal</nom>
+			<prenom>Frederic </prenom>
+		</etatcivil>
+		<formation>
+			<date>1981</date>
+			<titre>D.E.S. Médecine générale - Faculté de médecine Bichat</titre>
+		</formation>
+		<experience>
+			<date>1981</date>
+			<titre>Cabinet - Asnières-sur-Seine</titre>
+		</experience>
+	</cv>
+	<cv>
+		<etatcivil>
+			<nom>Hervault</nom>
+			<prenom>Amélie</prenom>
+		</etatcivil>
+		<formation>
+			<date>2019</date>
+			<titre>D.I.U. Santé de l'enfant - Université Paris 5 - Paris-Descartes</titre>
+		</formation>
+		<formation>
+			<date>2018</date>
+			<titre>Diplôme d'État de docteur en médecine - Université Paris 7 - Diderot</titre>
+		</formation>
+		<formation>
+			<date>2018</date>
+			<titre>D.I.U. Contraception et prévention en gynécologie - Université Paris 7 - Diderot</titre>
+		</formation>
+		<formation>
+			<date>2018</date>
+			<titre>D.E.S. Médecine générale - Université Paris 7 - Diderot</titre>
+		</formation>
+	</cv>
+	<cv>
+		<etatcivil>
+			<nom>Masot</nom>
+			<prenom>Emmanuel</prenom>
+		</etatcivil>
+		<formation>
+			<date>2016</date>
+			<titre>D.I.U. Médecine esthétique - Université Paris 5 - Paris-Descartes</titre>
+		</formation>
+		<formation>
+			<date>2012</date>
+			<titre>D.I.U. Hypnose médicale, clinique et thérapeutique - Université Paris 6 - La Pitié Salpetrière</titre>
+		</formation>
+		<formation>
+			<date>2009</date>
+			<titre>Master Santé des populations - Université Paris 13 - Bobigny</titre>
+		</formation>
+		<formation>
+			<date>2009</date>
+			<titre>D.U. Nutrition - Faculté de médecine de Dijon</titre>
+		</formation>
+		<formation>
+			<date>2009</date>
+			<titre>D.I.U. Lasers médicaux - Université Paris 5 - Paris-Descartes</titre>
+		</formation>
+		<experience>
+			<date>2009 – 2010</date>
+			<titre>Cabinet - Paris</titre>
+		</experience>
+		<experience>
+			<date>2006 – 2009</date>
+			<titre>Interne - Hôpital Calmette - Lille</titre>
+		</experience>
+	</cv>
 </liste_cv>
