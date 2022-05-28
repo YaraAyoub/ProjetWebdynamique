@@ -1,6 +1,8 @@
 <?php
 session_start();
+
  ?>
+
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -9,7 +11,8 @@ session_start();
      <title>Omnes Santé</title>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
      <link href="index.css" rel="stylesheet" type="text/css" />
-      <link href="parcourir.css" rel="stylesheet" type="text/css" />
+      <link href="specialiste.css" rel="stylesheet" type="text/css" />
+      <link href="rdv.css" rel="stylesheet" type="text/css" />
      <link href="logo.jpg" rel="icon" type="images/x-icon" />
      <script type="text/javascript" src="parcours.js"></script>
      <meta charset="utf-8" />
@@ -35,161 +38,74 @@ session_start();
         </div>
       </div>
 
-      <form name="submitSpe"action="specialiste.php" method="POST">
-        <input id="choixSpe" name="choixSpe" type="text" style="display:none; position:absolute; top:0%" value="" required>
-        <input id="submitChoixSpe" class="submitbtn" type="submit" value="Voir cette spe" style="display: none;">
-      </form>
+
+    <div id="section">
+
+      <div id="section2">
+
+        <?php
+
+          $spe = $_POST["choixSpe"];
+          echo ("<h2>Parcourir : ".$spe."</h2>");
+
+          //Le nom de la base de donnée visée
+          $database = "omnessante";
+          //connectez-vous dans votre BDD
+          $db_handle = mysqli_connect('localhost', 'root', '' );
+          $db_found = mysqli_select_db($db_handle, $database);
+          //si le BDD existe, faire le traitement
+          if ($db_found) {
+            $sql = "SELECT Nom, Prenom, Specialiste, Email, Bureau, Adresse, DigiCode, Telephone, Image FROM medecin WHERE Specialiste='$spe' Order by Nom, Prenom";
+
+            $result = mysqli_query($db_handle, $sql);
+
+            while ($data = mysqli_fetch_assoc($result)) {
+
+              $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
+              $image=$data['Image'];
+
+             $sql2 = "SELECT idClient, DateHeure FROM rendezvous WHERE NomMedecin = '$data[Nom]' ";
+
+              $result2 = mysqli_query($db_handle, $sql2);
+              $libre = array();
+              $nonlibre = array();
+
+              while($data2 = mysqli_fetch_assoc($result2))
+              {
+                    if($data2['idClient'] == NULL)
+                        array_push($libre, $data2['DateHeure']);
+                    else
+                        array_push($nonlibre, $data2['DateHeure']);
+              }
+
+              echo("
+              <div class=\"rdv\">
+                <a class=\"active\" onclick='openForm(".json_encode($data).",".json_encode($libre).",".json_encode($nonlibre).")'>
+                  <img src='PhotoProfils/$image' height='60' width='50'>$doc
+                </a>
+              </div>");
 
 
-      <div id="section" >
-
-        <div id="section2" style ="display: block;">
-
-          <div class="topnav">
-            <a href="#home" class="active" onclick="dropDownDoc()">Médecine générale</a>
-            <div id="myLinks1">
-
-          <?php
-            //Le nom de la base de donnée visée
-            $database = "omnessante";
-            //connectez-vous dans votre BDD
-            $db_handle = mysqli_connect('localhost', 'root', '' );
-            $db_found = mysqli_select_db($db_handle, $database);
-            //si le BDD existe, faire le traitement
-            if ($db_found) {
-              $sql = "SELECT Nom, Prenom, Specialiste, Email, Bureau, Adresse, DigiCode, Telephone, Image FROM medecin WHERE Specialiste='generaliste' Order by Nom, Prenom";
-
-              $result = mysqli_query($db_handle, $sql);
-
-              while ($data = mysqli_fetch_assoc($result)) {
-                // $sql2="SELECT Adresse FROM medecin WHERE Specialiste='generaliste' Order by Nom, Prenom";
-                // $result2 = mysqli_query($db_handle, $sql2);
+            }//end while
+          }//end if
+          //si le BDD n'existe pas
+          else {
+          echo "Database not found";
+          }//end else
+          //fermer la connection
+          mysqli_close($db_handle);
+        ?>
 
 
-                $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
-                $image=$data['Image'];
 
-               $sql2 = "SELECT idClient, DateHeure FROM rendezvous WHERE NomMedecin = '$data[Nom]' ";
+        </div>
 
-                $result2 = mysqli_query($db_handle, $sql2);
-                $libre = array();
-                $nonlibre = array();
-
-                while($data2 = mysqli_fetch_assoc($result2))
-                {
-                      if($data2['idClient'] == NULL)
-                          array_push($libre, $data2['DateHeure']);
-                      else
-                          array_push($nonlibre, $data2['DateHeure']);
-                }
-                // echo("<a onclick=\"openForm('{$doc}')\"> <img src=\"PhotoProfils/$image\" height='60' width='50'> $doc</a>");
-                echo "<a onclick='openForm(".json_encode($data).",".json_encode($libre).",".json_encode($nonlibre).")'> <img src='PhotoProfils/$image' height='60' width='50'>$doc</a>";
-
-                //remplir le tableau RDV
-
-              }//end while
-            }//end if
-            //si le BDD n'existe pas
-            else {
-            echo "Database not found";
-            }//end else
-            //fermer la connection
-            mysqli_close($db_handle);
-          ?>
-
-          </div>
-
-          <a href="javascript:void(0);" class="icon" onclick="dropDownDoc()">
-          <i class="fa fa-chevron-down"></i>
-
-          </a>
-          </div>
-          <!-- Top Navigation Menu -->
-          <div class="topnav">
-            <a href="#home" class="active" onclick="dropDownSpe()">Médecins spécialistes</a>
-            <div id="myLinks2">
-
-              <?php
-                //Le nom de la base de donnée visée
-                $database = "omnessante";
-                //connectez-vous dans votre BDD
-                $db_handle = mysqli_connect('localhost', 'root', '' );
-                $db_found = mysqli_select_db($db_handle, $database);
-                //si le BDD existe, faire le traitement
-                if ($db_found) {
-                  $sql = "SELECT Distinct Specialiste FROM medecin Order by Specialiste";
-
-                  $result = mysqli_query($db_handle, $sql);
-
-                  while ($data = mysqli_fetch_assoc($result)) {
-                    $spe = ucwords($data['Specialiste']);
-                    //echo("<a href=\"#{$spe}\">$spe</a>");
-                    echo ("<a href=\"#{$spe}\" onclick=\"showDocSpe('{$spe}')\">".$spe."</a>");
-
-                  }//end while
-                }//end if
-                //si le BDD n'existe pas
-                else {
-                echo "Database not found";
-                }//end else
-                //fermer la connection
-                mysqli_close($db_handle);
-              ?>
-
-            </div>
-
-            <a href="javascript:void(0);" class="icon" onclick="dropDownSpe()">
-            <i class="fa fa-chevron-down"></i>
-            </a>
-
-          </div>
-
-            <!-- Top Navigation Menu -->
-            <div class="topnav">
-              <a href="#home" class="active" onclick="dropDownLab()">Laboratoire de biologie médicale</a>
-
-              <div id="myLinks3">
-
-                <?php
-                  //Le nom de la base de donnée visée
-                  $database = "omnessante";
-                  //connectez-vous dans votre BDD
-                  $db_handle = mysqli_connect('localhost', 'root', '' );
-                  $db_found = mysqli_select_db($db_handle, $database);
-                  //si le BDD existe, faire le traitement
-                  if ($db_found) {
-                    $sql = "SELECT DISTINCT s.Nom FROM service s, prestation p
-                            WHERE s.IdService = p.IdService
-                            And p.IdMedLab>=100
-                            Order BY s.Nom";
-
-                    $result = mysqli_query($db_handle, $sql);
-
-                    while ($data = mysqli_fetch_assoc($result)) {
-                      $exam = $data['Nom'];
-                      echo("<a href=\"#{$exam}\">$exam</a>");
-
-                    }//end while
-                  }//end if
-                  //si le BDD n'existe pas
-                  else {
-                  echo "Database not found";
-                  }//end else
-                  //fermer la connection
-                  mysqli_close($db_handle);
-                ?>
-
-              </div>
-
-              <a href="javascript:void(0);" class="icon" onclick="dropDownLab()">
-              <i class="fa fa-chevron-down"></i>
-
-              </a>
-            </div>
 
 
       </div>
+
     </div>
+
 
     <div class="login-popup">
       <div class="form-popup" id="popupForm" onclick="closeForm()">
@@ -421,6 +337,7 @@ session_start();
       <h1 id="CVnomDoc">Le CV de : </h1>
       <h2 id="CVspeDoc">Médecin </h2>
     </div>
+
 
       <div id="footer">Copyright &copy; 2022, Omnes Santé<br>
         <a href="mailto:omnes.sante@gmail.com">omnes.sante@gmail.com</a>
