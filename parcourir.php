@@ -287,6 +287,11 @@ session_start();
       </div>
     </div>
 
+    <form action="confirmationRDV.php" method="POST">
+      <input id="choixDocRDV" name="choixDocRDV" type="text" style="display:none; position:absolute; top:2%" value="">
+      <input id="choixDateRDV" name="choixDateRDV" type="text" style="display:none; position:absolute; top:0%" value="" required>
+      <input id="submitChoixRDV" class="submitbtn" type="submit" value="Choisir ce RDV" style="display: none;">
+    </form>
 
 
     <div id="priseRDV" style ="display:none;
@@ -318,27 +323,26 @@ session_start();
         <div class="case4"><strong>Vendredi</strong></div>
         <div class="case5"><strong>Samedi</strong></div>
 
+        <a href = "#" id="lun8" onclick="takeResa('lun8')" class="case" style="color:black;">08:00</a>
+        <a href = "#" id="mar8" onclick="takeResa('mar8')"class="case" style="color:black;">08:00</a>
+        <a href = "#" id="mer8" onclick="takeResa('mer8')"class="case" style="color:black;">08:00</a>
+        <a href = "#" id="jeu8" onclick="takeResa('jeu8')"class="case" style="color:black;">08:00</a>
+        <a href = "#" id="ven8" onclick="takeResa('ven8')"class="case" style="color:black;">08:00</a>
+        <a href = "#" id="sam8" onclick="takeResa('sam8')"class="case2" style="color:black;">08:00</a>
 
-        <a href = "#" id="lun8" class="case" style="color:black;">08:00</a>
-        <a href = "#" id="mar8" class="case" style="color:black;">08:00</a>
-        <a href = "#" id="mer8" class="case" style="color:black;">08:00</a>
-        <a href = "#" id="jeu8" class="case" style="color:black;">08:00</a>
-        <a href = "#" id="ven8" class="case" style="color:black;">08:00</a>
-        <a href = "#" id="sam8" class="case2" style="color:black;">08:00</a>
+        <a href = "#" id="lun9" onclick="takeResa('lun9')"class="case" style="color:black;">09:00</a>
+        <a href = "#" id="mar9" onclick="takeResa('mar9')"class="case" style="color:black;">09:00</a>
+        <a href = "#" id="mer9" onclick="takeResa('mer9')"class="case" style="color:black;">09:00</a>
+        <a href = "#" id="jeu9" onclick="takeResa('jeu9')"class="case" style="color:black;">09:00</a>
+        <a href = "#" id="ven9" onclick="takeResa('ven9')"class="case" style="color:black;">09:00</a>
+        <a href = "#" id="sam9" onclick="takeResa('sam9')"class="case2" style="color:black;">09:00</a>
 
-        <a href = "#" id="lun9" class="case" style="color:black;">09:00</a>
-        <a href = "#" id="mar9" class="case" style="color:black;">09:00</a>
-        <a href = "#" id="mer9" class="case" style="color:black;">09:00</a>
-        <a href = "#" id="jeu9" class="case" style="color:black;">09:00</a>
-        <a href = "#" id="ven9" class="case" style="color:black;">09:00</a>
-        <a href = "#" id="sam9" class="case2" style="color:black;">09:00</a>
-
-        <a href = "#" id="lun10" class="case" style="color:black;">10:00</a>
-        <a href = "#" id="mar10" class="case" style="color:black;">10:00</a>
-        <a href = "#" id="mer10" class="case" style="color:black;">10:00</a>
-        <a href = "#" id="jeu10" class="case" style="color:black;">10:00</a>
-        <a href = "#" id="ven10" class="case" style="color:black;">10:00</a>
-        <a href = "#" id="sam10" class="case2" style="color:black;">10:00</a>
+        <a href = "#" id="lun10" onclick="takeResa('lun10')"class="case" style="color:black;">10:00</a>
+        <a href = "#" id="mar10" onclick="takeResa('mar10')"class="case" style="color:black;">10:00</a>
+        <a href = "#" id="mer10" onclick="takeResa('mer10')"class="case" style="color:black;">10:00</a>
+        <a href = "#" id="jeu10" onclick="takeResa('jeu10')"class="case" style="color:black;">10:00</a>
+        <a href = "#" id="ven10" onclick="takeResa('ven10')"class="case" style="color:black;">10:00</a>
+        <a href = "#" id="sam10" onclick="takeResa('sam10')"class="case2" style="color:black;">10:00</a>
 
         <a href = "#" id="lun11" class="case" style="color:black;">11:00</a>
         <a href = "#" id="mar11" class="case" style="color:black;">11:00</a>
@@ -383,7 +387,6 @@ session_start();
         <a href = "#" id="sam17" class="case3" style="color:black; border: 2px solid #800080;">17:00</a>
 
       </div>
-
 
     </div>
 

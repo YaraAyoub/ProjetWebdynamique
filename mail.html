@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Send Mail</title>
+<script src=
+	"https://smtpjs.com/v3/smtp.js">
+</script>
+
+<script type="text/javascript">
+	function sendEmail() {
+	Email.send({
+		Host: "smtp.gmail.com",
+		Username: "omnes.sante2022@gmail.com",
+		Password: "OmnesSante2022!",
+		To: 'ayoubyara13@gmail.com',
+		From: "omnes.sante2022@gmail.com",
+		Subject: "Confirmation de votre RDV",
+		Body: "Well that was easy!!",
+	})
+		.then(function (message) {
+		alert("Un mail de confirmation vient de vous être envoyé")
+		});
+	}
+</script>
+</head>
+
+<body>
+<form method="post">
+	<input type="button" value="Send Email"
+		onclick="sendEmail()" />
+</form>
+</body>
+
+</html>

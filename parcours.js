@@ -58,6 +58,8 @@ function openForm(data, libre, nonlibre) {
 
    //document.getElementById("boutonRDV").onclick = openPriseRDV;
 
+   document.getElementById("choixDocRDV").value = data['Nom'] ;
+
    data2 = data;
    dlibre = libre;
    dnonlibre = nonlibre;
@@ -75,12 +77,32 @@ function openPriseRDV() {
 
   for(let i=0;i<dnonlibre.length;i++){
     document.getElementById(dnonlibre[i]).style.background = "purple" ;
+    document.getElementById(dnonlibre[i]).style.cursor = "not-allowed" ;
   }
 
    document.getElementById("popupForm").style.display = "none";
    document.getElementById("pagePopup").style.display = "none";
    document.getElementById("section2").style.display = "none";
    document.getElementById("priseRDV").style.display = "block";
+   document.getElementById("submitChoixRDV").style.display = "block";
+}
+
+function takeResa(choix){
+
+  for(let i=0;i<dlibre.length;i++){
+    document.getElementById(dlibre[i]).style.background = "none" ;
+  }
+
+  for(let i=0;i<dnonlibre.length;i++){
+    document.getElementById(dnonlibre[i]).style.background = "purple" ;
+    document.getElementById(dnonlibre[i]).style.cursor = "not-allowed" ;
+    document.getElementById(dnonlibre[i]).onclick = "" ;
+  }
+
+  document.getElementById(choix).style.background = "gray" ;
+  document.getElementById("choixDateRDV").value = choix ;
+
+
 }
 
 
