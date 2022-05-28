@@ -344,47 +344,47 @@ session_start();
         <a href = "#" id="ven10" onclick="takeResa('ven10')"class="case" style="color:black;">10:00</a>
         <a href = "#" id="sam10" onclick="takeResa('sam10')"class="case2" style="color:black;">10:00</a>
 
-        <a href = "#" id="lun11" class="case" style="color:black;">11:00</a>
-        <a href = "#" id="mar11" class="case" style="color:black;">11:00</a>
-        <a href = "#" id="mer11" class="case" style="color:black;">11:00</a>
-        <a href = "#" id="jeu11" class="case" style="color:black;">11:00</a>
-        <a href = "#" id="ven11" class="case" style="color:black;">11:00</a>
-        <a href = "#" id="sam11" class="case2" style="color:black;">11:00</a>
+        <a href = "#" id="lun11" onclick="takeResa('lun11')"class="case" style="color:black;">11:00</a>
+        <a href = "#" id="mar11" onclick="takeResa('mar11')"class="case" style="color:black;">11:00</a>
+        <a href = "#" id="mer11" onclick="takeResa('mer11')"class="case" style="color:black;">11:00</a>
+        <a href = "#" id="jeu11" onclick="takeResa('jeu11')"class="case" style="color:black;">11:00</a>
+        <a href = "#" id="ven11" onclick="takeResa('ven11')"class="case" style="color:black;">11:00</a>
+        <a href = "#" id="sam11" onclick="takeResa('sam11')"class="case2" style="color:black;">11:00</a>
 
-        <a href = "#" id="lun12" class="case" style="color:black;">12:00</a>
-        <a href = "#" id="mar12" class="case" style="color:black;">12:00</a>
-        <a href = "#" id="mer12" class="case" style="color:black;">12:00</a>
-        <a href = "#" id="jeu12" class="case" style="color:black;">12:00</a>
-        <a href = "#" id="ven12" class="case" style="color:black;">12:00</a>
-        <a href = "#" id="sam12" class="case2" style="color:black;">12:00</a>
+        <a href = "#" id="lun12" onclick="takeResa('lun12')"class="case" style="color:black;">12:00</a>
+        <a href = "#" id="mar12" onclick="takeResa('mar12')"class="case" style="color:black;">12:00</a>
+        <a href = "#" id="mer12" onclick="takeResa('mer12')"class="case" style="color:black;">12:00</a>
+        <a href = "#" id="jeu12" onclick="takeResa('jeu12')"class="case" style="color:black;">12:00</a>
+        <a href = "#" id="ven12" onclick="takeResa('ven12')"class="case" style="color:black;">12:00</a>
+        <a href = "#" id="sam12" onclick="takeResa('sam12')"class="case2" style="color:black;">12:00</a>
 
-        <a href = "#" id="lun14" class="case" style="color:black;">14:00</a>
-        <a href = "#" id="mar14" class="case" style="color:black;">14:00</a>
-        <a href = "#" id="mer14" class="case" style="color:black;">14:00</a>
-        <a href = "#" id="jeu14" class="case" style="color:black;">14:00</a>
-        <a href = "#" id="ven14" class="case" style="color:black;">14:00</a>
-        <a href = "#" id="sam14" class="case2" style="color:black;">14:00</a>
+        <a href = "#" id="lun14" onclick="takeResa('lun14')"class="case" style="color:black;">14:00</a>
+        <a href = "#" id="mar14" onclick="takeResa('mar14')"class="case" style="color:black;">14:00</a>
+        <a href = "#" id="mer14" onclick="takeResa('mer14')"class="case" style="color:black;">14:00</a>
+        <a href = "#" id="jeu14" onclick="takeResa('jeu14')"class="case" style="color:black;">14:00</a>
+        <a href = "#" id="ven14" onclick="takeResa('ven14')"class="case" style="color:black;">14:00</a>
+        <a href = "#" id="sam14" onclick="takeResa('sam14')"class="case2" style="color:black;">14:00</a>
 
-        <a href = "#" id="lun15" class="case" style="color:black;">15:00</a>
-        <a href = "#" id="mar15" class="case" style="color:black;">15:00</a>
-        <a href = "#" id="mer15" class="case" style="color:black;">15:00</a>
-        <a href = "#" id="jeu15" class="case" style="color:black;">15:00</a>
-        <a href = "#" id="ven15" class="case" style="color:black;">15:00</a>
-        <a href = "#" id="sam15" class="case2" style="color:black;">15:00</a>
+        <a href = "#" id="lun15" onclick="takeResa('lun15')"class="case" style="color:black;">15:00</a>
+        <a href = "#" id="mar15" onclick="takeResa('mar15')"class="case" style="color:black;">15:00</a>
+        <a href = "#" id="mer15" onclick="takeResa('mer15')"class="case" style="color:black;">15:00</a>
+        <a href = "#" id="jeu15" onclick="takeResa('jeu15')"class="case" style="color:black;">15:00</a>
+        <a href = "#" id="ven15" onclick="takeResa('ven15')"class="case" style="color:black;">15:00</a>
+        <a href = "#" id="sam15" onclick="takeResa('sam15')"class="case2" style="color:black;">15:00</a>
 
-        <a href = "#" id="lun16" class="case" style="color:black;">16:00</a>
-        <a href = "#" id="mar16" class="case" style="color:black;">16:00</a>
-        <a href = "#" id="mer16" class="case" style="color:black;">16:00</a>
-        <a href = "#" id="jeu16" class="case" style="color:black;">16:00</a>
-        <a href = "#" id="ven16" class="case" style="color:black;">16:00</a>
-        <a href = "#" id="sam16" class="case2" style="color:black;">16:00</a>
+        <a href = "#" id="lun16" onclick="takeResa('lun16')"class="case" style="color:black;">16:00</a>
+        <a href = "#" id="mar16" onclick="takeResa('mar16')"class="case" style="color:black;">16:00</a>
+        <a href = "#" id="mer16" onclick="takeResa('mer16')"class="case" style="color:black;">16:00</a>
+        <a href = "#" id="jeu16" onclick="takeResa('jeu16')"class="case" style="color:black;">16:00</a>
+        <a href = "#" id="ven16" onclick="takeResa('ven16')"class="case" style="color:black;">16:00</a>
+        <a href = "#" id="sam16" onclick="takeResa('sam16')"class="case2" style="color:black;">16:00</a>
 
-        <a href = "#" id="lun17" class="case3" style="color:black;">17:00</a>
-        <a href = "#" id="mar17" class="case3" style="color:black;">17:00</a>
-        <a href = "#" id="mer17" class="case3" style="color:black;">17:00</a>
-        <a href = "#" id="jeu17" class="case3" style="color:black;">17:00</a>
-        <a href = "#" id="ven17" class="case3" style="color:black;">17:00</a>
-        <a href = "#" id="sam17" class="case3" style="color:black; border: 2px solid #800080;">17:00</a>
+        <a href = "#" id="lun17" onclick="takeResa('lun17')"class="case3" style="color:black;">17:00</a>
+        <a href = "#" id="mar17" onclick="takeResa('mar17')"class="case3" style="color:black;">17:00</a>
+        <a href = "#" id="mer17" onclick="takeResa('mer17')"class="case3" style="color:black;">17:00</a>
+        <a href = "#" id="jeu17" onclick="takeResa('jeu17')"class="case3" style="color:black;">17:00</a>
+        <a href = "#" id="ven17" onclick="takeResa('ven17')"class="case3" style="color:black;">17:00</a>
+        <a href = "#" id="sam17" onclick="takeResa('sam17')"class="case3" style="color:black; border: 2px solid #800080;">17:00</a>
 
       </div>
 
