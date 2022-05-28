@@ -87,6 +87,19 @@ function openPriseRDV() {
    document.getElementById("submitChoixRDV").style.display = "block";
 }
 
+function openCV() {
+
+  document.getElementById("CVnomDoc").innerHTML += "Dr. "+data2["Prenom"]+" "+data2['Nom'];
+  document.getElementById("CVspeDoc").innerHTML = data2["Specialiste"].charAt(0).toUpperCase() + data2["Specialiste"].slice(1);
+
+
+   document.getElementById("popupForm").style.display = "none";
+   document.getElementById("pagePopup").style.display = "none";
+   document.getElementById("section2").style.display = "none";
+   document.getElementById("monCv").style.display = "block";
+   document.getElementById("submitChoixRDV").style.display = "none";
+}
+
 function takeResa(choix){
 
   for(let i=0;i<dlibre.length;i++){
