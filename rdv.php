@@ -37,12 +37,17 @@ session_start();
         </div>
       </div>
 
-
       <div id="section">
 
         <div id="section2">
 
           <h2>Rendez-vous à venir</h2>
+
+          <form name="submitDeleteRDV"action="confirmDeleteRDV.php" method="POST">
+            <input id="choixDateDeleteRDV" name="choixDateDeleteRDV" type="text" style="display:none; position:absolute; top:0%" value="" required>
+            <input id="choixDocDeleteRDV" name="choixDocDeleteRDV" type="text" style="display:none; position:absolute; top:0%" value="" required>
+            <input id="submitChoixDeleteRDV" class="submitbtn" type="submit" value="Confirmer l'annulation" style="display: none;">
+          </form>
 
           <?php
             //Le nom de la base de donnée visée
@@ -94,14 +99,30 @@ session_start();
                 }
 
 
-                echo("
-                <div class=\"rdv\">
-                  <a class=\"active\">Dr $nomDoc <br>Ce $jour à $heure:00 heure</a>
+                if(($nomDoc == "Prise de sang")||($nomDoc == "Test PCR Covid")||($nomDoc == "Examen urinaire")||($nomDoc == "Examen des selles"))
+                  {
+                    echo("
+                    <div class=\"rdv\">
+                      <a class=\"active\"> $nomDoc <br>Ce $jour à $heure:00 heure</a>
 
-                  <a href=\"#home\" class=\"icon\" onclick=\"clickSuppRdv()\">
-                    <i class=\"fa fa-trash-o\"></i>
-                  </a>
-                </div>");
+                      <a href=\"#home\" class=\"icon\" onclick=\"clickSuppRdv('{$date}', '{$nomDoc}')\">
+                        <i class=\"fa fa-trash-o\"></i>
+
+                      </a>
+                    </div>");
+                  }
+                  else
+                  {
+                    echo("
+                    <div class=\"rdv\">
+                      <a class=\"active\">Dr $nomDoc <br>Ce $jour à $heure:00 heure</a>
+
+                      <a href=\"#home\" class=\"icon\" id=\"$date$nomDoc\" onclick=\"clickSuppRdv('{$date}', '{$nomDoc}')\">
+                        <i class=\"fa fa-trash-o\"></i>
+
+                      </a>
+                    </div>");
+                  }
 
 
               }//end while

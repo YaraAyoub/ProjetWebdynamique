@@ -41,3 +41,20 @@
   background-color: #ddd;
   color: white;
 }
+
+
+.submitbtn{
+  font-size: 1.1em;
+  display: block;
+  position: absolute;
+  top: 134px;
+  left: 63%;
+  border: none;
+  background-color: #6666667d;
+  padding: 15px;
+  border-radius: 25px;
+}
+.submitbtn:hover{
+ background-color: purple;
+  color: white;
+}
