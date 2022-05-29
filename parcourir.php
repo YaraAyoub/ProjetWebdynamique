@@ -49,6 +49,9 @@ session_start();
 
       <div id="section" >
 
+        <img src="imagesDeco/doc6.png" alt="OMNES SANTE" width="230" height="310" style="position:absolute;top:200px; left: 10px"/>
+        <img src="imagesDeco/doc2.png" alt="OMNES SANTE" width="220" height="310" style="position:absolute;top:190px; right: 15px"/>
+
         <div id="section2" style ="display: block;">
 
           <div class="topnav">
@@ -185,7 +188,7 @@ session_start();
 
 
                     echo("<div id=\"myLinks3\">");
-                    
+
                   ?>
                   <?php
                     $sql = "SELECT Nom, IdServiceLab FROM servicelab Order BY Nom";
@@ -312,7 +315,7 @@ session_start();
           padding: 8px;"
         >Voir son CV</button>
 
-        <a href="priseRDV.php">
+        <a id="mailContactDoc" href="mailto:omnes.sante@gmail.com">
           <button type="button" onclick="closeForm()"
             style="background-color: #80008040;
             font-size: medium;
@@ -450,9 +453,14 @@ session_start();
       <h2 id="CVspeDoc">Médecin </h2>
     </div>
 
-      <div id="footer">Copyright &copy; 2022, Omnes Santé<br>
+    <div id="footer">
+      <p>
+        Copyright &copy; 2022, Omnes Santé<br><br>
         <a href="mailto:omnes.sante@gmail.com">omnes.sante@gmail.com</a>
-      </div>
+      </p>
+
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.081761528267!2d2.2863111515249366!3d48.87571787604028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66ff2e51e5f8b%3A0xd1996d079d18a7cd!2s59%20Av.%20de%20la%20Grande%20Arm%C3%A9e%2C%2075116%20Paris!5e0!3m2!1sfr!2sfr!4v1653816525128!5m2!1sfr!2sfr" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 
     </div>
 

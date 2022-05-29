@@ -1,16 +1,3 @@
-/*
-let co = "test";
-function setCo(emailProfil){
-
-    co = "test2";
-}
-
-function getCo(){
-
-    document.getElementById("titreA").innerHTML += co;
-}
-*/
-
 // afficher les docteurs généraliste tout parcourir
 function dropDownDoc() {
   var x = document.getElementById("myLinks1");
@@ -61,6 +48,8 @@ function openForm(data, libre, nonlibre) {
    //document.getElementById("boutonRDV").onclick = openPriseRDV;
 
    document.getElementById("choixDocRDV").value = data['Nom'] ;
+
+   document.getElementById("mailContactDoc").href = "mailto:"+data['Email'];
 
    data2 = data;
    dlibre = libre;

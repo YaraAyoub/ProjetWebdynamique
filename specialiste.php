@@ -200,7 +200,7 @@ session_start();
           padding: 8px;"
         >Voir son CV</button>
 
-        <a href="priseRDV.php">
+        <a id="mailContactDoc" href="mailto:omnes.sante@gmail.com">
           <button type="button" onclick="closeForm()"
             style="background-color: #80008040;
             font-size: medium;

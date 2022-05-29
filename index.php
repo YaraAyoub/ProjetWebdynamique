@@ -101,15 +101,30 @@
           <div id="chiffreCle">
             <h2 style="text-align:center">Bienvenue sur OMNES Santé !</h2>
             <p>Votre plateforme pour prendre un rendez-vous médical pour la communauté Omnes Education</p>
-          </div>
+
+
         </div>
+
+        <img src="imagesDeco/AcHILd.png" alt="photo dr" width="700" height="500" style="float:right;margin-top:30px;border-radius:120px;">
+        <img src="imagesDeco/coeur.png" alt="photo dr" width="700" height="500" style="margin-top:30px;border-radius:120px;">
+        <img src="imagesDeco/teamdoc.png" alt="photo dr" width="700" height="500" style="float:right;margin-top:30px;border-radius:120px;">
+        <img src="imagesDeco/microscope.png" alt="photo dr" width="700" height="500"style="margin-top:30px;border-radius:120px;">
+
+
+
 
       </div>
 
 
 
-      <div id="footer">Copyright &copy; 2022, Omnes Santé<br>
-        <a href="mailto:omnes.sante@gmail.com">omnes.sante@gmail.com</a>
+      <div id="footer">
+        <p>
+          Copyright &copy; 2022, Omnes Santé<br><br>
+          <a href="mailto:omnes.sante@gmail.com">omnes.sante@gmail.com</a>
+        </p>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.081761528267!2d2.2863111515249366!3d48.87571787604028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66ff2e51e5f8b%3A0xd1996d079d18a7cd!2s59%20Av.%20de%20la%20Grande%20Arm%C3%A9e%2C%2075116%20Paris!5e0!3m2!1sfr!2sfr!4v1653816525128!5m2!1sfr!2sfr" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
       </div>
 
     </div>
