@@ -37,14 +37,14 @@ session_start();
         </div>
       </div>
 
+      <img src="imagesDeco/doc5.png" alt="OMNES SANTE" width="280" height="300" style="position:absolute;top:200px; left: 10px;"/>
+      <img src="imagesDeco/doc4.png" alt="OMNES SANTE" width="220" height="310" style="position:absolute;top:190px; right: 15px"/>
+
       <div id="section">
 
         <div id="section2">
 
-          <img src="imagesDeco/doc5.png" alt="OMNES SANTE" width="280" height="300" style="position:absolute;top:200px; left: 10px"/>
-          <img src="imagesDeco/doc4.png" alt="OMNES SANTE" width="220" height="310" style="position:absolute;top:190px; right: 15px"/>
-
-          <h2>Rendez-vous à venir</h2>
+          <h2 style="text-align:center">Rendez-vous à venir</h2>
 
           <form name="submitDeleteRDV"action="confirmDeleteRDV.php" method="POST">
             <input id="choixDateDeleteRDV" name="choixDateDeleteRDV" type="text" style="display:none; position:absolute; top:0%" value="" required>
@@ -141,7 +141,7 @@ session_start();
             mysqli_close($db_handle);
           ?>
 
-          <h2>Rendez-vous passés</h2>
+          <h2 style="text-align:center">Rendez-vous passés</h2>
           <?php
             //Le nom de la base de donnée visée
             $database = "omnessante";

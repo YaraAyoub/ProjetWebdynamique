@@ -81,7 +81,7 @@
            //echo("<script>setCo('{$email}')</script>");
            $_SESSION['email'] = $email;
            $_SESSION['type'] = "client";
-           header("Location: compte.php");
+           header("Location: index.php");
          }
          else if(mysqli_fetch_assoc($result2))    //admin
          {

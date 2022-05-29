@@ -82,7 +82,7 @@
                 $dateExpiration = $data['DateExpiration'];
                 $codeSecurite = $data['CodeSecurite'];
 
-                echo ("<img src=\"PhotoProfils/$photoProfil\" height='120' width='100' style=\"padding-left: 210px;\">");
+                echo ("<img src=\"PhotoProfils/$photoProfil\" height='120' width='100' style=\"float:right;\">");
 
                 echo ("<p style=\"margin-bottom: 20px;padding-top: 8px;padding-bottom: 8px;\">"
                   ."Prénom : ".$prenom."<br>"."<br>"

@@ -151,6 +151,7 @@
                                 height: 50%;">
 
 
+          <img src="imagesDeco/compte.jpg" alt="OMNES SANTE" width="200" height="220" style="position:absolute;top:120px; left: 70px"/>
 
             <h2 style="margin-top: 50px;margin-bottom: 25px;text-align: center;">
                 <i class="fa fa-user"></i> Vos informations personnelles:

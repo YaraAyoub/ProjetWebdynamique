@@ -38,6 +38,8 @@ session_start();
 
     <div id="section">
 
+      <img src="imagesDeco/confirmation.png" alt="OMNES SANTE" width="200" height="220" style="position:absolute;top:300px; left: 200px"/>
+
       <div id="confirmation" style ="display:block;
                               margin-top: 5%;
                               margin-left: 15%;
@@ -128,10 +130,10 @@ session_start();
             border-radius: 25px;
             cursor: pointer;
             opacity: 0.8;
-            position: fixed;
-            top: 470px;
+            position: absolute;
+            top: 370px;
             margin-left: 60px;
-            padding: 8px;"
+            padding: 20px;"
           >Retour à la page d'accueil</button>
         </a>
 

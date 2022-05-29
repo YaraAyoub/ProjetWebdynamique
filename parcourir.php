@@ -71,9 +71,6 @@ session_start();
               $result = mysqli_query($db_handle, $sql);
 
               while ($data = mysqli_fetch_assoc($result)) {
-                // $sql2="SELECT Adresse FROM medecin WHERE Specialiste='generaliste' Order by Nom, Prenom";
-                // $result2 = mysqli_query($db_handle, $sql2);
-
 
                 $doc = "Dr ".$data['Prenom']." ".strtoupper($data['Nom']);
                 $image=$data['Image'];
@@ -286,22 +283,6 @@ session_start();
             padding: 8px;"
           >Prendre RDV</button>
 
-
-        <!-- <a href="CV.php">
-          <button type="button" onclick="closeForm()"
-            style="background-color: #80008040;
-            font-size: medium;
-            color: black;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            opacity: 0.8;
-            position: fixed;
-            top: 470px;
-            margin-left: -70px;
-            padding: 8px;"
-          >Voir son CV</button>
-        </a> -->
         <button id="buttonCV" type="button" onclick="openCV()" style="background-color: #80008040;
           font-size: medium;
           color: black;

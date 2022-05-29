@@ -46,7 +46,9 @@
 
         <div id="section">
 
-        <p id="titreA">page admin de <?php echo "$_SESSION[email]"; ?></p>
+        <h2 style="color: white"></h2>
+
+
 
         <div id="ajout" style ="display: none;
                                 margin-top: 5%;
@@ -238,13 +240,16 @@
         </div>
 
 
-        <div id="compteA" style ="display: none;
+        <div id="compteA" style ="display: block;
                                 margin-top: 5%;
                                 margin-left: 32%;
                                 background-color: transparent;
                                 width: 50%;
                                 min-height: 500px;
                                 height: 50%;">
+
+
+           <img src="imagesDeco/compte.jpg" alt="OMNES SANTE" width="200" height="220" style="position:absolute;top:120px; left: 70px"/>
 
 
 

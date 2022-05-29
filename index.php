@@ -40,6 +40,8 @@
 
       <div id="section">
 
+        <img src="imagesDeco/description.png" alt="OMNES SANTE" width=100% height="700"/>
+
         <div>
           <div class="carousel">
             <ul class="slides">
@@ -99,11 +101,23 @@
           </div>
 
           <div id="chiffreCle">
-            <h2 style="text-align:center">Bienvenue sur OMNES Santé !</h2>
-            <p>Votre plateforme pour prendre un rendez-vous médical pour la communauté Omnes Education</p>
+            <h1 style="text-align:center; font-size:3em">Bienvenue sur OMNES Santé !</h1>
+
+            <h2 style="font-size:2.5em">News de la semaine :</h2>
+
+            <p style="text-align:center;">
+              <h3 style="font-size:2em; margin-left:70px">Coronavirus :</h3>
+              <ul style="font-size:1.8em; margin-left:70px">
+                <li>79,9% de couverture vaccinal en France</li>
+                <li>53,5 millions de vaccinations terminées</li>
+                <li>98,2% de test avec suspicion de variant Omicron</li>
+                <li>20% de tension en réanimation</li>
+              </ul>
 
 
+            </p>
         </div>
+
 
         <img src="imagesDeco/AcHILd.png" alt="photo dr" width="700" height="500" style="float:right;margin-top:30px;border-radius:120px;">
         <img src="imagesDeco/coeur.png" alt="photo dr" width="700" height="500" style="margin-top:30px;border-radius:120px;">

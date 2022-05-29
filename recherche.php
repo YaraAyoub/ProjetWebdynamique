@@ -1,10 +1,13 @@
-<?php //session_start(); //utile? ?>
+<?php
+session_start();
+?>
  <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
   <head>
      <title>Omnes Santé</title>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <link href="index.css" rel="stylesheet" type="text/css" />
      <link href="logo.jpg" rel="icon" type="images/x-icon" />
      <script type="text/javascript" src="parcours.js"></script>
@@ -12,23 +15,60 @@
   </head>
 
   <style>
-  .search-container form {
-  position: relative;
-  margin-left: 27%;
-  margin-top: 12%;
-  }
-  .search-container form button {
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 50px;
-    background: transparent;
-    border: transparent;
-    font-size: 20px;
-    color: #190037;
-    cursor: pointer;
-    outline: 0;
-  }
+    #result{
+      background-color: transparent;
+      /* height: 500px; */
+      width: 700px;
+      margin-left: 27%;
+      margin-top: 40px;
+      max-height: 600px;
+      overflow: auto;
+    }
+
+    .zone{
+      background-color: #ddd;
+      position: relative;
+      margin: 30px;
+      border-radius: 30px;
+    }
+    .zone a {
+      color: black;
+      padding: 25px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      display: block;
+      border-radius: 15px;
+    }
+
+    .active {
+      background-color: #ddd;
+      color: white;
+    }
+    .search-container form {
+      position: relative;
+      margin-left: 27%;
+      margin-top: 4%;
+      width: 670px;
+      height: 60px;
+    }
+
+    .submitB{
+      width: 50px;
+      height: 60px;
+      font-size: 20px;
+      color: #190037;
+      cursor: pointer;
+      background: transparent;
+      border-color: transparent;
+    }
+
+    .submitB:hover{
+      background-color: purple;
+      border-radius: 15px;
+      height: 60px;
+      color: white;
+    }
+
   </style>
 
   <body>
@@ -52,18 +92,96 @@
         </div>
       </div>
 
+      <img src="imagesDeco/doc1.png" alt="OMNES SANTE" width="270" height="310" style="position:absolute;top:200px; left: 30px"/>
+      <img src="imagesDeco/doc2.png" alt="OMNES SANTE" width="220" height="310" style="position:absolute;top:190px; right: 15px"/>
+
 
       <div id="section">
 
         <div class="search-container">
-            <form action="">
+
+            <form action="trouvesearch.php" method="POST">
+              <button class="submitB" type="submit"><i class="fa fa-search"></i></button>
               <input type="text" placeholder="Recherche..." name="Recherche" style="height: 50px;width: 600px;
               border-width: 4px; border-color: #190037;border-radius: 15px;">
-              <button type="submit"><i class="fa fa-search"></i></button>
             </form>
+
+             <div id="result">
+
+            <?php
+
+            if (isset($_SESSION['recherche'])) {
+
+
+              if ($_SESSION['recherche'] != "") {
+
+                $recherche = $_SESSION['recherche'];
+
+                //Le nom de la base de donnée visée
+                $database = "omnessante";
+                //connectez-vous dans votre BDD
+                $db_handle = mysqli_connect('localhost', 'root', '' );
+                $db_found = mysqli_select_db($db_handle, $database);
+                //si le BDD existe, faire le traitement
+                if ($db_found) {
+                  $sql = "SELECT Nom, Prenom, Specialiste, Email, Bureau, Adresse, Telephone, Image
+                    FROM Medecin
+                    WHERE Nom
+                    LIKE '%$recherche%' OR Prenom LIKE '%$recherche%' OR Specialiste LIKE '%$recherche%'
+                    ORDER BY Nom";
+
+
+
+                  $result = mysqli_query($db_handle, $sql);
+                  while($data = mysqli_fetch_assoc($result))
+                  {
+                    $nom = strtoupper($data['Nom']);
+                    $prenom = $data['Prenom'];
+                    $spe = $data['Specialiste'];
+                    $mail = $data['Email'];
+                    $bureau = $data['Bureau'];
+                    $adresse = $data['Adresse'];
+                    $tel = $data['Telephone'];
+                    $image = $data['Image'];
+
+
+                    echo("
+                      <div class=\"zone\">
+                        <a class=\"active\">
+
+                        <img style=\"float:right\" src='PhotoProfils/$image' height='120' width='100'>
+                        <p>
+                          Dr $prenom $nom <br>$spe <br><i class=\"material-icons\">local_post_office</i>$mail <br> <br><i class=\"material-icons\">place</i> : bureau $bureau, $adresse
+                        </p>
+
+                        </a>
+                      </div>
+
+                    ");
+
+
+                  }
+
+                }//end if
+                //si le BDD n'existe pas
+                else {
+                  echo "Database not found";
+                }//end else
+                //fermer la connection
+                mysqli_close($db_handle);
+
+                $_SESSION['recherche'] ="";
+
+              }
+            }
+
+            ?>
+
         </div>
 
       </div>
+
+    </div>
 
 
 
