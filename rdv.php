@@ -101,11 +101,13 @@ session_start();
 
                 if(($nomDoc == "Prise de sang")||($nomDoc == "Test PCR Covid")||($nomDoc == "Examen urinaire")||($nomDoc == "Examen des selles"))
                   {
+
+                    $idnomDoc = str_replace(" ", "", $nomDoc);
                     echo("
                     <div class=\"rdv\">
                       <a class=\"active\"> $nomDoc <br>Ce $jour à $heure:00 heure</a>
 
-                      <a href=\"#home\" class=\"icon\" onclick=\"clickSuppRdv('{$date}', '{$nomDoc}')\">
+                      <a href=\"#home\" class=\"icon\" id=\"$date$idnomDoc\" onclick=\"clickSuppRdv('{$date}', '{$nomDoc}', '{$idnomDoc}')\">
                         <i class=\"fa fa-trash-o\"></i>
 
                       </a>
@@ -113,11 +115,12 @@ session_start();
                   }
                   else
                   {
+                    $idnomDoc = str_replace(" ", "", $nomDoc);
                     echo("
                     <div class=\"rdv\">
                       <a class=\"active\">Dr $nomDoc <br>Ce $jour à $heure:00 heure</a>
 
-                      <a href=\"#home\" class=\"icon\" id=\"$date$nomDoc\" onclick=\"clickSuppRdv('{$date}', '{$nomDoc}')\">
+                      <a href=\"#home\" class=\"icon\" id=\"$date$idnomDoc\" onclick=\"clickSuppRdv('{$date}', '{$nomDoc}','{$idnomDoc}')\">
                         <i class=\"fa fa-trash-o\"></i>
 
                       </a>

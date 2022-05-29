@@ -197,7 +197,7 @@ function takeResa(choix){
 
 
 let previousDelete="";
-function clickSuppRdv(dateDelete, doc) {
+function clickSuppRdv(dateDelete, doc, iddoc) {
   //  var result ="<?php SuppRdv(); ?>"
   //  document.write(result);
 
@@ -207,7 +207,7 @@ function clickSuppRdv(dateDelete, doc) {
   document.getElementById("choixDateDeleteRDV").value = dateDelete ;
   document.getElementById("choixDocDeleteRDV").value = doc ;
 
-  document.getElementById(dateDelete+doc).style.background = "red";
+  document.getElementById(dateDelete+iddoc).style.background = "red";
 
   if (previousDelete != "") {
     document.getElementById(previousDelete).style.background = "#190037";
@@ -216,7 +216,7 @@ function clickSuppRdv(dateDelete, doc) {
 
   document.getElementById("submitChoixDeleteRDV").style.display = "block";
 
-  previousDelete = dateDelete+doc;
+  previousDelete = dateDelete+iddoc;
 
 }
 
