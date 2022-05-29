@@ -196,11 +196,29 @@ function takeResa(choix){
   }
 
 
+let previousDelete="";
+function clickSuppRdv(dateDelete, doc) {
+  //  var result ="<?php SuppRdv(); ?>"
+  //  document.write(result);
 
-  function clickSuppRdv(){
-    var result ="<?php SuppRdv(); ?>"
-    document.write(result);
+  console.log(dateDelete);
+  console.log(doc);
+
+  document.getElementById("choixDateDeleteRDV").value = dateDelete ;
+  document.getElementById("choixDocDeleteRDV").value = doc ;
+
+  document.getElementById(dateDelete+doc).style.background = "red";
+
+  if (previousDelete != "") {
+    document.getElementById(previousDelete).style.background = "#190037";
   }
+
+
+  document.getElementById("submitChoixDeleteRDV").style.display = "block";
+
+  previousDelete = dateDelete+doc;
+
+}
 
 function showSecretData(elemId) {
   var x = document.getElementById(elemId);
