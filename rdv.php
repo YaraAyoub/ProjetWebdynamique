@@ -46,11 +46,7 @@ session_start();
           <form name="submitDeleteRDV"action="confirmDeleteRDV.php" method="POST">
             <input id="choixDateDeleteRDV" name="choixDateDeleteRDV" type="text" style="display:none; position:absolute; top:0%" value="" required>
             <input id="choixDocDeleteRDV" name="choixDocDeleteRDV" type="text" style="display:none; position:absolute; top:0%" value="" required>
-<<<<<<< HEAD
             <input id="submitChoixDeleteRDV" class="submitbtnDelete" type="submit" value="Confirmer l'annulation" style="display: none;">
-=======
-            <input id="submitChoixDeleteRDV" class="submitbtn" type="submit" value="Confirmer l'annulation" style="display: none;">
->>>>>>> ccda3c2872b39e7bd154dec0d11ac69c42f8df25
           </form>
 
           <?php

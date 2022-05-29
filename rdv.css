@@ -43,11 +43,7 @@
 }
 
 
-<<<<<<< HEAD
 .submitbtnDelete{
-=======
-.submitbtn{
->>>>>>> ccda3c2872b39e7bd154dec0d11ac69c42f8df25
   font-size: 1.1em;
   display: block;
   position: absolute;
@@ -58,11 +54,7 @@
   padding: 15px;
   border-radius: 25px;
 }
-<<<<<<< HEAD
 .submitbtnDelete:hover{
-=======
-.submitbtn:hover{
->>>>>>> ccda3c2872b39e7bd154dec0d11ac69c42f8df25
  background-color: purple;
   color: white;
 }
